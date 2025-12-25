@@ -1,6 +1,15 @@
 import React, { useRef, useLayoutEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import img5 from "../assets/5.png";
+import img7 from "../assets/7.png";
+import img4 from "../assets/4.png";
+import img3 from "../assets/3.png";
+import img2 from "../assets/2.png";
+import bg5 from "../assets/bg-5.png";
+import bg7 from "../assets/bg-7.png";
+import bg6 from "../assets/bg-6.png";
+
 function FloatingImage({ img, target, scrollY }) {
   if (!target) {
     return (
@@ -43,10 +52,10 @@ export default function WixDocking() {
   const bgOpacity = useTransform(scrollY, [0, 500], [1, 0.25]);
 
   const IMAGES = [
-    { src: "/src/assets/5.png", x: 50, y: 100, w: 180, h: 180, bgW: 220, bgH: 220, bgX: 30, bgY: 70 },
-    { src: "/src/assets/7.png", x: 1200, y: 50, w: 270, h: 200 },
-    { src: "/src/assets/4.png", x: 80 , y: 470, w: 280, h: 200, bgW: 220, bgH: 240, bgX: 100, bgY: 450 },
-    { src: "/src/assets/3.png", x: 1230, y: 420, w: 120, h: 120, bgW: 220, bgH: 240, bgX: 1180, bgY: 350 },
+    { src: img5, x: 50, y: 100, w: 180, h: 180, bgW: 220, bgH: 220, bgX: 30, bgY: 70 },
+    { src: img7, x: 1200, y: 50, w: 270, h: 200 },
+    { src: img4, x: 80 , y: 470, w: 280, h: 200, bgW: 220, bgH: 240, bgX: 100, bgY: 450 },
+    { src: img3, x: 1230, y: 420, w: 120, h: 120, bgW: 220, bgH: 240, bgX: 1180, bgY: 350 },
   ];
 
   useLayoutEffect(() => {
@@ -105,9 +114,9 @@ export default function WixDocking() {
           let bgName = null;
           let bgW, bgH, bgX, bgY;
 
-          if (i === 0) bgName = "bg-5.png";
-          if (i === 2) bgName = "bg-7.png";
-          if (i === 3) bgName = "bg-6.png";
+          if (i === 0) bgName = bg5;
+          if (i === 2) bgName = bg7;
+          if (i === 3) bgName = bg6;
 
           if (bgName) {
             bgW = img.bgW;
@@ -126,7 +135,7 @@ export default function WixDocking() {
                     top: bgY,
                     width: bgW,
                     height: bgH,
-                    backgroundImage: `url(/src/assets/${bgName})`,
+                    backgroundImage: `url(${bgName})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     zIndex: 10,
@@ -143,7 +152,7 @@ export default function WixDocking() {
       {/* DOCK GRID */}
       <section ref={grid} className="flex justify-center pt-20 pb-40" id="pricing">
         <div className="relative w-full max-w-[1250px] min-h-[700px] overflow-hidden rounded-3xl">
-          <img src="/src/assets/2.png" className="absolute inset-0 w-full h-full z-0" />
+          <img src={img2} className="absolute inset-0 w-full h-full z-0" />
 
           <div ref={(el) => (frames.current[0] = el)} className="absolute top-[50px] left-[35px] w-[170px] h-[170px]" />
           <div ref={(el) => (frames.current[1] = el)} className="absolute top-[130px] right-[10px] w-[150px] h-[150px]" />

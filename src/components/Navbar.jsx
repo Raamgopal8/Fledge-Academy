@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +9,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="flex items-center gap-3">
         <a href="/">
-          <img src="/src/assets/logo.png" alt="Fledge Academy" className="h-25 w-auto" />
+          <img src={logo} alt="Fledge Academy" className="h-25 w-auto" />
         </a>
       </div>
 

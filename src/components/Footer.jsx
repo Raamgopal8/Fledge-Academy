@@ -1,4 +1,5 @@
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
            
               <a href="/">
                 <img
-                  src="/src/assets/logo.png"
+                  src={logo}
                   alt="Fledge Academy"
                   className="h-15 w-auto"
                 />

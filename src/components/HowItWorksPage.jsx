@@ -6,7 +6,7 @@ export default function HowItWorksPage() {
     <section className="relative min-h-screen w-full bg-white py-24 overflow-hidden" id="how-it-works">
       {/* Header */}
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-28">
-        <span className="inline-block mb-4 rounded-full bg-cyan-300 px-4 py-1 text-sm font-medium text-white">
+        <span className="inline-block mb-4 rounded-full bg-cyan-400 px-4 py-1 text-sm font-medium text-white">
           We teach with intention, not compulsion
         </span>
 
