@@ -1,6 +1,19 @@
+:root {
+  --bg-section: #F9FAFB;
+  --bg-card: #FFFFFF;
+  --border-soft: #E5E7EB;
+
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+
+  --accent-primary: #0891B2;
+  --accent-hover: #0E7490;
+}
 
 html, body {
-	width: 100vw;
-	max-width: 100vw;
-	overflow-x: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  /* No font-family here, let Tailwind handle it */
 }

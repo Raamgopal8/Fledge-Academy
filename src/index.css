@@ -1,4 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+html, body {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+
+
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
@@ -18,4 +28,8 @@
 .mobile-3d-card {
   transform-style: preserve-3d;
   transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+img {
+  will-change: transform;
 }

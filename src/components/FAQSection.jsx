@@ -3,30 +3,31 @@ import { Plus, Minus } from "lucide-react";
 
 const faqData = [
   {
-    q: "Do I need any prior knowledge?",
-    a: "No prior knowledge is required. We start from absolute basics.",
+    q: "Do I need any previous knowledge to join the N5 course?",
+    a: "No. Our N5 course is designed for complete beginners. We start from the basics, including scripts and simple sentences, and guide you step by step.",
   },
   {
-    q: "Are the classes live or recorded?",
-    a: "Classes are live with session recordings available for revision.",
+    q: "How interactive are the online classes?",
+    a: "Very interactive. Each session includes speaking, reading, writing, and activity-based practice with continuous feedback.",
+  },
+  {
+    q: "Will I get individual attention?",
+    a: "Yes. We keep our batch sizes small to ensure personal guidance, doubt clarification, and regular feedback for every learner.",
   },
   {
     q: "What if I miss a class?",
-    a: "You will receive the class recording so you never fall behind.",
+    a: "No worries. We provide class notes, session recordings, and support so you can easily catch up.",
   },
   {
-    q: "Is JLPT preparation included?",
-    a: "Yes, our curriculum includes JLPT-focused training and mock tests.",
+    q: "Do you prepare students for JLPT or NAT exams?",
+    a: "Yes. We conduct weekly reviews, monthly tests, and mock exams to help you prepare confidently for JLPT and NAT levels.",
   },
   {
-    q: "Who is this course suitable for?",
-    a: "Anyone who wants to learn Japanese—from beginners to professionals.",
-  },
-  {
-    q: "How do I join the free trial?",
-    a: "Click on 'Join Free Trial' on our website and complete the signup.",
+    q: "What platform do you use for classes?",
+    a: "All classes are conducted online via Zoom or Google Meet, and lesson materials are provided for every session.",
   },
 ];
+
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -36,7 +37,7 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center py-16 px-4 bg-white">
+    <div className="w-full flex flex-col items-center py-16 px-4 bg-white" id="faq">
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl font-bold text-center">
         Frequently Asked Questions
@@ -50,7 +51,7 @@ export default function FAQSection() {
         {faqData.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl border-l-4 border-red-500 shadow-sm"
+            className="bg-white rounded-xl border-l-4 border-cyan-500 shadow-sm"
           >
             {/* Question Row */}
             <button

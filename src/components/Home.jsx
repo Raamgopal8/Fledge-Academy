@@ -1,16 +1,16 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import FadeUp from "../animations/FadeUp";
 import VerticalJapaneseText from "../animations/VerticalJapaneseText";
 import EnsoCircle from "../animations/EnsoCircle";
 import { breathingOpacity } from "../animations/variants";
-import RoseFlower from "../assets/RoseFlower.png";
-import Heroimg from "../assets/Sample-hero.png";
+// import RoseFlower from "../assets/RoseFlower.png";
+// import Heroimg from "../assets/Sample-hero.png";
 import "./Hero.css";
 
 export default function Home() {
   return (
     <div className="hero-container min-h-screen w-full md:pt-8 hero-tab">
-      {/* Vertical Japanese Text Decoration - Hidden on mobile */}
       <div className="hidden lg:block">
         <VerticalJapaneseText 
           text="日本語を学ぶ旅へようこそ" 
@@ -18,7 +18,6 @@ export default function Home() {
         />
       </div>
       
-      {/* Large Breathing Kanji "未来" (Future) - Responsive sizing */}
       <motion.div
         variants={breathingOpacity}
         initial="initial"
@@ -29,25 +28,20 @@ export default function Home() {
         未来
       </motion.div>
 
-      {/* Ensō Circle behind content - Hidden on mobile */}
       <div className="hidden md:block absolute top-[20%] left-[10%] opacity-10">
         <EnsoCircle size={200} delay={0.5} />
       </div>
       
-      {/* Soft Radial Pastel Glow - Background Layer with Breathing - Hidden on mobile */}
       <motion.div 
         className="hidden md:block absolute top-20 right-[10%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full blur-3xl pointer-events-none glow-purple-soft breathing-glow"
         style={{ willChange: "transform, opacity" }}
       />
       
-      {/* HERO SECTION */}
       <section className="w-full flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-16 mt-8 md:mt-12 relative z-10">
-
-        {/* LEFT CONTENT */}
-        <div className="max-w-2xl text-center  pt-16 md:pt-25 md:text-left md:pl-8 lg:pl-20 w-full overflow-x-visible">
+        <div className="max-w-2xl text-center pt-16 md:pt-25 md:text-left md:pl-8 lg:pl-20 w-full overflow-x-visible">
           <FadeUp delay={0.2}>
             <motion.h1 
-              className="text-3xl hero-text sm:text-2xl md:text-5xl lg:text-[55px]  font-bold leading-tight md:leading-tight lg:leading-[1.2] text-[#000000]/70 calligraphy-reveal px-2 md:px-0"
+              className="text-3xl hero-text sm:text-2xl md:text-5xl lg:text-[55px] font-bold leading-tight md:leading-tight lg:leading-[1.2] text-[#000000]/70 calligraphy-reveal px-2 md:px-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, delay: 0.3 }}
@@ -92,9 +86,7 @@ export default function Home() {
           </FadeUp>
         </div>
 
-        {/* RIGHT IMAGE BLOCK */}
         <div className="mt-10 md:mt-0 relative w-full flex justify-center md:justify-end md:pr-8 lg:pr-16">
-          {/* Breathing Soft Radial Glow Behind Crane - Hidden on mobile */}
           <motion.div 
             className="hidden md:block absolute -top-10 left-10 w-32 h-32 rounded-full blur-2xl pointer-events-none glow-pink-soft"
             animate={{
@@ -116,7 +108,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Pink Tree (RoseFlower) as Absolute Background at the very end of Home - Responsive */}
+
       <motion.div
         className="pointer-events-none absolute left-0 bottom-0 w-full flex justify-left z-0 overflow-x-hidden"
         initial={{ opacity: 0, y: 40 }}
@@ -130,7 +122,7 @@ export default function Home() {
           alt="Sakura Pink Tree"
           className="w-full max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl h-auto object-contain select-none opacity-500 drop-shadow-xl"
           draggable="false"
-          style={{ marginBottom: '-2px' }}
+          style={{ marginBottom: "-2px" }}
         />
       </motion.div>
     </div>

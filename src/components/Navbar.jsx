@@ -4,24 +4,28 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 sm:px-6 md:px-16 py-4 shadow-sm bg-white relative z-50">
+    <nav className="w-full flex items-center justify-between px-6 md:px-10 lg:px-18 bg-white relative z-50 shadow-sm border-b border-gray-200">
       {/* Logo */}
-      <div className="flex items-center gap-2">
-        <img
-          src="/logo.png"
-          alt="Fledge Academy Logo"
-          className="w-7 h-7 sm:w-8 sm:h-8"
-        />
-        <h1 className="text-lg sm:text-xl font-semibold">Fledge Academy</h1>
+      <div className="flex items-center gap-3">
+        <a href="/">
+          <img src="/src/assets/logo.png" alt="Fledge Academy" className="h-25 w-auto" />
+        </a>
       </div>
 
       {/* Desktop Menu Links */}
-      <div className="hidden md:flex items-center gap-6 lg:gap-8 text-gray-700 font-medium">
-        <a href="#" className="hover:text-black transition">Courses</a>
-        <a href="#" className="hover:text-black transition">About</a>
+      <div className="hidden md:flex items-center gap-8 text-base text-gray-800">
+        <a href="#why-learn-japanese" className="hover:text-black transition">Why Learn</a>
+        <a href="#how-it-works" className="hover:text-black transition">How it works</a>
+        <a href="#courses" className="hover:text-black transition">Courses</a>
+        <a href="#testimonials" className="hover:text-black transition">Testimonials</a>
+        <a href="/CoursesPricing" className="hover:text-black transition">Pricing</a>
+        <a href="#faq" className="hover:text-black transition">FAQ</a>
+      </div>
 
-        <button className="bg-linear-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition">
-          Book Free Trial
+      {/* CTA Button */}
+      <div className="hidden md:block">
+        <button className="bg-cyan-500 text-white font-semibold px-6 py-3 rounded-lg transition">
+          Book Slot
         </button>
       </div>
 
@@ -39,11 +43,14 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
-          <div className="flex flex-col gap-4 p-6 text-gray-700 font-medium">
-            <a href="#" className="hover:text-black transition py-2">Courses</a>
-            <a href="#" className="hover:text-black transition py-2">About</a>
-            <button className="bg-linear-to-r from-blue-500 to-purple-500 text-white px-4 py-3 rounded-lg shadow hover:shadow-lg transition w-full">
-              Book Free Trial
+          <div className="flex flex-col gap-4 p-6 text-gray-800">
+            <a href="#courses" className="hover:text-black transition py-2">Courses</a>
+            <a href="#how-it-works" className="hover:text-black transition py-2">How it works</a>
+            <a href="#testimonials" className="hover:text-black transition py-2">Testimonials</a>
+            <a href="#pricing" className="hover:text-black transition py-2">Pricing</a>
+            <a href="#faq" className="hover:text-black transition py-2">FAQ</a>
+            <button className="bg-purple-300 hover:bg-purple-400 text-black font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
+              Remix template
             </button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import './animations/JapaneseStyles.css'
 
@@ -11,31 +12,35 @@ import StudentSuccessStories from './components/StudentSuccessStories.jsx'
 import SakuraPetals from './animations/SakuraPetals.jsx'
 import FAQSection from './components/FAQSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
+import HeroPage from './components/FloatingDockLayout.jsx'
+import FloatingDockLayout from './components/FloatingDockLayout.jsx'
+import OurCourses from './components/OurCourses.jsx'
+import CoursesPricing from './components/CoursesPricing.jsx';
+import JourneyCTA from './components/JourneyCTA.jsx';
+import Footer from './components/Footer.jsx';
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    {/* Global Japanese Aesthetic Layers */}
-    <div className="washi-texture" />
-    <SakuraPetals />
-
-    {/* Wind Lines Effect - Hidden on mobile */}
-    <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <div className="wind-line" style={{ left: '10%' }} />
-      <div className="wind-line" style={{ left: '40%' }} />
-      <div className="wind-line" style={{ left: '70%' }} />
-    </div>
-    
-    <Navbar/>
-     <Home/>
-     <WhyLearnJapanese/>
-     <HowItWorksPage/>
-     <SpeakJapanesePage/>
-     <StudentSuccessStories/>
-     <FAQSection/>
-     <ContactSection/>
-    </>
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <FloatingDockLayout/>
+            <WhyLearnJapanese/>
+            <HowItWorksPage/>
+            <OurCourses/>
+            <StudentSuccessStories/>
+            <FAQSection/>
+            <JourneyCTA/>
+            <Footer/>
+          </>
+        } />
+        <Route path="/CoursesPricing" element={<CoursesPricing/>} />
+      </Routes>
+    </Router>
   )
 }
 
