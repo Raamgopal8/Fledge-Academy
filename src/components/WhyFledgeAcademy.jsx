@@ -1,5 +1,5 @@
-// WhyFledgeAcademy.jsx
 import React from "react";
+import japaneseRow from "../assets/japanese_row.png";
 
 export default function WhyFledgeAcademy() {
   return (
@@ -48,7 +48,7 @@ export default function WhyFledgeAcademy() {
           <div
             className="h-[380px] rounded-[18px] p-7 text-white relative"
             style={{
-              backgroundImage: "url('/src/assets/japanese_row.png')",
+              backgroundImage: `url(${japaneseRow})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
