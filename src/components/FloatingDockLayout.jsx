@@ -1,5 +1,6 @@
 import React, { useRef, useLayoutEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 import img5 from "../assets/5.png";
 import img7 from "../assets/7.png";
@@ -10,6 +11,7 @@ import bg5 from "../assets/bg-5.png";
 import bg7 from "../assets/bg-7.png";
 import bg6 from "../assets/bg-6.png";
 
+/* ---------------- FLOATING IMAGE ---------------- */
 function FloatingImage({ img, target, scrollY }) {
   if (!target) {
     return (
@@ -40,6 +42,7 @@ function FloatingImage({ img, target, scrollY }) {
   );
 }
 
+/* ---------------- MAIN COMPONENT ---------------- */
 export default function WixDocking() {
   const wrapper = useRef(null);
   const grid = useRef(null);
@@ -48,13 +51,12 @@ export default function WixDocking() {
   const { scrollY } = useScroll();
   const [targets, setTargets] = useState([]);
 
-  // fade background images on scroll
   const bgOpacity = useTransform(scrollY, [0, 500], [1, 0.25]);
 
   const IMAGES = [
     { src: img5, x: 50, y: 100, w: 180, h: 180, bgW: 220, bgH: 220, bgX: 30, bgY: 70 },
-    { src: img7, x: 1200, y: 50, w: 270, h: 200 },
-    { src: img4, x: 80 , y: 470, w: 280, h: 200, bgW: 220, bgH: 240, bgX: 100, bgY: 450 },
+    { src: img7, x: 1250, y: 50, w: 270, h: 200 },
+    { src: img4, x: 80, y: 480, w: 280, h: 200, bgW: 220, bgH: 240, bgX: 100, bgY: 450 },
     { src: img3, x: 1230, y: 420, w: 120, h: 120, bgW: 220, bgH: 240, bgX: 1180, bgY: 350 },
   ];
 
@@ -91,25 +93,69 @@ export default function WixDocking() {
 
   return (
     <div ref={wrapper} className="relative min-h-full bg-white" id="hero">
-      {/* HERO */}
+      {/* ---------------- HERO ---------------- */}
       <section className="relative h-screen flex items-center justify-center">
-        <div className="text-center space-y-8 max-w-4xl z-30 -mt-60">
-          <h1 className="md:text-8xl">
-            Learn Japanese <br />
-            <span className="text-gray-600">without limits</span>
+        {/* CENTER CONTENT */}
+        <div className="text-center max-w-4xl z-30 -mt-30">
+          <h1 className="text-5xl md:text-7xl font-semibold text-black/90 leading-tight">
+            Learn Japanese
+            <br />
+            <span className="text-gray-400 font-medium">
+              <Typewriter
+                words={[
+                  "at your own pace",
+                  "from anywhere",
+                  "by experiencing it",
+                  "with confidence",
+                ]}
+                loop={0}
+                cursor
+                cursorStyle="▍"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
           </h1>
-          <p className="text-gray-700 text-md">
-            Learn Japanese naturally with an interactive, modern learning platform.
+
+          <p className="mt-6 text-lg text-gray-600">
+            Experience the language through a clear path
+            <br />
+            that makes every step simple
           </p>
-          <button
-            className="bg-cyan-500 text-white px-10 py-4 rounded-full text-2xl font-semibold"
-            onClick={() => window.location.href = '/CoursesPricing'}
-          >
-            Explore Courses
-          </button>
+
+          <div className="mt-10 flex justify-center gap-4">
+            <button
+              className="bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
+              onClick={() => (window.location.href = "/CoursesPricing")}
+            >
+              Explore Courses
+            </button>
+
+            <button className="bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition">
+              Enroll Now
+            </button>
+          </div>
+
+          {/* Social proof */}
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <p className="text-gray-500 text-sm">
+              Growing with learners across the world
+            </p>
+
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <img
+                  key={i}
+                  src={`https://i.pravatar.cc/40?img=${i + 10}`}
+                  className="w-9 h-9 rounded-full border-2 border-white"
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* FLOATING + BACKGROUND */}
+        {/* FLOATING IMAGES */}
         {IMAGES.map((img, i) => {
           let bgName = null;
           let bgW, bgH, bgX, bgY;
@@ -149,14 +195,14 @@ export default function WixDocking() {
         })}
       </section>
 
-      {/* DOCK GRID */}
-      <section ref={grid} className="flex justify-center pt-20 pb-40" id="pricing">
+      {/* ---------------- DOCK GRID ---------------- */}
+      <section ref={grid} className="flex justify-center pt-20 pb-40">
         <div className="relative w-full max-w-[1250px] min-h-[700px] overflow-hidden rounded-3xl">
           <img src={img2} className="absolute inset-0 w-full h-full z-0" />
 
           <div ref={(el) => (frames.current[0] = el)} className="absolute top-[50px] left-[35px] w-[170px] h-[170px]" />
           <div ref={(el) => (frames.current[1] = el)} className="absolute top-[130px] right-[10px] w-[150px] h-[150px]" />
-          <div ref={(el) => (frames.current[2] = el)} className="absolute bottom-[-10px] left-[30px] w-[170px] h-[170px]" />
+          <div ref={(el) => (frames.current[2] = el)} className="absolute bottom-[10px] left-[30px] w-[170px] h-[170px]" />
           <div ref={(el) => (frames.current[3] = el)} className="absolute bottom-[50px] right-[50px] w-[110px] h-[110px]" />
         </div>
       </section>

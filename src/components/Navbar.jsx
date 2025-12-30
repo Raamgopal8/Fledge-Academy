@@ -50,7 +50,7 @@ export default function Navbar() {
             <a href="#testimonials" className="hover:text-black transition py-2">Testimonials</a>
             <a href="#pricing" className="hover:text-black transition py-2">Pricing</a>
             <a href="#faq" className="hover:text-black transition py-2">FAQ</a>
-            <button className="bg-cyan-400 hover:bg-cyan-700 text-black font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
+            <button className="bg-cyan-400 text-black font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
               Book Slot
             </button>
           </div>

@@ -18,6 +18,7 @@ import OurCourses from './components/OurCourses.jsx'
 import CoursesPricing from './components/CoursesPricing.jsx';
 import JourneyCTA from './components/JourneyCTA.jsx';
 import Footer from './components/Footer.jsx';
+import WhyFledgeAcademy from './components/WhyFledgeAcademy.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +33,7 @@ function App() {
             <WhyLearnJapanese/>
             <HowItWorksPage/>
             <OurCourses/>
+            <WhyFledgeAcademy/>
             <StudentSuccessStories/>
             <FAQSection/>
             <JourneyCTA/>
