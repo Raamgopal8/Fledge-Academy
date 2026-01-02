@@ -98,10 +98,18 @@ export default function StudentSuccessStories() {
                 </div>
               </div>
 
-              {/* Preview */}
-              <p className="text-gray-700 text-sm leading-relaxed mb-8">
-                {item.preview}
-              </p>
+              {/* Preview + Read More */}
+              <div className="mb-8">
+                <p className="text-gray-700 text-sm leading-relaxed inline">
+                  {item.preview}
+                </p>
+                <button
+                  onClick={() => setActiveStory(item)}
+                  className="ml-2 text-xs font-medium text-gray-400 hover:text-cyan-600 transition align-baseline"
+                >
+                  Read more
+                </button>
+              </div>
 
               {/* Footer */}
               <div className="mt-auto">
@@ -114,13 +122,6 @@ export default function StudentSuccessStories() {
                   <p className="text-sm font-semibold text-cyan-500">
                     {item.kanji}
                   </p>
-
-                  <button
-                    onClick={() => setActiveStory(item)}
-                    className="text-xs font-medium text-gray-400 hover:text-cyan-600 transition"
-                  >
-                    Read more →
-                  </button>
                 </div>
               </div>
             </motion.div>
@@ -159,9 +160,11 @@ export default function StudentSuccessStories() {
               {/* Content */}
               <div className="flex gap-4 mb-6">
                 <FaQuoteLeft className="text-cyan-500 text-4xl shrink-0" />
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {activeStory.full}
-                </p>
+                <div className="text-gray-700 text-sm leading-relaxed">
+                  {activeStory.full.split(/\n|(?<=[.!?])\s+(?=[A-Z])/).map((para, idx) => (
+                    <p key={idx} className="mb-3 last:mb-0">{para.trim()}</p>
+                  ))}
+                </div>
               </div>
 
               <div className="h-px bg-gray-100 mb-4" />

@@ -73,15 +73,15 @@ export default function FAQSection() {
   }, [showMore]);
 
   return (
-    <section className="w-full flex flex-col items-center py-16 px-4 bg-white" id="faq">
-      <h1 className="text-4xl md:text-5xl font-bold text-center">
+    <section className="w-full flex flex-col items-center py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center">
         Frequently Asked Questions
       </h1>
-      <p className="text-gray-500 mt-3 text-center text-lg">
+      <p className="text-gray-500 mt-3 text-center text-sm sm:text-lg">
         Everything you need to know about learning Japanese with us.
       </p>
 
-      <div className="mt-12 w-full max-w-3xl space-y-4">
+      <div className="mt-8 sm:mt-12 w-full max-w-3xl space-y-4">
         {[...baseFaqs, ...(showMore ? extraFaqs : [])].map((item, idx) => {
           const isExtra = idx >= baseFaqs.length;
 
@@ -98,9 +98,9 @@ export default function FAQSection() {
             >
               <button
                 onClick={() => toggleFAQ(idx)}
-                className="w-full flex justify-between items-center py-5 px-4 text-left"
+                className="w-full flex justify-between items-center py-4 sm:py-5 px-4 text-left"
               >
-                <p className="text-lg font-medium">{item.q}</p>
+                <p className="text-sm sm:text-lg font-medium">{item.q}</p>
                 <div className="bg-indigo-500/10 p-2 rounded-full">
                   {openIndex === idx ? (
                     <Minus className="text-indigo-500" size={20} />
@@ -111,7 +111,7 @@ export default function FAQSection() {
               </button>
 
               {openIndex === idx && (
-                <div className="px-4 pb-4 text-gray-600">
+                <div className="px-4 pb-4 text-gray-600 text-sm sm:text-base">
                   {item.a}
                 </div>
               )}
@@ -123,7 +123,7 @@ export default function FAQSection() {
       {!showMore && (
         <button
           onClick={() => setShowMore(true)}
-          className="mt-8 rounded-full border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
+          className="mt-6 sm:mt-8 rounded-full border border-gray-300 px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
         >
           Load more questions
         </button>

@@ -1,6 +1,5 @@
-import React, { useRef, useLayoutEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
+import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
 import img5 from "../assets/5.png";
 import img7 from "../assets/7.png";
@@ -10,6 +9,35 @@ import img2 from "../assets/2.png";
 import bg5 from "../assets/bg-5.png";
 import bg7 from "../assets/bg-7.png";
 import bg6 from "../assets/bg-6.png";
+
+/* ---------------- SWAPPING TEXT ---------------- */
+function SwappingText({ phrases, interval = 2000 }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [phrases.length, interval]);
+
+  return (
+    <span className="inline-block min-h-[1.2em]">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          className="inline-block"
+        >
+          {phrases[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 /* ---------------- FLOATING IMAGE ---------------- */
 function FloatingImage({ img, target, scrollY }) {
@@ -101,19 +129,14 @@ export default function WixDocking() {
             Learn Japanese
             <br />
             <span className="text-gray-400 font-medium">
-              <Typewriter
-                words={[
+              <SwappingText
+                phrases={[
                   "at your own pace",
                   "from anywhere",
                   "by experiencing it",
                   "with confidence",
                 ]}
-                loop={0}
-                cursor
-                cursorStyle="▍"
-                typeSpeed={80}
-                deleteSpeed={50}
-                delaySpeed={1500}
+                interval={2500}
               />
             </span>
           </h1>

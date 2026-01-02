@@ -19,43 +19,42 @@ export default function WhyLearnJapanese() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
             Why Learn Japanese Today
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-xl sm:max-w-2xl mx-auto text-sm sm:text-base">
             Discover global opportunities, cultural depth, and a smarter way of
             thinking through language learning.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           {features.map((item, index) => {
-            // Show dashed line for all except the last card in each column (2-column layout)
             return (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-3xl p-8 flex gap-6 relative"
+                className="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 flex gap-4 sm:gap-6 relative"
               >
                 {/* ICON + LINE */}
                 <div className="relative flex flex-col items-center">
-                  <div className="w-14 h-14 bg-cyan-400 text-white rounded-xl flex items-center justify-center text-2xl z-10">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-cyan-400 text-white rounded-xl flex items-center justify-center text-xl sm:text-2xl z-10">
                     {item.icon}
                   </div>
 
-                  {/* Dashed line for all cards, including last */}
-                  <div className="absolute top-[60px] h-[80%] border-l-2 border-dashed border-gray-300" />
+                  {/* Dashed line for all cards */}
+                  <div className="absolute top-[50px] sm:top-[60px] h-[70%] sm:h-[80%] border-l-2 border-dashed border-gray-300" />
                 </div>
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
