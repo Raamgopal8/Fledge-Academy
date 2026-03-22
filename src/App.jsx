@@ -14,11 +14,16 @@ import FAQSection from './components/FAQSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import HeroPage from './components/FloatingDockLayout.jsx'
 import FloatingDockLayout from './components/FloatingDockLayout.jsx'
+import SmoothScroll from './components/SmoothScroll.jsx'
 import OurCourses from './components/OurCourses.jsx'
 import CoursesPricing from './components/CoursesPricing.jsx';
 import JourneyCTA from './components/JourneyCTA.jsx';
 import Footer from './components/Footer.jsx';
 import WhyFledgeAcademy from './components/WhyFledgeAcademy.jsx';
+import AboutPage from './components/AboutPage.jsx';
+import CoursesPage from './components/CoursesPage.jsx';
+import BlogPage from './components/BlogPage.jsx';
+import ContactPage from './components/ContactPage.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,22 +31,29 @@ function App() {
   return (
     <Router>
       <Navbar/>
-      <Routes>
-        <Route path="/" element={
-          <>
-            <FloatingDockLayout/>
-            <WhyLearnJapanese/>
-            <HowItWorksPage/>
-            <OurCourses/>
-            <WhyFledgeAcademy/>
-            <StudentSuccessStories/>
-            <FAQSection/>
-            <JourneyCTA/>
-            <Footer/>
-          </>
-        } />
-        <Route path="/CoursesPricing" element={<CoursesPricing/>} />
-      </Routes>
+      <SmoothScroll>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <FloatingDockLayout/>
+              <WhyLearnJapanese/>
+              <HowItWorksPage/>
+              
+              <OurCourses/>
+              <WhyFledgeAcademy/>
+              <StudentSuccessStories/>
+              <FAQSection/>
+              <JourneyCTA/>
+              <Footer/>
+            </>
+          } />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/CoursesPricing" element={<CoursesPricing/>} />
+        </Routes>
+      </SmoothScroll>
     </Router>
   )
 }

@@ -45,7 +45,7 @@ function FloatingImage({ img, target, scrollY }) {
     return (
       <img
         src={img.src}
-        className="absolute object-contain z-20"
+        className="hidden md:block absolute object-contain z-20"
         style={{
           left: img.x,
           top: img.y,
@@ -64,7 +64,7 @@ function FloatingImage({ img, target, scrollY }) {
   return (
     <motion.img
       src={img.src}
-      className="absolute object-contain z-20"
+      className="hidden md:block absolute object-contain z-20"
       style={{ left, top, width, height }}
     />
   );
@@ -198,6 +198,7 @@ export default function WixDocking() {
             <React.Fragment key={i}>
               {bgName && (
                 <motion.div
+                  className="hidden md:block"
                   style={{
                     position: "absolute",
                     left: bgX,
@@ -219,7 +220,7 @@ export default function WixDocking() {
       </section>
 
       {/* ---------------- DOCK GRID ---------------- */}
-      <section ref={grid} className="flex justify-center pt-20 pb-40">
+      <section ref={grid} className="hidden md:flex justify-center pt-20 pb-40">
         <div className="relative w-full max-w-[1250px] min-h-[700px] overflow-hidden rounded-3xl">
           <img src={img2} className="absolute inset-0 w-full h-full z-0" />
 

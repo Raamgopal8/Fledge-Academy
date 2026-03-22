@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+  const linkClass = (path) => `hover:text-blue-600 transition ${isActive(path) ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : ''}`;
 
   return (
     <nav className="w-full flex items-center justify-between px-6 md:px-10 lg:px-18 bg-white relative z-50 shadow-sm border-b border-gray-200">
@@ -14,19 +19,18 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Menu Links */}
-      <div className="hidden md:flex items-center gap-8 text-base text-gray-800">
-        <a href="#why-learn-japanese" className="hover:text-black transition">Why Learn</a>
-        <a href="#how-it-works" className="hover:text-black transition">How it works</a>
-        <a href="#courses" className="hover:text-black transition">Courses</a>
-        <a href="#testimonials" className="hover:text-black transition">Testimonials</a>
-        <a href="/CoursesPricing" className="hover:text-black transition">Pricing</a>
-        <a href="#faq" className="hover:text-black transition">FAQ</a>
+      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <Link to="/" className={linkClass("/")}>Home</Link>
+        <Link to="/courses" className={linkClass("/courses")}>Courses</Link>
+        <Link to="/blog" className={linkClass("/blog")}>Blog</Link>
+        <Link to="/about" className={linkClass("/about")}>About</Link>
+        <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
       </div>
 
       {/* CTA Button */}
       <div className="hidden md:block">
-        <button className="bg-cyan-500 text-white font-semibold px-6 py-3 rounded-lg transition">
-          Book Slot
+        <button className="bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-semibold px-6 py-2 rounded-md transition text-sm">
+          Enroll Now
         </button>
       </div>
 
@@ -45,13 +49,13 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
           <div className="flex flex-col gap-4 p-6 text-gray-800">
-            <a href="#courses" className="hover:text-black transition py-2">Courses</a>
-            <a href="#how-it-works" className="hover:text-black transition py-2">How it works</a>
-            <a href="#testimonials" className="hover:text-black transition py-2">Testimonials</a>
-            <a href="#pricing" className="hover:text-black transition py-2">Pricing</a>
-            <a href="#faq" className="hover:text-black transition py-2">FAQ</a>
-            <button className="bg-cyan-400 text-black font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
-              Book Slot
+            <Link to="/" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/courses" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Courses</Link>
+            <Link to="/blog" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+            <Link to="/about" className="hover:text-blue-600 transition py-2 font-bold" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link to="/contact" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            <button className="bg-[#3B66AC] text-white font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
+              Enroll Now
             </button>
           </div>
         </div>

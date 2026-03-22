@@ -86,7 +86,7 @@ export default function Home() {
           </FadeUp>
         </div>
 
-        <div className="mt-10 md:mt-0 relative w-full flex justify-center md:justify-end md:pr-8 lg:pr-16">
+        <div className="hidden md:flex mt-10 md:mt-0 relative w-full justify-center md:justify-end md:pr-8 lg:pr-16">
           <motion.div 
             className="hidden md:block absolute -top-10 left-10 w-32 h-32 rounded-full blur-2xl pointer-events-none glow-pink-soft"
             animate={{
@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       <motion.div
-        className="pointer-events-none absolute left-0 bottom-0 w-full flex justify-left z-0 overflow-x-hidden"
+        className="hidden md:flex pointer-events-none absolute left-0 bottom-0 w-full justify-left z-0 overflow-x-hidden"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ duration: 1.2, delay: 0.6 }}
