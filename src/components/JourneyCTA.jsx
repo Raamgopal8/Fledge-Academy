@@ -1,6 +1,6 @@
 export default function JourneyCTA() {
   return (
-    <section className="w-full py-24 px-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 text-center">
+    <section className="w-full py-16 sm:py-24 px-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 text-center">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
           Ready to Start Your Journey?

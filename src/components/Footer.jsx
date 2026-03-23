@@ -18,10 +18,14 @@ export default function Footer() {
               </a>
             
           </div>
+         
           <p className="text-sm text-gray-600 mt-4 leading-relaxed">
             Empowering learners to become confident Japanese speakers through
             structured learning and practical methods.
           </p>
+           <h1 className="text-sm text-gray-600 mt-4 leading-relaxed">
+            Spreading your Knowledge like wings to fly ! 
+          </h1>
         </div>
 
         {/* Quick Links */}

@@ -13,7 +13,7 @@ export default function OurCourses() {
   const courses = [
     {
       title: "Junior N5 Course (Grades 6 - 12)",
-      desc: "A beginner course for school students that combines structured teaching with activity - based practice across reading, writing, speaking, and cultural understanding",
+      desc: "A beginner course for school students that combines structured teaching with activity - based practice across reading, writing, speaking, and cultural understanding.",
       motionProps: {
         initial: { x: -50, opacity: 0 },
         whileInView: { x: 0, opacity: 1 },
@@ -41,6 +41,16 @@ export default function OurCourses() {
         transition: { duration: 0.6, delay: 0.4 }
       }
     },
+    {
+      title: "Demo Classes",
+      desc: "Basic Japanese kanji, grammar, and vocabulary are covered in this course session.",
+      motionProps: {
+        initial: { y: 50, opacity: 0 },
+        whileInView: { y: 0, opacity: 1 },
+        viewport: { once: true },
+        transition: { duration: 0.6, delay: 0.6 }
+    }
+  }
   ];
 
   return (
@@ -51,11 +61,11 @@ export default function OurCourses() {
             Our Courses
           </h2>
           <p className="text-center text-gray-500 text-sm sm:text-base md:text-md mb-8 sm:mb-12 md:mb-14 max-w-3xl mx-auto">
-            Each course follows a structured, purposeful approach that helps learners
+            Each course follows a structured, purposeful approach that helps learners 
             <br className="hidden sm:block" /> build strong foundations and steady progress in Japanese
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 md:gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-14">
             {courses.map((course, idx) => (
               <motion.div
                 key={idx}
@@ -66,13 +76,13 @@ export default function OurCourses() {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {course.title}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                     {course.desc}
                   </p>
                 </div>
 
                 <button
-                  className="mt-6 sm:mt-8 self-start text-sm font-bold text-[#3B66AC] 
+                  className="mt-8 sm:mt-10 self-start text-sm font-bold text-[#3B66AC] 
                              hover:text-blue-800 transition inline-flex items-center gap-1"
                 >
                   View Course →

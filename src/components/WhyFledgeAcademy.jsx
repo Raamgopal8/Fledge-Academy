@@ -17,7 +17,7 @@ export default function WhyFledgeAcademy() {
       {/* MAIN GRID */}
       <div className="max-w-[1320px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1fr_2fr] gap-4 sm:gap-6">
         {/* LEFT SIDE */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:col-span-2">
           <Card
             index="1"
             bg="bg-[#e07a6f]"
@@ -38,7 +38,7 @@ export default function WhyFledgeAcademy() {
             title="A Community That Lifts You"
             desc="We’re building a supportive space where learners grow together and support each other."
             size="large"
-            className="sm:col-span-2"
+            className="md:col-span-2"
           />
         </div>
 

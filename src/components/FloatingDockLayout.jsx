@@ -128,7 +128,7 @@ export default function WixDocking() {
           <h1 className="text-5xl md:text-7xl font-semibold text-black/90 leading-tight">
             Learn Japanese
             <br />
-            <span className="text-gray-400 font-medium">
+            <span className="text-gray-500 font-medium">
               <SwappingText
                 phrases={[
                   "at your own pace",
@@ -141,21 +141,21 @@ export default function WixDocking() {
             </span>
           </h1>
 
-          <p className="mt-6 text-lg text-gray-600">
+          <p className="mt-6 text-lg text-gray-600 px-4">
             Experience the language through a clear path
-            <br />
+            <br className="hidden sm:block" />
             that makes every step simple
           </p>
 
-          <div className="mt-10 flex justify-center gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 px-6 md:px-0">
             <button
-              className="bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
+              className="w-full sm:w-auto bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
               onClick={() => (window.location.href = "/CoursesPricing")}
             >
               Explore Courses
             </button>
 
-            <button className="bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition">
+            <button className="w-full sm:w-auto bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition">
               Enroll Now
             </button>
           </div>

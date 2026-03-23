@@ -22,10 +22,10 @@ export default function HowItWorksPage() {
       {/* Timeline area (lines and cards) */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         {/* Vertical timeline lines */}
-        <div className="absolute inset-0 flex justify-between h-full pointer-events-none select-none">
+        <div className="absolute inset-0 flex justify-between h-full pointer-events-none select-none px-4 sm:px-0">
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div key={i} className="relative w-px bg-gray-200">
-              <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-xs sm:text-sm text-gray-300">
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-xs sm:text-sm text-gray-300 hidden sm:block">
                 {String(i).padStart(2, "0")}
               </span>
             </div>

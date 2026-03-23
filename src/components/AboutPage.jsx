@@ -4,12 +4,6 @@ import { Eye, Rocket, BookOpen, Globe, Users, Brain, ArrowRight } from 'lucide-r
 import Footer from './Footer';
 import heroImage from '../assets/japanese_garden_house.png';
 
-const stats = [
-  { label: 'YEARS', value: '12+', subtext: 'OF EXCELLENCE' },
-  { label: 'GRADUATED', value: '5k+', subtext: 'SCHOLARS' },
-  { label: 'PASS RATE', value: '98%', subtext: 'JLPT SUCCESS' },
-];
-
 const philosophy = [
   {
     title: 'Academic Rigor',
@@ -51,17 +45,10 @@ const AboutPage = () => {
               Pioneering the Path <br /> to <span className="text-[#3B66AC]">Fluency.</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-10">
-              Fledge Academy was founded in Tokyo by a collective of educators and linguists who recognized a gap in traditional language instruction. We don't just teach Japanese; we help you find your voice within it.
+              Fledge Academy is an online learning space built for those who want to learn languages with clarity, structure, and real purpose. We believe good learning is not about rushing. It’s about understanding, practicing with care, and building confidence step by step. This belief shapes how every class is designed and delivered. At Fledge, teaching is thoughtful and clear. Learners are guided patiently, with regular practice and support that helps them see steady progress over time.Our classes are flexible, yet focused — giving learners the freedom to learn while staying steady and clear about their progress. Today, we focus on Japanese language education and exams like JLPT and NAT, while building learning foundations that can grow into many skills in the future. Here, learning is not rushed — it’s guided with purpose. 
             </p>
             
-            <div className="flex gap-12">
-              {stats.map((stat, i) => (
-                <div key={i}>
-                  <p className="text-3xl font-extrabold text-[#3B66AC]">{stat.value}</p>
-                  <p className="text-[10px] font-bold text-gray-400 tracking-widest mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+            
           </motion.div>
 
           <motion.div 
@@ -99,7 +86,7 @@ const AboutPage = () => {
             </div>
             <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Our Vision</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              To become the global gold standard for contextual language learning, where every student transcends basic communication to achieve profound cultural resonance and intellectual depth.
+              To become a trusted place where meaningful learning shapes confident, capable individuals for the future.
             </p>
           </motion.div>
 
@@ -112,7 +99,7 @@ const AboutPage = () => {
             </div>
             <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
             <p className="text-white/90 leading-relaxed text-lg">
-              To elevate Japanese language mastery to an art form. We bridge cultures by fostering deep cultural empathy and providing the tools for boundless intellectual potential through academic excellence.
+              To deliver thoughtful, structured learning experiences that help every learner grow with clarity and confidence.
             </p>
             {/* Subtle decorative element */}
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Book, Users, Clock, Award, Star, ArrowRight } from 'lucide-react';
+import { Book, Users, Clock, Award, Star, ArrowRight, GraduationCap, Briefcase, Palette } from 'lucide-react';
 import Footer from './Footer';
 import heroImage from '../assets/japanese_courses_hero.png';
 
@@ -8,40 +8,50 @@ const courses = [
   {
     id: 1,
     title: 'Beginner Japanese (N5)',
-    level: 'N5',
+    level: 'Level: N5',
     duration: '12 Weeks',
     type: 'JLPT Focused',
     description: 'Establish a rock-solid foundation in Hiragana, Katakana, and basic Kanji. Master daily survival phrases and essential grammar structures.',
     tags: ['Scripts Mastery', 'Daily Greetings', 'Basic Verbs'],
+    gridSpan: 'lg:col-span-2',
+    style: 'primary',
+    icon: <GraduationCap className="w-48 h-48 absolute bottom-0 right-0 opacity-[0.03] -rotate-12 translate-y-4" />,
     link: '#',
   },
   {
     id: 2,
     title: 'Intermediate Conversation',
-    level: 'N4-N3',
+    level: 'Level: N4-N3',
     duration: '16 Weeks',
     type: 'Conversation',
     description: 'Bridge the gap between textbook Japanese and real-world fluency. Focus on fluid expression and natural sentence structures.',
     nextCohort: 'Nov 15',
+    gridSpan: 'lg:col-span-1',
+    style: 'secondary',
     link: '#',
   },
   {
     id: 3,
     title: 'Advanced Business Japanese',
-    level: 'N2-N1',
-    duration: '20 Weeks',
+    level: 'Level: N2-N1',
+    duration: '20 Weeks Course',
     type: 'JLPT Focused',
     description: 'Master Keigo (honorifics), professional email writing, and corporate etiquette for the Japanese workplace.',
     professional: true,
+    gridSpan: 'lg:col-span-1',
+    style: 'tertiary',
     link: '#',
   },
   {
     id: 4,
     title: 'Cultural Workshops',
     level: 'Artistic',
-    duration: 'Flexible',
-    type: 'Culture',
+    duration: 'Flexible Schedule',
+    type: 'Culture', // Map to Culture for bento styling
     description: 'Dive deep into calligraphy, tea ceremony, and history. Language learning is incomplete without its soul.',
+    isWorkshop: true,
+    gridSpan: 'lg:col-span-2',
+    style: 'workshop',
     link: '#',
   },
 ];
@@ -51,9 +61,9 @@ const categories = ['All Courses', 'JLPT Focused', 'Conversation'];
 const CoursesPage = () => {
   const [activeCategory, setActiveCategory] = useState('All Courses');
 
-  const filteredCourses = activeCategory === 'All Courses' 
+const filteredCourses = activeCategory === 'All Courses' 
     ? courses 
-    : courses.filter(c => c.type === activeCategory || (activeCategory === 'Conversation' && c.type === 'Culture')); 
+    : courses.filter(c => c.type === activeCategory || (activeCategory === 'Conversation' && c.type === 'Culture'));
     // Cultural workshops could fit in conversation or stay separate, but for the layout we'll match the design.
 
   return (
@@ -72,7 +82,7 @@ const CoursesPage = () => {
               <span className="text-[#3B66AC]">Without Limits.</span>
             </h1>
             <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-10">
-              Our curriculum blends traditional linguistic rigor with contemporary cultural immersion. Find the path that fits your ambition.
+             Each course follows a structured, purposeful approach that helps learners build strong foundations and steady progress in Japanese.
             </p>
             
             <div className="flex gap-4 mb-8">
@@ -134,67 +144,123 @@ const CoursesPage = () => {
 
       {/* Courses Grid */}
       <section className="px-6 md:px-12 lg:px-24 mb-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           <AnimatePresence mode="wait">
-            {filteredCourses.map((course, i) => (
-              <motion.div
-                key={course.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: i * 0.1 }}
-                className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-gray-50 flex flex-col justify-between hover:shadow-xl transition-shadow group h-full"
-              >
-                <div>
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="flex gap-3">
-                      <span className="bg-blue-50 text-[#3B66AC] text-[10px] font-bold tracking-widest px-3 py-1.5 rounded uppercase font-mono">
-                        Level: {course.level}
-                      </span>
-                      <span className="text-gray-400 text-[10px] font-bold tracking-widest px-3 py-1.5 flex items-center gap-1.5 uppercase">
-                        <Clock className="w-3 h-3" /> {course.duration}
-                      </span>
+            {filteredCourses.map((course, i) => {
+              // Custom span logic for bento grid
+              const spanClass = course.id === 1 ? 'lg:col-span-4' : 
+                               course.id === 2 ? 'lg:col-span-2' :
+                               'lg:col-span-3';
+
+              return (
+                <motion.div
+                  key={course.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, delay: i * 0.1 }}
+                  className={`bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-500 overflow-hidden relative group h-full ${spanClass}`}
+                >
+                  {/* Background Icon for Primary Card */}
+                  {course.icon && course.icon}
+
+                  <div className="relative z-10 h-full flex flex-col">
+                      <div className="flex gap-3">
+                        {course.isWorkshop && (
+                          <span className="bg-red-50 text-red-500 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded uppercase font-mono border border-red-100/50 shadow-sm">
+                            Workshop
+                          </span>
+                        )}
+                        {!course.isWorkshop && (
+                          <span className="text-[10px] font-bold tracking-widest px-3 py-1.5 rounded uppercase font-mono border bg-blue-50 text-[#3B66AC] border-blue-100">
+                            {course.level}
+                          </span>
+                        )}
+                        
+                        {!course.isWorkshop && (
+                          <span className="text-gray-400 text-[10px] font-bold tracking-widest px-3 py-1.5 flex items-center gap-1.5 uppercase border border-gray-100 rounded">
+                            {course.professional ? <Briefcase className="w-3 h-3" /> : <Clock className="w-3 h-3" />}
+                            {course.duration}
+                          </span>
+                        )}
+
+                        {course.isWorkshop && (
+                          <span className="text-gray-400 text-[10px] font-bold tracking-widest px-3 py-1.5 flex items-center gap-1.5 uppercase border border-gray-100 rounded">
+                            <Palette className="w-3 h-3" /> Artistic
+                          </span>
+                        )}
+                      </div>
+                    
+
+                    <h3 className={`font-extrabold text-[#1A1A1A] mb-4 group-hover:text-[#3B66AC] transition-colors ${
+                      course.id === 1 ? 'text-4xl' : 'text-2xl'
+                    }`}>
+                      {course.title}
+                    </h3>
+
+                    <p className={`text-gray-500 leading-relaxed mb-8 ${course.id === 1 ? 'max-w-xl text-lg' : 'text-sm'}`}>
+                      {course.description}
+                    </p>
+
+                    {/* Tags for Primary Card */}
+                    {course.tags && (
+                      <div className="flex flex-wrap gap-2 mb-8">
+                        {course.tags.map(tag => (
+                          <span key={tag} className="bg-gray-50 text-gray-500 text-[10px] font-bold px-4 py-2 rounded-lg border border-gray-100">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Next Cohort for Secondary Card */}
+                    <div className="mt-auto">
+                      {course.nextCohort && (
+                        <div className="flex justify-between items-center text-sm mb-6 pb-2 border-b border-gray-50">
+                          <p className="font-bold text-gray-400">Duration</p>
+                          <p className="font-extrabold text-[#1A1A1A]">{course.duration}</p>
+                        </div>
+                      )}
+                      
+                      {course.nextCohort && (
+                        <div className="flex justify-between items-center text-sm mb-6">
+                          <p className="font-bold text-gray-400">Next Cohort</p>
+                          <p className="font-extrabold text-[#1A1A1A]">{course.nextCohort}</p>
+                        </div>
+                      )}
+
+                      {!course.nextCohort && (
+                         <div className="flex justify-between items-center text-sm mb-6">
+                            <p className="font-bold text-gray-400 px-1">{course.duration}</p>
+                         </div>
+                      )}
+
+                      {/* Action Button */}
+                      <div className="flex items-center justify-between">
+                        {course.style === 'secondary' ? (
+                          <button className="w-full bg-[#E9ECEF] text-[#495057] font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-colors">
+                            Learn More
+                          </button>
+                        ) : (
+                          <a href={course.link} className={`flex items-center gap-2 font-bold text-[#1A1A1A] hover:gap-4 transition-all ${
+                            course.id === 1 ? 'text-lg' : 'text-sm'
+                          }`}>
+                            Learn More <ArrowRight className={`w-4 h-4 text-[#3B66AC]`} />
+                          </a>
+                        )}
+
+                        {course.professional && !course.nextCohort && (
+                          <span className="flex items-center gap-1.5 text-[10px] font-bold text-[#3B66AC] uppercase tracking-wider">
+                            Professional
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
-
-                  <h3 className="text-3xl font-extrabold text-[#1A1A1A] mb-6 group-hover:text-[#3B66AC] transition-colors">
-                    {course.title}
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed mb-8 flex-grow">
-                    {course.description}
-                  </p>
-
-                  {course.tags && (
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {course.tags.map(tag => (
-                        <span key={tag} className="bg-gray-50 text-gray-500 text-[10px] font-bold px-3 py-1.5 rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {course.nextCohort && (
-                     <div className="bg-[#F8F9FA] p-4 rounded-2xl mb-8 flex justify-between items-center">
-                        <p className="text-xs font-bold text-gray-400">Next Cohort</p>
-                        <p className="text-sm font-extrabold text-[#1A1A1A]">{course.nextCohort}</p>
-                     </div>
-                  )}
-                </div>
-
-                <div className="flex items-center justify-between mt-4">
-                  <a href={course.link} className="flex items-center gap-2 text-sm font-bold text-[#1A1A1A] hover:gap-4 transition-all">
-                    Learn More <ArrowRight className="w-4 h-4 text-[#3B66AC]" />
-                  </a>
-                  {course.professional && (
-                    <span className="flex items-center gap-1.5 text-[10px] font-bold text-[#3B66AC] uppercase tracking-wider">
-                      <Star className="w-3 h-3 fill-[#3B66AC]" /> Professional
-                    </span>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </div>
       </section>

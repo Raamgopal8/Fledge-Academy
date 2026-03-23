@@ -12,13 +12,13 @@ export default function VerticalJapaneseText({
 
   return (
     <motion.div
-      className={`fixed ${positionClass} top-1/4 z-10 pointer-events-none select-none ${className}`}
+      className={`fixed ${positionClass} top-1/4 z-10 pointer-events-none select-none hidden lg:block ${className}`}
       initial={{ opacity: 0, x: position === "left" ? -20 : 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
     >
       <div 
-        className="text-gray-300 font-serif tracking-[0.5em]"
+        className="text-gray-500 font-serif tracking-[0.5em]"
         style={{
           writingMode: "vertical-rl",
           textOrientation: "upright",
