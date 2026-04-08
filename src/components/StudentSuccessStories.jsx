@@ -163,7 +163,7 @@ export default function StudentSuccessStories() {
                 return (
                   <motion.div
                     key={index}
-                    className="absolute bg-white rounded-2xl border border-red-100 shadow-md p-4 flex flex-col min-h-[280px] w-64 cursor-pointer"
+                    className="absolute bg-white rounded-2xl border border-red-400 shadow-md p-4 flex flex-col min-h-[280px] w-64 cursor-pointer"
                     initial={{ scale: 0.8, opacity: 0, x: 300 }}
                     animate={{
                       scale: isActive ? 1.1 : 0.8,

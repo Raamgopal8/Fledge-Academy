@@ -6,6 +6,7 @@ import img7 from "../assets/7.png";
 import img4 from "../assets/4.png";
 import img3 from "../assets/3.png";
 import img2 from "../assets/2.png";
+import img1 from "../assets/1.png";
 import bg5 from "../assets/bg-5.png";
 import bg7 from "../assets/bg-7.png";
 import bg6 from "../assets/bg-6.png";
@@ -82,9 +83,9 @@ export default function WixDocking() {
   const bgOpacity = useTransform(scrollY, [0, 500], [1, 0.25]);
 
   const IMAGES = [
-    { src: img5, x: 80, y: 120, w: 250, h: 250, bgW: 280, bgH: 280, bgX: 50, bgY: 120 },
+    { src: img5, x: 65, y: 130, w: 250, h: 250, bgW: 280, bgH: 280, bgX: 50, bgY: 120 },
     { src: img7, x: 1250, y: 100, w: 320, h: 240 },
-    { src: img4, x: 90, y: 480, w: 350, h: 250, bgW: 280, bgH: 280, bgX: 110, bgY: 490 },
+    { src: img4, x: 80, y: 510, w: 350, h: 250, bgW: 280, bgH: 280, bgX: 110, bgY: 490 },
     { src: img3, x: 1200, y: 430, w: 180, h: 180, bgW: 280, bgH: 280, bgX: 1150, bgY: 400 },
   ];
 
@@ -212,6 +213,13 @@ export default function WixDocking() {
           <div ref={(el) => (frames.current[1] = el)} className="absolute top-[130px] right-[10px] w-[150px] h-[150px]" />
           <div ref={(el) => (frames.current[2] = el)} className="absolute bottom-[10px] left-[30px] w-[170px] h-[170px]" />
           <div ref={(el) => (frames.current[3] = el)} className="absolute bottom-[50px] right-[50px] w-[110px] h-[110px]" />
+        </div>
+      </section>
+
+      {/* ---------------- MOBILE DOCK GRID ---------------- */}
+      <section className="md:hidden flex justify-center pt-20 pb-40">
+        <div className="relative w-full max-w-[1250px] min-h-[700px] overflow-hidden rounded-3xl">
+          <img src={img1} className="absolute inset-0 w-full h-full z-0" />
         </div>
       </section>
     </div>
