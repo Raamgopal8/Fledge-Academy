@@ -44,7 +44,32 @@ const stories = [
 
 export default function StudentSuccessStories() {
   const [activeStory, setActiveStory] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  // Check if mobile and update state
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Auto-rotate for mobile
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % stories.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
 
   useEffect(() => {
     document.body.style.overflow = activeStory ? "hidden" : "auto";
@@ -65,19 +90,18 @@ export default function StudentSuccessStories() {
         </div>
 
         {/* Cards */}
-        <div
-          ref={ref}
-          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4"
-        >
-          {stories.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              transition={{ delay: index * 0.15 }}
-              className="bg-white rounded-2xl border border-red-100 shadow-md p-4 flex flex-col min-h-[300px]"
-            >
+        <div ref={ref} className="max-w-6xl mx-auto px-4">
+          {/* Desktop Grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {stories.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                transition={{ delay: index * 0.15 }}
+                className="bg-white rounded-2xl border border-red-100 shadow-md p-4 flex flex-col min-h-[300px]"
+              >
               {/* Quote + Stars */}
               <div className="flex items-center justify-between mb-6">
                 <div className="w-10 h-10 rounded-full bg-cyan-400 text-white flex items-center justify-center">
@@ -124,8 +148,89 @@ export default function StudentSuccessStories() {
                   </p>
                 </div>
               </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Carousel */}
+          <div className="md:hidden relative h-80 overflow-hidden">
+            <div className="flex items-center justify-center h-full">
+              {stories.map((item, index) => {
+                const isActive = index === currentIndex;
+                const offset = index - currentIndex;
+                const absOffset = Math.abs(offset);
+                
+                return (
+                  <motion.div
+                    key={index}
+                    className="absolute bg-white rounded-2xl border border-red-100 shadow-md p-4 flex flex-col min-h-[280px] w-64 cursor-pointer"
+                    initial={{ scale: 0.8, opacity: 0, x: 300 }}
+                    animate={{
+                      scale: isActive ? 1.1 : 0.8,
+                      opacity: isActive ? 1 : 0.5,
+                      x: offset * 120,
+                      zIndex: isActive ? 10 : 5 - absOffset,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                    }}
+                    onClick={() => setActiveStory(item)}
+                  >
+                    {/* Quote + Stars */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-8 h-8 rounded-full bg-cyan-400 text-white flex items-center justify-center text-sm">
+                        <FaQuoteLeft />
+                      </div>
+                      <div className="flex gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <FaStar
+                            key={i}
+                            className={`text-xs ${
+                              i < item.rating
+                                ? "text-yellow-400"
+                                : "text-gray-200"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Preview */}
+                    <div className="mb-4 flex-grow">
+                      <p className="text-gray-700 text-xs leading-relaxed line-clamp-3">
+                        {item.preview}
+                      </p>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="mt-auto">
+                      <h4 className="font-semibold text-sm">{item.name}</h4>
+                      <p className="text-xs text-gray-500">{item.role}</p>
+                      <div className="h-px bg-red-100 my-2" />
+                      <p className="text-xs font-semibold text-cyan-500">
+                        {item.kanji}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+              {stories.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentIndex ? "bg-cyan-500" : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
