@@ -160,22 +160,6 @@ export default function WixDocking() {
             </button>
           </div>
 
-          {/* Social proof */}
-          <div className="mt-10 flex flex-col items-center gap-3">
-            <p className="text-gray-500 text-sm">
-              Growing with learners across the world
-            </p>
-
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <img
-                  key={i}
-                  src={`https://i.pravatar.cc/40?img=${i + 10}`}
-                  className="w-9 h-9 rounded-full border-2 border-white"
-                />
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* FLOATING IMAGES */}

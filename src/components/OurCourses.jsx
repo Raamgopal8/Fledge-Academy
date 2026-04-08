@@ -23,7 +23,7 @@ export default function OurCourses() {
     },
     {
       title: "N5 Course for College Students & Professionals",
-      desc: "A beginner course created for mature learners, blending explanation with speaking drills, guided exercises, reading practice, and practical usage",
+      desc: "A beginner course created for mature learners, blending explanation with speaking drills, guided exercises, reading practice, and practical usage.",
       motionProps: {
         initial: { y: 50, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },

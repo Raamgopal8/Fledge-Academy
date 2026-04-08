@@ -7,7 +7,7 @@ import heroImage from '../assets/japanese_courses_hero.png';
 const courses = [
   {
     id: 1,
-    title: 'Beginner Japanese (N5)',
+    title: 'Junior N5 Course (Grades 6 - 12)',
     level: 'Level: N5',
     duration: '12 Weeks',
     type: 'JLPT Focused',
@@ -32,26 +32,26 @@ const courses = [
   },
   {
     id: 3,
-    title: 'Advanced Business Japanese',
-    level: 'Level: N2-N1',
+    title: 'N5 Course for College Students & Professionals',
+    level: 'Level: N5',
     duration: '20 Weeks Course',
     type: 'JLPT Focused',
-    description: 'Master Keigo (honorifics), professional email writing, and corporate etiquette for the Japanese workplace.',
+    description: 'A beginner course created for mature learners, blending explanation with speaking drills, guided exercises, reading practice, and practical usage.',
     professional: true,
     gridSpan: 'lg:col-span-1',
-    style: 'tertiary',
+    style: 'primary',
     link: '#',
   },
   {
     id: 4,
-    title: 'Cultural Workshops',
+    title: 'JLPT N4 Course (Elementary Level)',
     level: 'Artistic',
     duration: 'Flexible Schedule',
-    type: 'Culture', // Map to Culture for bento styling
-    description: 'Dive deep into calligraphy, tea ceremony, and history. Language learning is incomplete without its soul.',
+    type: 'JLPT Focused', // Map to Culture for bento styling
+    description: 'An elementary Japanese course designed to strengthen the foundation built in N5. Learners work through advanced beginner grammar, structured reading and listening tasks, and 300+ kanji - building steady confidence and real language ability.',
     isWorkshop: true,
     gridSpan: 'lg:col-span-2',
-    style: 'workshop',
+    style: 'primary',
     link: '#',
   },
 ];
@@ -64,11 +64,10 @@ const CoursesPage = () => {
 const filteredCourses = activeCategory === 'All Courses' 
     ? courses 
     : courses.filter(c => c.type === activeCategory || (activeCategory === 'Conversation' && c.type === 'Culture'));
-    // Cultural workshops could fit in conversation or stay separate, but for the layout we'll match the design.
 
   return (
     <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden pb-12">
-      {/* Hero Section */}
+    
       <section className="relative pt-32 pb-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <motion.div 
@@ -117,7 +116,6 @@ const filteredCourses = activeCategory === 'All Courses'
         </div>
       </section>
 
-      {/* Filter Section */}
       <section className="px-6 md:px-12 lg:px-24 mb-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-6 border-b border-gray-100 pb-8">
           <div>
@@ -142,12 +140,10 @@ const filteredCourses = activeCategory === 'All Courses'
         </div>
       </section>
 
-      {/* Courses Grid */}
       <section className="px-6 md:px-12 lg:px-24 mb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           <AnimatePresence mode="wait">
             {filteredCourses.map((course, i) => {
-              // Custom span logic for bento grid
               const spanClass = course.id === 1 ? 'lg:col-span-4' : 
                                course.id === 2 ? 'lg:col-span-2' :
                                'lg:col-span-3';
@@ -162,7 +158,7 @@ const filteredCourses = activeCategory === 'All Courses'
                   transition={{ duration: 0.3, delay: i * 0.1 }}
                   className={`bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-500 overflow-hidden relative group h-full ${spanClass}`}
                 >
-                  {/* Background Icon for Primary Card */}
+                  
                   {course.icon && course.icon}
 
                   <div className="relative z-10 h-full flex flex-col">
@@ -203,7 +199,6 @@ const filteredCourses = activeCategory === 'All Courses'
                       {course.description}
                     </p>
 
-                    {/* Tags for Primary Card */}
                     {course.tags && (
                       <div className="flex flex-wrap gap-2 mb-8">
                         {course.tags.map(tag => (
@@ -214,7 +209,6 @@ const filteredCourses = activeCategory === 'All Courses'
                       </div>
                     )}
 
-                    {/* Next Cohort for Secondary Card */}
                     <div className="mt-auto">
                       {course.nextCohort && (
                         <div className="flex justify-between items-center text-sm mb-6 pb-2 border-b border-gray-50">
@@ -236,7 +230,6 @@ const filteredCourses = activeCategory === 'All Courses'
                          </div>
                       )}
 
-                      {/* Action Button */}
                       <div className="flex items-center justify-between">
                         {course.style === 'secondary' ? (
                           <button className="w-full bg-[#E9ECEF] text-[#495057] font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-colors">
@@ -265,7 +258,6 @@ const filteredCourses = activeCategory === 'All Courses'
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="px-6 md:px-12 lg:px-24 mb-12">
         <div className="max-w-7xl mx-auto bg-[#3B66AC] rounded-[50px] p-12 md:p-20 text-center text-white relative overflow-hidden">
           <div className="relative z-10">

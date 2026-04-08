@@ -1,29 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Eye, Rocket, BookOpen, Globe, Users, Brain, ArrowRight } from 'lucide-react';
+import { Eye, Rocket, BookOpen, Globe, Users, Brain, ArrowRight, Clock, Lightbulb, Heart, TrendingUp } from 'lucide-react';
 import Footer from './Footer';
 import heroImage from '../assets/japanese_garden_house.png';
 
 const philosophy = [
   {
-    title: 'Academic Rigor',
-    description: 'We maintain high linguistic standards, focusing on the structural precision of the Japanese language. Our curriculum is designed by PhD holders and certified native experts to ensure your foundation is unbreakable.',
-    icon: <BookOpen className="w-6 h-6 text-blue-600" />,
+    title: 'Patience Over Pressure',
+    description: 'Learning a language is a marathon, not a sprint. We believe in steady, consistent progress where every concept is understood before moving forward.',
+    icon: <Clock className="w-6 h-6 text-blue-600" />,
   },
   {
-    title: 'Cultural Soul',
-    description: '“To learn a language is to have one more window from which to look at the world.” We integrate deep cultural insights into every lesson, making language more than just words—it\'s a living experience.',
-    icon: <Globe className="w-6 h-6 text-blue-600" />,
+    title: 'The "Why" Behind Every Word',
+    description: 'We don\'t just teach what to say, we teach why it matters. By connecting language to culture and logic, we turn memorization into true understanding.',
+    icon: <Lightbulb className="w-6 h-6 text-blue-600" />,
   },
   {
-    title: 'Intimate Cohorts',
-    description: 'Small class sizes ensure every student receives personalized mentorship, leveraging the traditional Japanese apprentice-master relationship to accelerate learning and provide direct feedback.',
-    icon: <Users className="w-6 h-6 text-blue-600" />,
+    title: 'Intention, Not Compulsion',
+    description: 'Education should be an invitation, not a chore. We create an environment where learners participate because they are engaged, not because they are forced.',
+    icon: <Heart className="w-6 h-6 text-blue-600" />,
   },
   {
-    title: 'Cognitive Immersion',
-    description: 'Our methods leverage neuroscientific principles of spaced repetition and contextual association, making complex Kanji and grammar patterns second nature to our students.',
-    icon: <Brain className="w-6 h-6 text-blue-600" />,
+    title: 'Holistic Growth',
+    description: 'Beyond exams like the JLPT or NAT we focus on building the sharper memory and focus that naturally come with mastering a language. These mental tools help learners grow with the clarity and confidence needed for any future career.',
+    icon: <TrendingUp className="w-6 h-6 text-blue-600" />,
   },
 ];
 

@@ -24,6 +24,7 @@ import AboutPage from './components/AboutPage.jsx';
 import CoursesPage from './components/CoursesPage.jsx';
 import BlogPage from './components/BlogPage.jsx';
 import ContactPage from './components/ContactPage.jsx';
+import WhatsAppWidget from './components/WhatsAppWidget.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
   return (
     <Router>
       <Navbar/>
+      <WhatsAppWidget />
       <SmoothScroll>
         <Routes>
           <Route path="/" element={

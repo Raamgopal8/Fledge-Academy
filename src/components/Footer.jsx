@@ -45,7 +45,7 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-900 mb-4">Contact</h4>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li>📞 +91 9XXXXXXXXX</li>
+            <li>📞 +91 8072702576</li>
             <li>✉️ fledgeacademy@gmail.com</li>
             <li>📍 Online Classes</li>
           </ul>

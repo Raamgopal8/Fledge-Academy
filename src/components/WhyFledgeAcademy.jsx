@@ -21,23 +21,24 @@ export default function WhyFledgeAcademy() {
           <Card
             index="1"
             bg="bg-[#e07a6f]"
-            title="Thoughtful Teaching"
-            desc="Our expert trainers simplify difficult ideas and guide you patiently."
-          />
+            title="Learning You Can Feel"
+            desc="Immersive activities in every class make learning feel alive."
+            />
 
           <Card
             index="2"
             bg="bg-[#2f8f83]"
-            title="Learning You Can Feel"
-            desc="Immersive activities in every class make learning feel alive."
+            title="A Community That Lifts You"
+            desc="We’re building a supportive space where learners grow together and support each other."
+            size="large"
           />
 
           <Card
             index="3"
             bg="bg-[#c77ac6]"
-            title="A Community That Lifts You"
-            desc="We’re building a supportive space where learners grow together and support each other."
-            size="large"
+            title="Thoughtful Teaching"
+            desc="Our expert trainers simplify difficult ideas and guide you patiently."
+        
             className="md:col-span-2"
           />
         </div>
