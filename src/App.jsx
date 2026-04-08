@@ -33,7 +33,7 @@ function App() {
     <Router>
       <Navbar/>
       <WhatsAppWidget />
-      <SmoothScroll>
+      <SmoothScroll className="pt-20">
         <Routes>
           <Route path="/" element={
             <>

@@ -45,7 +45,7 @@ function FloatingImage({ img, target, scrollY }) {
     return (
       <img
         src={img.src}
-        className="hidden md:block absolute object-contain z-20"
+        className="hidden md:block absolute object-contain z-30 drop-shadow-lg"
         style={{
           left: img.x,
           top: img.y,
@@ -64,7 +64,7 @@ function FloatingImage({ img, target, scrollY }) {
   return (
     <motion.img
       src={img.src}
-      className="hidden md:block absolute object-contain z-20"
+      className="hidden md:block absolute object-contain z-30 drop-shadow-lg"
       style={{ left, top, width, height }}
     />
   );
@@ -82,10 +82,10 @@ export default function WixDocking() {
   const bgOpacity = useTransform(scrollY, [0, 500], [1, 0.25]);
 
   const IMAGES = [
-    { src: img5, x: 50, y: 100, w: 180, h: 180, bgW: 220, bgH: 220, bgX: 30, bgY: 70 },
-    { src: img7, x: 1250, y: 50, w: 270, h: 200 },
-    { src: img4, x: 80, y: 480, w: 280, h: 200, bgW: 220, bgH: 240, bgX: 100, bgY: 450 },
-    { src: img3, x: 1230, y: 420, w: 120, h: 120, bgW: 220, bgH: 240, bgX: 1180, bgY: 350 },
+    { src: img5, x: 80, y: 120, w: 250, h: 250, bgW: 280, bgH: 280, bgX: 50, bgY: 120 },
+    { src: img7, x: 1250, y: 100, w: 320, h: 240 },
+    { src: img4, x: 90, y: 480, w: 350, h: 250, bgW: 280, bgH: 280, bgX: 110, bgY: 490 },
+    { src: img3, x: 1200, y: 430, w: 180, h: 180, bgW: 280, bgH: 280, bgX: 1150, bgY: 400 },
   ];
 
   useLayoutEffect(() => {
@@ -197,7 +197,7 @@ export default function WixDocking() {
                   }}
                 />
               )}
-              <FloatingImage img={img} target={targets[i]} scrollY={scrollY} />
+              <FloatingImage img={img} target={targets[i] || null} scrollY={scrollY} />
             </React.Fragment>
           );
         })}

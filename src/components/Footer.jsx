@@ -13,7 +13,7 @@ export default function Footer() {
                 <img
                   src={logo}
                   alt="Fledge Academy"
-                  className="h-15 w-auto"
+                  className="h-20 w-auto"
                 />
               </a>
             
@@ -32,12 +32,11 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-gray-600">
+            <li className="hover:text-gray-900 cursor-pointer">Home</li>
+            <li className="hover:text-gray-900 cursor-pointer">Courses</li>
+            <li className="hover:text-gray-900 cursor-pointer"> Blog</li>
             <li className="hover:text-gray-900 cursor-pointer">About Us</li>
-            <li className="hover:text-gray-900 cursor-pointer">Our Courses</li>
-            <li className="hover:text-gray-900 cursor-pointer">
-              Why Learn Japanese
-            </li>
-            <li className="hover:text-gray-900 cursor-pointer">FAQ</li>
+            <li className="hover:text-gray-900 cursor-pointer">Contact</li>
           </ul>
         </div>
 

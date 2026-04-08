@@ -30,7 +30,7 @@ export default function WhyFledgeAcademy() {
             bg="bg-[#2f8f83]"
             title="A Community That Lifts You"
             desc="We’re building a supportive space where learners grow together and support each other."
-            size="large"
+            
           />
 
           <Card
@@ -38,7 +38,7 @@ export default function WhyFledgeAcademy() {
             bg="bg-[#c77ac6]"
             title="Thoughtful Teaching"
             desc="Our expert trainers simplify difficult ideas and guide you patiently."
-        
+            size="large"
             className="md:col-span-2"
           />
         </div>

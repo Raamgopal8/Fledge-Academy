@@ -10,11 +10,11 @@ export default function Navbar() {
   const linkClass = (path) => `hover:text-blue-600 transition ${isActive(path) ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : ''}`;
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 md:px-18 lg:px-8 bg-white fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-200 py-1">
+    <nav className="w-full flex items-center justify-between px-6 md:px-10 lg:px-18 bg-white fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-200">
       {/* Logo */}
       <div className="flex items-center gap-3">
         <a href="/">
-          <img src={logo} alt="Fledge Academy" className="h-13 w-auto" />
+          <img src={logo} alt="Fledge Academy" className="h-25 w-auto" />
         </a>
       </div>
 
@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link to="/" className={linkClass("/")}>Home</Link>
         <Link to="/courses" className={linkClass("/courses")}>Courses</Link>
         <Link to="/blog" className={linkClass("/blog")}>Blog</Link>
-        <Link to="/about" className={linkClass("/about")}>About</Link>
+        <Link to="/about" className={linkClass("/about")}>About Us</Link>
         <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
       </div>
 

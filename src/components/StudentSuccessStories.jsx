@@ -105,7 +105,7 @@ export default function StudentSuccessStories() {
                 </p>
                 <button
                   onClick={() => setActiveStory(item)}
-                  className="ml-2 text-xs font-medium text-gray-400 hover:text-cyan-600 transition align-baseline"
+                  className="ml-2 text-xs font-medium text-blue-600 hover:text-cyan-600 transition align-baseline"
                 >
                   Read more
                 </button>
