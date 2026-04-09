@@ -73,7 +73,7 @@ export default function FAQSection() {
   }, [showMore]);
 
   return (
-    <section className="w-full flex flex-col items-center py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+    <section className="w-full flex flex-col items-center py-10 md:py-16 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center">
         Frequently Asked Questions
       </h1>
@@ -81,7 +81,7 @@ export default function FAQSection() {
         Everything you need to know about learning Japanese with us.
       </p>
 
-      <div className="mt-8 sm:mt-12 w-full max-w-3xl space-y-4">
+      <div className="mt-6 md:mt-12 w-full max-w-3xl space-y-4">
         {[...baseFaqs, ...(showMore ? extraFaqs : [])].map((item, idx) => {
           const isExtra = idx >= baseFaqs.length;
 

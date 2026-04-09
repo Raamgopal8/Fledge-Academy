@@ -123,9 +123,9 @@ export default function WixDocking() {
   return (
     <div ref={wrapper} className="relative min-h-full bg-white" id="hero">
       {/* ---------------- HERO ---------------- */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative min-h-[600px] md:h-screen flex items-center justify-center">
         {/* CENTER CONTENT */}
-        <div className="text-center max-w-4xl z-30 -mt-30">
+        <div className="text-center max-w-4xl z-30 pt-24 md:pt-0 md:-mt-32">
           <h1 className="text-5xl md:text-7xl font-semibold text-black/90 leading-tight">
             Learn Japanese
             <br />
@@ -148,7 +148,7 @@ export default function WixDocking() {
             that makes every step simple
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 px-6 md:px-0">
+          <div className="mt-6 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 px-6 md:px-0">
             <button
               className="w-full sm:w-auto bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
               onClick={() => (window.location.href = "/CoursesPricing")}
@@ -160,6 +160,21 @@ export default function WixDocking() {
               Enroll Now
             </button>
           </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="md:hidden mt-6 px-6"
+          >
+            <div className="relative w-full max-w-[320px] mx-auto overflow-hidden rounded-2xl shadow-lg bg-gray-50/50">
+              <img 
+                src={img1} 
+                className="w-full h-auto object-center" 
+                alt="Fledge Academy Learning"
+              />
+            </div>
+          </motion.div>
 
         </div>
 
@@ -216,16 +231,6 @@ export default function WixDocking() {
         </div>
       </section>
 
-      {/* ---------------- MOBILE DOCK GRID ---------------- */}
-      <section className="md:hidden flex justify-center pt-12 pb-24 px-6">
-        <div className="relative w-full max-w-[450px] overflow-hidden rounded-[2.5rem] shadow-2xl bg-gray-50">
-          <img 
-            src={img1} 
-            className="w-full h-auto object-center z-0" 
-            alt="Fledge Academy Learning Path"
-          />
-        </div>
-      </section>
     </div>
   );
 }

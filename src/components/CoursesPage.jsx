@@ -7,7 +7,7 @@ import heroImage from '../assets/japanese_courses_hero.png';
 const courses = [
   {
     id: 1,
-    tier: 'Tier 01',
+    tier: 'N5 / Q5 ',
     title: 'JLPT N5 – Beginner Japanese Course',
     subtitle: 'Build a clear, structured foundation in Japanese scripts and essential survival communication.',
     level: 'N5',
@@ -33,12 +33,12 @@ const courses = [
     link: '#',
     isStitch: true,
     layout: 'left',
-    buttonText: 'Begin the Path',
+    buttonText: 'Enroll Now',
     buttonStyle: 'white'
   },
   {
     id: 2,
-    tier: 'Tier 02',
+    tier: 'N4 / Q4',
     title: 'JLPT N4 – Elementary Japanese Course',
     subtitle: 'Strengthen your daily interaction skills to express opinions and navigate social situations with confidence.',
     level: 'N4',
@@ -64,12 +64,12 @@ const courses = [
     link: '#',
     isStitch: true,
     layout: 'left',
-    buttonText: 'Select Tier',
-    buttonStyle: 'red'
+    buttonText: 'Enroll Now',
+    buttonStyle: 'white'
   },
   {
     id: 3,
-    tier: 'Tier 03',
+    tier: 'N3 / Q3',
     title: 'JLPT N3 – Intermediate Japanese Course',
     subtitle: 'Bridge the gap to professional fluency by mastering unscripted discussions and workplace communication.',
     level: 'N3',
@@ -96,16 +96,16 @@ const courses = [
     isStitch: true,
     isRecommended: true,
     recommendedBadge: true,
-    outcomeTheme: 'dark',
+    outcomeTheme: 'light',
     focusDotColor: 'bg-red-500',
     outcomeHeaderColor: 'text-red-600',
-    buttonText: 'Become a Scholar',
+    buttonText: 'Enroll Now',
     buttonStyle: 'white',
     layout: 'left'
   },
   {
     id: 4,
-    tier: 'Tier 04',
+    tier: 'Conversational',
     title: 'Conversation Course - Spoken Japanese & Culture',
     subtitle: 'A dedicated practical course focused on mastering real-life fluency and understanding the cultural nuances of modern Japan.',
     level: 'Fluency',
@@ -132,7 +132,7 @@ const courses = [
     link: '#',
     isStitch: true,
     layout: 'left',
-    buttonText: 'Select Tier',
+    buttonText: 'Enroll Now',
     buttonStyle: 'white'
   },
 ];
@@ -150,7 +150,7 @@ const StitchCourseCard = ({ course, index }) => {
   const FocusColumn = (
     <div key="focus" className="w-full lg:w-[32%] p-10 flex flex-col justify-center relative z-10 border-r border-gray-100/30">
       <h4 className="text-[10px] font-bold uppercase tracking-[3px] mb-8 text-white/70 flex items-center gap-3">
-        <span className="w-6 h-[1px] bg-white/30"></span> Core Focus
+        <span className="w-6 bg-white/30"></span> Course Details
       </h4>
       <ul className="space-y-5">
         {course.focusList.map((item, idx) => (
@@ -166,7 +166,7 @@ const StitchCourseCard = ({ course, index }) => {
   const OutcomeColumn = (
     <div key="outcome" className={`w-full lg:w-[35%] p-8 ${outcomeTheme === 'dark' ? 'bg-[#0a1e3d]/40' : 'bg-transparent'} flex items-center justify-center relative z-10`}>
       <div className={`w-full p-8 rounded-[36px] ${outcomeTheme === 'dark' ? 'bg-[#0f2a52] border-white/5 shadow-2xl shadow-black/20' : 'bg-white shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] border-white/50'} border backdrop-blur-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1`}>
-        <h4 className={`text-[10px] font-bold uppercase tracking-[2px] mb-8 ${outcomeTheme === 'dark' ? 'text-red-400' : outcomeHeaderColor} border-b border-gray-100/10 pb-4`}>
+        <h4 className={`text-[10px] font-bold uppercase tracking-[2px] mb-8 ${outcomeTheme === 'dark' ? 'text-red-400 border-gray-100/10' : `${outcomeHeaderColor} border-[#3B66AC]`} border-b pb-4`}>
            Course Outcome
         </h4>
         <div className="space-y-5">
@@ -251,7 +251,7 @@ const StitchCourseCard = ({ course, index }) => {
 
 const CoursesPage = () => {
   return (
-    <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden pb-12">
+    <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden">
     
       <section className="relative pt-32 pb-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
@@ -301,7 +301,7 @@ const CoursesPage = () => {
       </section>
 
 
-      <section className="px-6 md:px-12 lg:px-24 mb-24">
+      <section className="px-6 md:px-12 lg:px-24 mb-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           <AnimatePresence mode="wait">
             {courses.map((course, i) => {
@@ -422,20 +422,20 @@ const CoursesPage = () => {
           </AnimatePresence>
         </div>
       </section>
-
+       
       <section className="px-6 md:px-12 lg:px-24 mb-12">
         <div className="max-w-7xl mx-auto bg-[#3B66AC] rounded-[50px] p-12 md:p-20 text-center text-white relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Ready to find your wing?</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Not Sure Where to start?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-              Take our free placement test and get a personalized learning roadmap in under 10 minutes.
+              Speak with out expert mentors to get clear guidance on the right course for your goals and schedule.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button className="bg-white text-[#3B66AC] font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition shadow-xl">
-                Take Placement Test
+                Request Guidance
               </button>
               <button className="border-2 border-white/20 text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition">
-                Book a Consultation
+                Message on WhatsApp
               </button>
             </div>
           </div>
@@ -450,7 +450,6 @@ const CoursesPage = () => {
         </div>
       </section>
       
-    
       <Footer />
     </div>
   );

@@ -56,8 +56,8 @@ export default function ContactSection() {
                 <option>Select your interest</option>
                 <option>JLPT N5</option>
                 <option>JLPT N4</option>
+                <option>JLPT N3</option>
                 <option>Conversational Japanese</option>
-                <option>Kids Program</option>
               </select>
             </div>
 

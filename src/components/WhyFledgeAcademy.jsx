@@ -3,9 +3,9 @@ import japaneseRow from "../assets/japanese_row.png";
 
 export default function WhyFledgeAcademy() {
   return (
-    <section className="min-h-screen bg-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <section className="min-h-0 py-12 md:min-h-screen md:py-20 bg-white px-4 sm:px-6 lg:px-8">
       {/* Heading */}
-      <div className="max-w-[1320px] mx-auto mb-10 sm:mb-12 lg:mb-14 text-center">
+      <div className="max-w-[1320px] mx-auto mb-8 md:mb-14 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-black mb-3 sm:mb-4">
           Why Fledge Academy
         </h1>
@@ -47,7 +47,7 @@ export default function WhyFledgeAcademy() {
         <div className="grid grid-cols-1 gap-4 sm:gap-6">
           {/* Image Card */}
           <div
-            className="h-[280px] sm:h-[320px] lg:h-[380px] rounded-[18px] p-5 sm:p-6 lg:p-7 text-white relative"
+            className="h-[220px] sm:h-[320px] lg:h-[380px] rounded-[18px] p-5 sm:p-6 lg:p-7 text-white relative"
             style={{
               backgroundImage: `url(${japaneseRow})`,
               backgroundSize: "cover",
@@ -97,7 +97,7 @@ export default function WhyFledgeAcademy() {
 
 /* ---------------- CARD ---------------- */
 function Card({ bg, title, desc, size, className = "", index }) {
-  const sizeClass = size === "large" ? "h-[280px] sm:h-[320px] lg:h-[380px]" : "h-[220px] sm:h-[240px] lg:h-[260px]";
+  const sizeClass = size === "large" ? "h-[220px] sm:h-[320px] lg:h-[380px]" : "h-[220px] sm:h-[240px] lg:h-[260px]";
 
   return (
     <div

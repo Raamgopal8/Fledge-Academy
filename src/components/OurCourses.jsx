@@ -54,13 +54,13 @@ export default function OurCourses() {
   ];
 
   return (
-    <div ref={containerRef} className="relative bg-white overflow-visible pb-24">
-      <section className="w-full flex items-center justify-center overflow-hidden py-20" id="courses">
+    <div ref={containerRef} className="relative bg-white overflow-visible pb-12 md:pb-24">
+      <section className="w-full flex items-center justify-center overflow-hidden py-12 md:py-20" id="courses">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 w-full">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6">
             Our Courses
           </h2>
-          <p className="text-center text-gray-500 text-sm sm:text-base md:text-md mb-8 sm:mb-12 md:mb-14 max-w-3xl mx-auto">
+          <p className="text-center text-gray-500 text-sm sm:text-base md:text-md mb-8 md:mb-14 max-w-3xl mx-auto">
             Each course follows a structured, purposeful approach that helps learners 
             <br className="hidden sm:block" /> build strong foundations and steady progress in Japanese
           </p>
@@ -91,7 +91,7 @@ export default function OurCourses() {
             ))}
           </div>
           
-          <div className="flex justify-center mt-12 sm:mt-16">
+          <div className="flex justify-center mt-8 md:mt-16">
             <motion.button
               style={{ opacity: opacity3 }}
               className="bg-[#3B66AC] hover:bg-blue-800 text-white font-bold px-8 sm:px-12 py-3 sm:py-4 rounded-full text-sm sm:text-base shadow-lg transition"
