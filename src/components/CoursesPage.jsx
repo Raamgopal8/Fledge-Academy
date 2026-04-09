@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Book, Users, Clock, Award, Star, ArrowRight, GraduationCap, Briefcase, Palette, Check } from 'lucide-react';
 import Footer from './Footer';
 import heroImage from '../assets/japanese_courses_hero.png';
+import { useModal } from '../context/ModalContext';
 
 const courses = [
   {
     id: 1,
-    tier: 'N5 / Q5 ',
+    tier: 'N5 / Q5  5 Months',
     title: 'JLPT N5 – Beginner Japanese Course',
     subtitle: 'Build a clear, structured foundation in Japanese scripts and essential survival communication.',
     level: 'N5',
@@ -38,7 +40,7 @@ const courses = [
   },
   {
     id: 2,
-    tier: 'N4 / Q4',
+    tier: 'N4 / Q4  5 Months',
     title: 'JLPT N4 – Elementary Japanese Course',
     subtitle: 'Strengthen your daily interaction skills to express opinions and navigate social situations with confidence.',
     level: 'N4',
@@ -69,7 +71,7 @@ const courses = [
   },
   {
     id: 3,
-    tier: 'N3 / Q3',
+    tier: 'N3 / Q3  6 Months',
     title: 'JLPT N3 – Intermediate Japanese Course',
     subtitle: 'Bridge the gap to professional fluency by mastering unscripted discussions and workplace communication.',
     level: 'N3',
@@ -105,7 +107,7 @@ const courses = [
   },
   {
     id: 4,
-    tier: 'Conversational',
+    tier: 'Conversational  3 Months',
     title: 'Conversation Course - Spoken Japanese & Culture',
     subtitle: 'A dedicated practical course focused on mastering real-life fluency and understanding the cultural nuances of modern Japan.',
     level: 'Fluency',
@@ -139,6 +141,7 @@ const courses = [
 
 
 const StitchCourseCard = ({ course, index }) => {
+  const { openModal } = useModal();
   const isLeft = course.layout === 'left';
   const { 
     recommendedBadge, 
@@ -205,20 +208,16 @@ const StitchCourseCard = ({ course, index }) => {
         </p>
         
         <div className="mt-auto">
-          <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value={`Enrollment Request: ${course.title}`} />
-            <input type="hidden" name="Course_Name" value={course.title} />
-            <button 
-              type="submit"
-              className={`w-full ${
-                course.buttonStyle === 'red' 
-                  ? 'bg-[#B91C1C] hover:bg-[#991B1B] text-white shadow-[#B91C1C]/20' 
-                  : 'bg-white hover:bg-gray-50 text-[#3B66AC] shadow-white/20'
-                } text-[11px] font-bold py-4 rounded-xl transition-all duration-300 uppercase tracking-[3px] shadow-lg group-hover:scale-[1.02] active:scale-95`}
-            >
-              {course.buttonText}
-            </button>
-          </form>
+          <button 
+            onClick={() => openModal(course.title)}
+            className={`w-full ${
+              course.buttonStyle === 'red' 
+                ? 'bg-[#B91C1C] hover:bg-[#991B1B] text-white shadow-[#B91C1C]/20' 
+                : 'bg-white hover:bg-gray-50 text-[#3B66AC] shadow-white/20'
+              } text-[11px] font-bold py-4 rounded-xl transition-all duration-300 uppercase tracking-[3px] shadow-lg group-hover:scale-[1.02] active:scale-95`}
+          >
+            {course.buttonText}
+          </button>
         </div>
       </div>
     </div>
@@ -256,6 +255,16 @@ const StitchCourseCard = ({ course, index }) => {
 };
 
 const CoursesPage = () => {
+  const { openModal } = useModal();
+  const navigate = useNavigate();
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "918072702576";
+    const message = "Hi! I'm interested in learning Japanese at Fledge Academy.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden">
     
@@ -280,7 +289,7 @@ const CoursesPage = () => {
                 <Award className="w-3 h-3" /> JLPT Certified
               </span>
               <span className="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded flex items-center gap-2">
-                <Users className="w-3 h-3" /> Native Mentors
+                <Users className="w-3 h-3" /> Experienced Mentors
               </span>
             </div>
           </motion.div>
@@ -299,7 +308,7 @@ const CoursesPage = () => {
               />
               <div className="absolute inset-0 bg-black/10"></div>
               <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl max-w-xs shadow-lg">
-                <p className="text-xs text-gray-500">Courses Onboarding</p>
+                <p className="text-sm text-gray-500">Limited Slots</p>
               </div>
             </div>
           </motion.div>
@@ -437,10 +446,18 @@ const CoursesPage = () => {
               Speak with out expert mentors to get clear guidance on the right course for your goals and schedule.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-white text-[#3B66AC] font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition shadow-xl">
+             
+              <button 
+                onClick={() => navigate('/contact')}
+                className="bg-white text-[#3B66AC] font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition shadow-xl"
+              >
                 Request Guidance
               </button>
-              <button className="border-2 border-white/20 text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition">
+              
+              <button 
+                onClick={handleWhatsAppClick}
+                className="border-2 border-white/20 text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition"
+              >
                 Message on WhatsApp
               </button>
             </div>

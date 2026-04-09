@@ -40,13 +40,26 @@ const BlogPage = () => {
             </p>
           </div>
           <div className="flex-1 w-full relative z-10">
-            <form className="flex flex-col sm:flex-row gap-4 p-2 bg-[#F8F9FA] rounded-[24px] border border-gray-100">
+            <form 
+              action="https://formsubmit.co/fledgeacademy@gmail.com" 
+              method="POST"
+              className="flex flex-col sm:flex-row gap-4 p-2 bg-[#F8F9FA] rounded-[24px] border border-gray-100"
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_subject" value="New Blog Subscription - Fledge Academy" />
+              <input type="hidden" name="_captcha" value="false" />
+              
               <input 
                 type="email" 
+                name="email"
+                required
                 placeholder="Email address" 
                 className="flex-grow bg-transparent px-6 py-4 outline-none text-gray-800 placeholder:text-gray-400"
               />
-              <button className="bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-bold px-8 py-4 rounded-[18px] transition shadow-lg whitespace-nowrap">
+              <button 
+                type="submit"
+                className="bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-bold px-8 py-4 rounded-[18px] transition shadow-lg whitespace-nowrap"
+              >
                 Subscribe Now
               </button>
             </form>

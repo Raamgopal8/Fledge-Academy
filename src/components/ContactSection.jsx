@@ -1,97 +1,124 @@
+import { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 export default function ContactSection() {
+  const [occupation, setOccupation] = useState('Student');
+
   return (
-    <section className="w-full py-16 px-4 sm:px-6 md:px-12">
+    <section className="w-full py-16 px-4 sm:px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-[#1A1A1A]">
           Ready to Start Your Journey?
         </h1>
-        <p className="text-gray-500 text-center mt-2 sm:text-lg">
-          Book your free trial class today and experience our teaching method.
+        <p className="text-gray-500 text-center mt-4 sm:text-lg max-w-2xl mx-auto">
+          Book your free trial class today and experience our unique teaching method that focuses on practical fluency.
         </p>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
           
           {/* FORM CARD */}
-          <div className="bg-white border border-gray-100 shadow-xl rounded-2xl p-6 sm:p-8">
+          <div className="bg-white border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[32px] p-8 sm:p-10">
             <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST">
-              {/* Full Name */}
-              <div className="mb-5">
-                <label className="text-sm font-medium">Full Name</label>
-                <input
-                  type="text"
-                  name="Full_Name"
-                  placeholder="Enter your name"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                  required
-                />
+              {/* Occupation Toggle */}
+              <div className="mb-8">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-3 block">Are you a...?</label>
+                <div className="flex p-1 bg-gray-50 rounded-xl border border-gray-100">
+                  <button
+                    type="button"
+                    onClick={() => setOccupation('Student')}
+                    className={`flex-1 py-3 rounded-lg text-sm font-bold transition-all ${
+                      occupation === 'Student' ? 'bg-white text-[#3B66AC] shadow-sm ring-1 ring-black/5' : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    Student
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setOccupation('Professional')}
+                    className={`flex-1 py-3 rounded-lg text-sm font-bold transition-all ${
+                      occupation === 'Professional' ? 'bg-white text-[#3B66AC] shadow-sm ring-1 ring-black/5' : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    Professional
+                  </button>
+                </div>
+                <input type="hidden" name="Occupation" value={occupation} />
               </div>
 
-              {/* Email */}
-              <div className="mb-5">
-                <label className="text-sm font-medium">Email</label>
-                <input
-                  type="email"
-                  name="Email"
-                  placeholder="your@email.com"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                  required
-                />
+              {/* Grid for Name and Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Full Name</label>
+                  <input
+                    type="text"
+                    name="Full_Name"
+                    placeholder="John Doe"
+                    className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Email Address</label>
+                  <input
+                    type="email"
+                    name="Email"
+                    placeholder="john@example.com"
+                    className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
+                    required
+                  />
+                </div>
               </div>
 
-              {/* Phone */}
-              <div className="mb-5">
-                <label className="text-sm font-medium">Phone / WhatsApp</label>
-                <input
-                  type="text"
-                  name="Phone"
-                  placeholder="+91 XXXXX XXXXX"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                  required
-                />
+              {/* Location and Phone */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Phone / WhatsApp</label>
+                  <input
+                    type="text"
+                    name="Phone"
+                    placeholder="+91 00000 00000"
+                    className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Your Location</label>
+                  <input
+                    type="text"
+                    name="Location"
+                    placeholder="City, Country"
+                    className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
+                    required
+                  />
+                </div>
               </div>
 
               {/* Interest */}
-              <div className="mb-5">
-                <label className="text-sm font-medium">Interest</label>
+              <div className="mb-8">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">What course are you interested in?</label>
                 <select 
                   name="Interest"
-                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                  className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all text-sm appearance-none"
                   required
                 >
-                  <option value="">Select your interest</option>
-                  <option value="JLPT N5">JLPT N5</option>
-                  <option value="JLPT N4">JLPT N4</option>
-                  <option value="JLPT N3">JLPT N3</option>
+                  <option value="">Select a course</option>
+                  <option value="JLPT N5">JLPT N5 – Beginner</option>
+                  <option value="JLPT N4">JLPT N4 – Elementary</option>
+                  <option value="JLPT N3">JLPT N3 – Intermediate</option>
                   <option value="Conversational Japanese">Conversational Japanese</option>
+                  <option value="Junior Course">Junior Course (Grades 6-12)</option>
                 </select>
-              </div>
-
-              {/* Message */}
-              <div className="mb-6">
-                <label className="text-sm font-medium">Message</label>
-                <textarea
-                  name="Message"
-                  placeholder="Tell us about your goals..."
-                  rows={4}
-                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                ></textarea>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="
-                  w-full py-3 text-white font-semibold rounded-lg
-                  bg-gradient-to-r from-blue-500 to-purple-500
-                  hover:opacity-90 transition
-                "
+                className="w-full py-5 bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-bold rounded-xl shadow-lg shadow-blue-200/50 transition-all transform active:scale-[0.98] uppercase tracking-[2px] text-xs"
               >
-                Book Free Trial
+                Enroll Now
               </button>
             </form>
           </div>

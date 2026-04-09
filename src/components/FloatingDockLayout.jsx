@@ -1,6 +1,7 @@
 import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useModal } from '../context/ModalContext';
 
 import img5 from "../assets/5.png";
 import img7 from "../assets/7.png";
@@ -74,6 +75,7 @@ function FloatingImage({ img, target, scrollY }) {
 
 /* ---------------- MAIN COMPONENT ---------------- */
 export default function WixDocking() {
+  const { openModal } = useModal();
   const wrapper = useRef(null);
   const grid = useRef(null);
   const frames = useRef([]);
@@ -158,27 +160,24 @@ export default function WixDocking() {
               </button>
             </Link>
 
-            <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST" className="w-full sm:w-auto">
-              <input type="hidden" name="_subject" value="New Enrollment Interest (Hero Section)" />
-              <button 
-                type="submit"
-                className="w-full bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition"
-              >
-                Enroll Now
-              </button>
-            </form>
+            <button
+              onClick={() => openModal()}
+              className="w-full sm:w-auto bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition"
+            >
+              Enroll Now
+            </button>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="md:hidden mt-6 px-6"
           >
             <div className="relative w-full max-w-[320px] mx-auto overflow-hidden rounded-2xl shadow-lg bg-gray-50/50">
-              <img 
-                src={img1} 
-                className="w-full h-auto object-center" 
+              <img
+                src={img1}
+                className="w-full h-auto object-center"
                 alt="Fledge Academy Learning"
               />
             </div>

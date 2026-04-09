@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { useModal } from "../context/ModalContext";
 
 export default function Navbar() {
+  const { openModal } = useModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -29,7 +31,10 @@ export default function Navbar() {
 
       {/* CTA Button */}
       <div className="hidden md:block">
-        <button className="bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-semibold px-6 py-2 rounded-md transition text-sm">
+        <button 
+          onClick={() => openModal()}
+          className="bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-semibold px-6 py-2 rounded-md transition text-sm"
+        >
           Enroll Now
         </button>
       </div>
@@ -54,7 +59,13 @@ export default function Navbar() {
             <Link to="/blog" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Blog</Link>
             <Link to="/about" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>About Us</Link>
             <Link to="/contact" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-            <button className="bg-[#3B66AC] text-white font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
+            <button 
+              className="bg-[#3B66AC] text-white font-semibold px-6 py-3 rounded-lg transition w-full mt-2"
+              onClick={() => {
+                setIsMenuOpen(false);
+                openModal();
+              }}
+            >
               Enroll Now
             </button>
           </div>

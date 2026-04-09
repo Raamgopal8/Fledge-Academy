@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import './animations/JapaneseStyles.css'
 
-import Home from "./components/Home.jsx"
 import Navbar from './components/Navbar.jsx'
 import WhyLearnJapanese from './components/WhyLearnJapanese.jsx'
 import HowItWorksPage from './components/HowItWorksPage.jsx'
@@ -25,36 +24,40 @@ import BlogPage from './components/BlogPage.jsx';
 import ContactPage from './components/ContactPage.jsx';
 import WhatsAppWidget from './components/WhatsAppWidget.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { ModalProvider } from './context/ModalContext';
+import EnrollmentModal from './components/EnrollmentModal';
 
+function App() {
   return (
-    <Router>
-      <Navbar/>
-      <WhatsAppWidget />
-      <SmoothScroll className="pt-20">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <FloatingDockLayout/>
-              <WhyLearnJapanese/>
-              <HowItWorksPage/>
-              
-              <OurCourses/>
-              <WhyFledgeAcademy/>
-              <StudentSuccessStories/>
-              <FAQSection/>
-              <JourneyCTA/>
-              <Footer/>
-            </>
-          } />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </SmoothScroll>
-    </Router>
+    <ModalProvider>
+      <Router>
+        <EnrollmentModal />
+        <Navbar/>
+        <WhatsAppWidget />
+        <SmoothScroll className="pt-20">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <FloatingDockLayout/>
+                <WhyLearnJapanese/>
+                <HowItWorksPage/>
+                
+                <OurCourses/>
+                <WhyFledgeAcademy/>
+                <StudentSuccessStories/>
+                <FAQSection/>
+                <JourneyCTA/>
+                <Footer/>
+              </>
+            } />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </SmoothScroll>
+      </Router>
+    </ModalProvider>
   )
 }
 

@@ -1,14 +1,18 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import FadeUp from "../animations/FadeUp";
 import VerticalJapaneseText from "../animations/VerticalJapaneseText";
 import EnsoCircle from "../animations/EnsoCircle";
 import { breathingOpacity } from "../animations/variants";
-// import RoseFlower from "../assets/RoseFlower.png";
-// import Heroimg from "../assets/Sample-hero.png";
+import Heroimg from "../assets/Sample-hero.png";
+import RoseFlower from "../assets/RoseFlower.png";
 import "./Hero.css";
 
+import { useModal } from '../context/ModalContext';
+
 export default function Home() {
+  const { openModal } = useModal();
   return (
     <div className="hero-container min-h-screen w-full md:pt-8 hero-tab">
       <div className="hidden lg:block">
@@ -59,29 +63,26 @@ export default function Home() {
 
           <FadeUp delay={0.6}>
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-8 justify-center md:justify-start px-2 md:px-0">
-              <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST" className="w-full sm:w-auto">
-                <input type="hidden" name="_subject" value="Book Free Trial Request (Home Hero)" />
-                <motion.button 
-                  type="submit"
-                  className="relative bg-linear-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md overflow-hidden w-full sm:w-auto text-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <motion.span
-                    className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
-                    animate={{
-                      x: ["-200%", "200%"],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 1.5,
-                      ease: "easeInOut",
-                    }}
-                  />
-                  <span className="relative z-10">Book Free Demo</span>
-                </motion.button>
-              </form>
+              <motion.button 
+                onClick={() => openModal()}
+                className="relative bg-linear-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md overflow-hidden w-full sm:w-auto text-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <motion.span
+                  className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: ["-200%", "200%"],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 1.5,
+                    ease: "easeInOut",
+                  }}
+                />
+                <span className="relative z-10">Book Free Demo</span>
+              </motion.button>
 
               <Link to="/courses" className="w-full sm:w-auto">
                 <button className="text-gray-700 font-medium hover:text-black hover:underline transition w-full sm:w-auto">

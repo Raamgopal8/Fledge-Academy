@@ -147,9 +147,11 @@ const AboutPage = () => {
               Join a global community of scholars dedicated to linguistic excellence and cultural discovery.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Link to="/contact" className="w-full sm:w-auto"> 
               <button className="bg-white text-[#3B66AC] font-bold px-10 py-4 rounded-full hover:bg-gray-100 transition shadow-xl">
-                Start Free Trial
+                Book Free Demo Class
               </button>
+              </Link>
               <Link to="/courses" className="w-full sm:w-auto">
                 <button className="border-2 border-white/30 text-white font-bold px-10 py-4 rounded-full hover:bg-white/10 transition">
                   Explore Courses
