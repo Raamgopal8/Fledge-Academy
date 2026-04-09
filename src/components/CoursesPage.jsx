@@ -8,8 +8,8 @@ const courses = [
   {
     id: 1,
     tier: 'Tier 01',
-    title: 'Level N5: The Foundation',
-    subtitle: 'The threshold of scholarly inquiry and pictographic discovery.',
+    title: 'JLPT N5 – Beginner Japanese Course',
+    subtitle: 'Build a clear, structured foundation in Japanese scripts and essential survival communication.',
     level: 'N5',
     kanji: '基',
     accentColor: 'linear-gradient(135deg, #3B66AC 0% 65%, #8ba3cd 65% 80%, #ffffff 80% 100%)',
@@ -17,16 +17,18 @@ const courses = [
     type: 'JLPT Focused',
     description: 'Establish a rock-solid foundation in Hiragana, Katakana, and basic Kanji.',
     focusList: [
-      'Hiragana & Katakana orthography',
-      '100+ Essential Pictographic Kanji',
-      'Rudimentary sentence architecture',
-      'Functional daily lexicon'
+      '100 Kanji characters',
+      '800 Vocabulary words',
+      '75+ Essential phrases',
+      'Activity-based learning',
+      'Weekly assessments',
+      'Live Interactive classes'
     ],
     outcomeList: [
-      'Comprehensive deciphering of basic instructional texts.',
-      'Critical understanding of primary particle functions.',
-      'Capacity for essential sociolinguistic introductions.',
-      'Readiness for formal standardized evaluation (JLPT N5).'
+      'Confidently introduce yourself and handle basics.',
+      'Master essential scripts and daily sentences.',
+      'Follow clear, slow-paced daily conversations.',
+      'Understand fundamental grammar and logic.'
     ],
     link: '#',
     isStitch: true,
@@ -37,25 +39,27 @@ const courses = [
   {
     id: 2,
     tier: 'Tier 02',
-    title: 'Level N4: Daily Fluency',
-    subtitle: 'Articulating the mechanics of daily life with functional precision.',
+    title: 'JLPT N4 – Elementary Japanese Course',
+    subtitle: 'Strengthen your daily interaction skills to express opinions and navigate social situations with confidence.',
     level: 'N4',
-    kanji: '话',
+    kanji: '話',
     accentColor: 'linear-gradient(135deg, #1e3a6d 0% 65%, #4a6fa5 65% 80%, #ffffff 80% 100%)',
     duration: '16 Weeks',
     type: 'JLPT Focused',
     description: 'Bridge the gap between textbook Japanese and real-world fluency.',
     focusList: [
-      '300+ Logographic variations',
-      'Complex inflectional verb forms',
-      'Honorific vs. Humble registers (Intro)',
-      'Contextual listening semantics'
+      '300 Kanji characters',
+      '1500 Vocabulary words',
+      'Polite Honorifics',
+      'Speaking drills',
+      'Culture-based tasks',
+      'Live Interactive classes'
     ],
     outcomeList: [
-      'Proficiency in navigating domestic transactional environments.',
-      'Ability to articulate abstract personal desires and intent.',
-      'Structural analysis of multi-clause syntactic chains.',
-      'Confident attainment of the JLPT N4 benchmark.'
+      'Confidently discuss hobbies and opinions.',
+      'Understand short essays and instructions.',
+      'Explain situations using complex grammar.',
+      'Master basic polite social expressions.'
     ],
     link: '#',
     isStitch: true,
@@ -66,25 +70,27 @@ const courses = [
   {
     id: 3,
     tier: 'Tier 03',
-    title: 'Level N3: The Bridge',
-    subtitle: 'The pivotal transition from functional communication to scholarly editorial command.',
+    title: 'JLPT N3 – Intermediate Japanese Course',
+    subtitle: 'Bridge the gap to professional fluency by mastering unscripted discussions and workplace communication.',
     level: 'N3',
-    kanji: '桥',
+    kanji: '橋',
     accentColor: 'linear-gradient(135deg, #0f2a52 0% 65%, #2d4a77 65% 80%, #ffffff 80% 100%)',
     duration: '20 Weeks',
     type: 'JLPT Focused',
     description: 'Mastering the mechanics of intermediate Japanese and subtle expression.',
     focusList: [
-      '650+ Intermediate Scholarly Kanji',
-      'Exegetical reading of news abstracts',
-      'Nuanced logical connectors',
-      'Professional Keigo foundations'
+      '600+ Kanji characters',
+      '3000 Vocabulary words',
+      'Business Communication',
+      'Unscripted Listening',
+      'Advanced Grammar',
+      'Live Interactive classes'
     ],
     outcomeList: [
-      'Comprehension of specific technical and editorial topics.',
-      'Integration into semi-professional Japanese discourse.',
-      'Capacity to summarize complex narrative sequences.',
-      'Secure mastery of the JLPT N3 transitional exam.'
+      'Engage in near-natural speed conversations.',
+      'Grasp headlines and unscripted audio.',
+      'Identify subtle meanings and relationships.',
+      'Qualify for diverse global careers.'
     ],
     link: '#',
     isStitch: true,
@@ -100,25 +106,28 @@ const courses = [
   {
     id: 4,
     tier: 'Tier 04',
-    title: 'Level N2: Mastery',
-    subtitle: 'The height of editorial command and high-order philosophical fluency.',
-    level: 'N2',
-    kanji: '熟',
+    title: 'Conversation Course - Spoken Japanese & Culture',
+    subtitle: 'A dedicated practical course focused on mastering real-life fluency and understanding the cultural nuances of modern Japan.',
+    level: 'Fluency',
+    kanji: '談',
     accentColor: 'linear-gradient(135deg, #0a1e3d 0% 65%, #25406b 65% 80%, #ffffff 80% 100%)',
     duration: 'Flexible',
-    type: 'JLPT Focused',
-    description: 'The height of intermediate Japanese, focusing on academic and philosophical command.',
+    type: 'Practical Fluency',
+    description: 'Focus on native speech patterns and practical roleplays to overcome the fear of speaking.',
     focusList: [
-      '1,000+ Advanced Literary Kanji',
-      'Critical analysis of editorial critiques',
-      'Native-cadence auditory processing',
-      'Full Keigo immersion (Business/Formal)'
+      'Native Speech Patterns',
+      'Practical Roleplays',
+      'Immersive Cultural Etiquette',
+      'Natural Listening Tasks',
+      'Intensive Speaking Drills',
+      'Social Communication Skills',
+      'Interactive Group Discussions'
     ],
     outcomeList: [
-      'High-order professional fluency in corporate settings.',
-      'Evaluative reading of complex academic journals.',
-      'Nuanced participation in deep philosophical debate.',
-      'Complete certification readiness for JLPT N2.'
+      'Speak clearly and naturally in diverse social settings.',
+      'Navigate Japanese traditions and social norms with ease.',
+      'Understand native speakers at natural conversational speed.',
+      'Overcome the fear of speaking through constant practice.'
     ],
     link: '#',
     isStitch: true,

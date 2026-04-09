@@ -52,7 +52,7 @@ export default function Navbar() {
             <Link to="/" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/courses" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Courses</Link>
             <Link to="/blog" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Blog</Link>
-            <Link to="/about" className="hover:text-blue-600 transition py-2 font-bold" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link to="/about" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link to="/contact" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             <button className="bg-[#3B66AC] text-white font-semibold px-6 py-3 rounded-lg transition w-full mt-2">
               Enroll Now

@@ -217,9 +217,13 @@ export default function WixDocking() {
       </section>
 
       {/* ---------------- MOBILE DOCK GRID ---------------- */}
-      <section className="md:hidden flex justify-center pt-20 pb-40">
-        <div className="relative w-full max-w-[1250px] min-h-[700px] overflow-hidden rounded-3xl">
-          <img src={img1} className="absolute inset-0 w-full h-full object-cover object-center z-0" />
+      <section className="md:hidden flex justify-center pt-12 pb-24 px-6">
+        <div className="relative w-full max-w-[450px] overflow-hidden rounded-[2.5rem] shadow-2xl bg-gray-50">
+          <img 
+            src={img1} 
+            className="w-full h-auto object-center z-0" 
+            alt="Fledge Academy Learning Path"
+          />
         </div>
       </section>
     </div>
