@@ -205,14 +205,20 @@ const StitchCourseCard = ({ course, index }) => {
         </p>
         
         <div className="mt-auto">
-          <button className={`w-full ${
-            course.buttonStyle === 'red' 
-              ? 'bg-[#B91C1C] hover:bg-[#991B1B] text-white shadow-[#B91C1C]/20' 
-              : 'bg-white hover:bg-gray-50 text-[#3B66AC] shadow-white/20'
-            } text-[11px] font-bold py-4 rounded-xl transition-all duration-300 uppercase tracking-[3px] shadow-lg group-hover:scale-[1.02] active:scale-95`}
-          >
-            {course.buttonText}
-          </button>
+          <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value={`Enrollment Request: ${course.title}`} />
+            <input type="hidden" name="Course_Name" value={course.title} />
+            <button 
+              type="submit"
+              className={`w-full ${
+                course.buttonStyle === 'red' 
+                  ? 'bg-[#B91C1C] hover:bg-[#991B1B] text-white shadow-[#B91C1C]/20' 
+                  : 'bg-white hover:bg-gray-50 text-[#3B66AC] shadow-white/20'
+                } text-[11px] font-bold py-4 rounded-xl transition-all duration-300 uppercase tracking-[3px] shadow-lg group-hover:scale-[1.02] active:scale-95`}
+            >
+              {course.buttonText}
+            </button>
+          </form>
         </div>
       </div>
     </div>

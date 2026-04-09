@@ -18,69 +18,82 @@ export default function ContactSection() {
           
           {/* FORM CARD */}
           <div className="bg-white border border-gray-100 shadow-xl rounded-2xl p-6 sm:p-8">
-            
-            {/* Full Name */}
-            <div className="mb-5">
-              <label className="text-sm font-medium">Full Name</label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-              />
-            </div>
+            <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST">
+              {/* Full Name */}
+              <div className="mb-5">
+                <label className="text-sm font-medium">Full Name</label>
+                <input
+                  type="text"
+                  name="Full_Name"
+                  placeholder="Enter your name"
+                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                  required
+                />
+              </div>
 
-            {/* Email */}
-            <div className="mb-5">
-              <label className="text-sm font-medium">Email</label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-              />
-            </div>
+              {/* Email */}
+              <div className="mb-5">
+                <label className="text-sm font-medium">Email</label>
+                <input
+                  type="email"
+                  name="Email"
+                  placeholder="your@email.com"
+                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                  required
+                />
+              </div>
 
-            {/* Phone */}
-            <div className="mb-5">
-              <label className="text-sm font-medium">Phone / WhatsApp</label>
-              <input
-                type="text"
-                placeholder="+91 XXXXX XXXXX"
-                className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-              />
-            </div>
+              {/* Phone */}
+              <div className="mb-5">
+                <label className="text-sm font-medium">Phone / WhatsApp</label>
+                <input
+                  type="text"
+                  name="Phone"
+                  placeholder="+91 XXXXX XXXXX"
+                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                  required
+                />
+              </div>
 
-            {/* Interest */}
-            <div className="mb-5">
-              <label className="text-sm font-medium">Interest</label>
-              <select className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500">
-                <option>Select your interest</option>
-                <option>JLPT N5</option>
-                <option>JLPT N4</option>
-                <option>JLPT N3</option>
-                <option>Conversational Japanese</option>
-              </select>
-            </div>
+              {/* Interest */}
+              <div className="mb-5">
+                <label className="text-sm font-medium">Interest</label>
+                <select 
+                  name="Interest"
+                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                  required
+                >
+                  <option value="">Select your interest</option>
+                  <option value="JLPT N5">JLPT N5</option>
+                  <option value="JLPT N4">JLPT N4</option>
+                  <option value="JLPT N3">JLPT N3</option>
+                  <option value="Conversational Japanese">Conversational Japanese</option>
+                </select>
+              </div>
 
-            {/* Message */}
-            <div className="mb-6">
-              <label className="text-sm font-medium">Message</label>
-              <textarea
-                placeholder="Tell us about your goals..."
-                rows={4}
-                className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-              ></textarea>
-            </div>
+              {/* Message */}
+              <div className="mb-6">
+                <label className="text-sm font-medium">Message</label>
+                <textarea
+                  name="Message"
+                  placeholder="Tell us about your goals..."
+                  rows={4}
+                  className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                ></textarea>
+              </div>
 
-            {/* Submit Button */}
-            <button
-              className="
-                w-full py-3 text-white font-semibold rounded-lg
-                bg-gradient-to-r from-blue-500 to-purple-500
-                hover:opacity-90 transition
-              "
-            >
-              Book Free Trial
-            </button>
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="
+                  w-full py-3 text-white font-semibold rounded-lg
+                  bg-gradient-to-r from-blue-500 to-purple-500
+                  hover:opacity-90 transition
+                "
+              >
+                Book Free Trial
+              </button>
+            </form>
           </div>
 
           {/* RIGHT SIDE CONTENT */}
@@ -96,7 +109,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Phone / WhatsApp</h4>
-                  <p className="text-gray-500 text-sm">+91 XXXXX XXXXX</p>
+                  <p className="text-gray-500 text-sm">+91 8072702576</p>
                 </div>
               </div>
 
@@ -107,7 +120,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Email</h4>
-                  <p className="text-gray-500 text-sm">contact@fledgeacademy.com</p>
+                  <p className="text-gray-500 text-sm">fledgeacademy@gmail.com</p>
                 </div>
               </div>
 

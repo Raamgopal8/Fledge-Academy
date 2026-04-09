@@ -19,9 +19,15 @@ export default function JourneyCTA() {
         </p> */}
 
         <div className="mt-10 flex flex-col items-center gap-3">
-          <button className="bg-white text-gray-900 text-md font-semibold px-10 py-4 rounded-full shadow-md hover:shadow-lg transition">
-            Book a Free Trial Class
-          </button>
+          <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Free Trial Class Request (Bottom CTA)" />
+            <button 
+              type="submit"
+              className="bg-white text-gray-900 text-md font-semibold px-10 py-4 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
+            >
+              Book a Free Trial Class
+            </button>
+          </form>
 
           {/* <p className="text-sm text-gray-700">
             No pressure. No commitment. Just a chance to see if this is the right

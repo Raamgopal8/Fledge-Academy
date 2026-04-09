@@ -16,7 +16,6 @@ import HeroPage from './components/FloatingDockLayout.jsx'
 import FloatingDockLayout from './components/FloatingDockLayout.jsx'
 import SmoothScroll from './components/SmoothScroll.jsx'
 import OurCourses from './components/OurCourses.jsx'
-import CoursesPricing from './components/CoursesPricing.jsx';
 import JourneyCTA from './components/JourneyCTA.jsx';
 import Footer from './components/Footer.jsx';
 import WhyFledgeAcademy from './components/WhyFledgeAcademy.jsx';
@@ -53,7 +52,6 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/CoursesPricing" element={<CoursesPricing/>} />
         </Routes>
       </SmoothScroll>
     </Router>

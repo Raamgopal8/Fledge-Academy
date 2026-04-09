@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Eye, Rocket, Clock, Lightbulb, Heart, TrendingUp } from 'lucide-react';
 import Footer from './Footer';
 import heroImage from '../assets/japanese_garden_house.png';
@@ -149,9 +150,11 @@ const AboutPage = () => {
               <button className="bg-white text-[#3B66AC] font-bold px-10 py-4 rounded-full hover:bg-gray-100 transition shadow-xl">
                 Start Free Trial
               </button>
-              <button className="border-2 border-white/30 text-white font-bold px-10 py-4 rounded-full hover:bg-white/10 transition">
-                Explore Courses
-              </button>
+              <Link to="/courses" className="w-full sm:w-auto">
+                <button className="border-2 border-white/30 text-white font-bold px-10 py-4 rounded-full hover:bg-white/10 transition">
+                  Explore Courses
+                </button>
+              </Link>
             </div>
           </div>
           {/* Background decoration */}

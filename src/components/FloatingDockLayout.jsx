@@ -1,5 +1,6 @@
 import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import img5 from "../assets/5.png";
 import img7 from "../assets/7.png";
@@ -149,16 +150,23 @@ export default function WixDocking() {
           </p>
 
           <div className="mt-6 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 px-6 md:px-0">
-            <button
-              className="w-full sm:w-auto bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
-              onClick={() => (window.location.href = "/CoursesPricing")}
-            >
-              Explore Courses
-            </button>
+            <Link to="/courses" className="w-full sm:w-auto">
+              <button
+                className="w-full bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
+              >
+                Explore Courses
+              </button>
+            </Link>
 
-            <button className="w-full sm:w-auto bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition">
-              Enroll Now
-            </button>
+            <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST" className="w-full sm:w-auto">
+              <input type="hidden" name="_subject" value="New Enrollment Interest (Hero Section)" />
+              <button 
+                type="submit"
+                className="w-full bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition"
+              >
+                Enroll Now
+              </button>
+            </form>
           </div>
 
           <motion.div 

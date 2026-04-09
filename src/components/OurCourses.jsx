@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function OurCourses() {
   const containerRef = useRef(null);
@@ -92,12 +93,14 @@ export default function OurCourses() {
           </div>
           
           <div className="flex justify-center mt-8 md:mt-16">
-            <motion.button
-              style={{ opacity: opacity3 }}
-              className="bg-[#3B66AC] hover:bg-blue-800 text-white font-bold px-8 sm:px-12 py-3 sm:py-4 rounded-full text-sm sm:text-base shadow-lg transition"
-            >
-              All Courses
-            </motion.button>
+            <Link to="/courses">
+              <motion.button
+                style={{ opacity: opacity3 }}
+                className="bg-[#3B66AC] hover:bg-blue-800 text-white font-bold px-8 sm:px-12 py-3 sm:py-4 rounded-full text-sm sm:text-base shadow-lg transition"
+              >
+                All Courses
+              </motion.button>
+            </Link>
           </div>
         </div>
       </section>
