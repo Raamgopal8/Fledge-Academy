@@ -219,7 +219,7 @@ export default function WixDocking() {
       {/* ---------------- MOBILE DOCK GRID ---------------- */}
       <section className="md:hidden flex justify-center pt-20 pb-40">
         <div className="relative w-full max-w-[1250px] min-h-[700px] overflow-hidden rounded-3xl">
-          <img src={img1} className="absolute inset-0 w-full h-full z-0" />
+          <img src={img1} className="absolute inset-0 w-full h-full object-cover object-center z-0" />
         </div>
       </section>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Book, Users, Clock, Award, Star, ArrowRight, GraduationCap, Briefcase, Palette } from 'lucide-react';
+import { Book, Users, Clock, Award, Star, ArrowRight, GraduationCap, Briefcase, Palette, Check } from 'lucide-react';
 import Footer from './Footer';
 import heroImage from '../assets/japanese_courses_hero.png';
 
@@ -9,26 +9,30 @@ const courses = [
     id: 1,
     tier: 'Tier 01',
     title: 'Level N5: The Foundation',
-    subtitle: 'The threshold of scholarly inquiry.',
+    subtitle: 'The threshold of scholarly inquiry and pictographic discovery.',
     level: 'N5',
     kanji: '基',
-    accentColor: 'linear-gradient(135deg, #020c1d 0%, #1a3a6d 40%, #ffffff 100%)',
+    accentColor: 'linear-gradient(135deg, #3B66AC 0% 65%, #8ba3cd 65% 80%, #ffffff 80% 100%)',
     duration: '12 Weeks',
     type: 'JLPT Focused',
     description: 'Establish a rock-solid foundation in Hiragana, Katakana, and basic Kanji.',
     focusList: [
-      'Orthography (Hiragana/Katakana)',
-      '100+ Essential Kanji',
-      'Rudimentary Sentence Architecture'
+      'Hiragana & Katakana orthography',
+      '100+ Essential Pictographic Kanji',
+      'Rudimentary sentence architecture',
+      'Functional daily lexicon'
     ],
     outcomeList: [
-      'Master the basics of reading & writing',
-      'Build basic conversational ability',
-      'Preparation for further scholarly study'
+      'Comprehensive deciphering of basic instructional texts.',
+      'Critical understanding of primary particle functions.',
+      'Capacity for essential sociolinguistic introductions.',
+      'Readiness for formal standardized evaluation (JLPT N5).'
     ],
     link: '#',
     isStitch: true,
-    layout: 'left'
+    layout: 'left',
+    buttonText: 'Begin the Path',
+    buttonStyle: 'white'
   },
   {
     id: 2,
@@ -37,24 +41,27 @@ const courses = [
     subtitle: 'Articulating the mechanics of daily life with functional precision.',
     level: 'N4',
     kanji: '话',
-    accentColor: 'linear-gradient(135deg, #051b3c 0%, #1a3a6d 40%, #ffffff 100%)',
+    accentColor: 'linear-gradient(135deg, #1e3a6d 0% 65%, #4a6fa5 65% 80%, #ffffff 80% 100%)',
     duration: '16 Weeks',
     type: 'JLPT Focused',
     description: 'Bridge the gap between textbook Japanese and real-world fluency.',
     focusList: [
-      '650+ Intermediate Scholarly Kanji',
-      'Exegetical reading of news',
-      'Nuanced logical connectors'
+      '300+ Logographic variations',
+      'Complex inflectional verb forms',
+      'Honorific vs. Humble registers (Intro)',
+      'Contextual listening semantics'
     ],
     outcomeList: [
-      'Bridging to advanced Japanese fluency',
-      'Understanding complex societal topics',
-      'Professional communication skills'
+      'Proficiency in navigating domestic transactional environments.',
+      'Ability to articulate abstract personal desires and intent.',
+      'Structural analysis of multi-clause syntactic chains.',
+      'Confident attainment of the JLPT N4 benchmark.'
     ],
     link: '#',
     isStitch: true,
-    
-    layout: 'left'
+    layout: 'left',
+    buttonText: 'Select Tier',
+    buttonStyle: 'red'
   },
   {
     id: 3,
@@ -63,23 +70,31 @@ const courses = [
     subtitle: 'The pivotal transition from functional communication to scholarly editorial command.',
     level: 'N3',
     kanji: '桥',
-    accentColor: 'linear-gradient(135deg, #010a1a 0%, #1e3a6d 40%, #ffffff 100%)',
+    accentColor: 'linear-gradient(135deg, #0f2a52 0% 65%, #2d4a77 65% 80%, #ffffff 80% 100%)',
     duration: '20 Weeks',
     type: 'JLPT Focused',
     description: 'Mastering the mechanics of intermediate Japanese and subtle expression.',
     focusList: [
-      '800+ Contextual Kanji',
-      'Authentic Media Analysis',
-      'Intermediate Sentence Flow'
+      '650+ Intermediate Scholarly Kanji',
+      'Exegetical reading of news abstracts',
+      'Nuanced logical connectors',
+      'Professional Keigo foundations'
     ],
     outcomeList: [
-      'Bridge to Advanced Proficiency',
-      'Professional Fluency Foundation',
-      'Critical Interpretation Skills'
+      'Comprehension of specific technical and editorial topics.',
+      'Integration into semi-professional Japanese discourse.',
+      'Capacity to summarize complex narrative sequences.',
+      'Secure mastery of the JLPT N3 transitional exam.'
     ],
     link: '#',
     isStitch: true,
     isRecommended: true,
+    recommendedBadge: true,
+    outcomeTheme: 'dark',
+    focusDotColor: 'bg-red-500',
+    outcomeHeaderColor: 'text-red-600',
+    buttonText: 'Become a Scholar',
+    buttonStyle: 'white',
     layout: 'left'
   },
   {
@@ -89,7 +104,7 @@ const courses = [
     subtitle: 'The height of editorial command and high-order philosophical fluency.',
     level: 'N2',
     kanji: '熟',
-    accentColor: 'linear-gradient(135deg, #010a1a 0%, #1e3a6d 40%, #ffffff 100%)',
+    accentColor: 'linear-gradient(135deg, #0a1e3d 0% 65%, #25406b 65% 80%, #ffffff 80% 100%)',
     duration: 'Flexible',
     type: 'JLPT Focused',
     description: 'The height of intermediate Japanese, focusing on academic and philosophical command.',
@@ -100,129 +115,132 @@ const courses = [
       'Full Keigo immersion (Business/Formal)'
     ],
     outcomeList: [
-      'High-order professional fluency in corporate settings',
-      'Evaluative reading of complex academic journals',
-      'Nuanced participation in deep philosophical debate',
-      'Complete certification readiness for JLPT N2'
+      'High-order professional fluency in corporate settings.',
+      'Evaluative reading of complex academic journals.',
+      'Nuanced participation in deep philosophical debate.',
+      'Complete certification readiness for JLPT N2.'
     ],
     link: '#',
     isStitch: true,
-    layout: 'left'
+    layout: 'left',
+    buttonText: 'Select Tier',
+    buttonStyle: 'white'
   },
 ];
 
-const categories = ['All Courses', 'JLPT Focused', 'Conversation'];
 
 const StitchCourseCard = ({ course, index }) => {
   const isLeft = course.layout === 'left';
+  const { 
+    recommendedBadge, 
+    outcomeTheme = 'light', 
+    focusDotColor = 'bg-blue-300/60',
+    outcomeHeaderColor = 'text-[#3B66AC]'
+  } = course;
   
+  const FocusColumn = (
+    <div key="focus" className="w-full lg:w-[32%] p-10 flex flex-col justify-center relative z-10 border-r border-gray-100/30">
+      <h4 className="text-[10px] font-bold uppercase tracking-[3px] mb-8 text-white/70 flex items-center gap-3">
+        <span className="w-6 h-[1px] bg-white/30"></span> Core Focus
+      </h4>
+      <ul className="space-y-5">
+        {course.focusList.map((item, idx) => (
+          <li key={idx} className="flex items-start gap-3.5 text-base font-medium text-white leading-relaxed group/item">
+            <span className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${focusDotColor} transition-colors`}></span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const OutcomeColumn = (
+    <div key="outcome" className={`w-full lg:w-[35%] p-8 ${outcomeTheme === 'dark' ? 'bg-[#0a1e3d]/40' : 'bg-transparent'} flex items-center justify-center relative z-10`}>
+      <div className={`w-full p-8 rounded-[36px] ${outcomeTheme === 'dark' ? 'bg-[#0f2a52] border-white/5 shadow-2xl shadow-black/20' : 'bg-white shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] border-white/50'} border backdrop-blur-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1`}>
+        <h4 className={`text-[10px] font-bold uppercase tracking-[2px] mb-8 ${outcomeTheme === 'dark' ? 'text-red-400' : outcomeHeaderColor} border-b border-gray-100/10 pb-4`}>
+           Course Outcome
+        </h4>
+        <div className="space-y-5">
+          {course.outcomeList.map((item, idx) => (
+            <div key={idx} className={`flex items-start gap-4 text-sm font-medium ${outcomeTheme === 'dark' ? 'text-white/80' : 'text-gray-700'} leading-snug italic font-serif`}>
+              <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${outcomeTheme === 'dark' ? 'bg-red-500/10 border-red-500/20' : 'bg-blue-50 border-blue-100'} border shadow-sm mt-0.5`}>
+                <Check className={`w-2.5 h-2.5 ${outcomeTheme === 'dark' ? 'text-red-400' : 'text-[#3B66AC]'}`} />
+              </div>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const InfoColumn = (
+    <div 
+      key="info"
+      className="w-full lg:w-[33%] p-10 flex flex-col justify-center relative z-10 text-white overflow-hidden"
+    >
+      {/* Decorative Grid Lines */}
+      <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
+        <div className="w-full h-full border-r-[20px] border-b-[20px] border-white/20 border-dotted"></div>
+      </div>
+
+      <div className="relative z-20 h-full flex flex-col">
+        <span className="text-[10px] font-black uppercase tracking-[5px] mb-4 text-white/40">
+          {course.tier}
+        </span>
+        <h3 className="text-4xl font-bold mb-6 font-serif leading-tight text-white">
+          {course.title}
+        </h3>
+        <p className="text-sm mb-12 italic font-serif opacity-80 leading-relaxed text-white">
+          {course.subtitle}
+        </p>
+        
+        <div className="mt-auto">
+          <button className={`w-full ${
+            course.buttonStyle === 'red' 
+              ? 'bg-[#B91C1C] hover:bg-[#991B1B] text-white shadow-[#B91C1C]/20' 
+              : 'bg-white hover:bg-gray-50 text-[#3B66AC] shadow-white/20'
+            } text-[11px] font-bold py-4 rounded-xl transition-all duration-300 uppercase tracking-[3px] shadow-lg group-hover:scale-[1.02] active:scale-95`}
+          >
+            {course.buttonText}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const columns = isLeft ? [InfoColumn, FocusColumn, OutcomeColumn] : [FocusColumn, OutcomeColumn, InfoColumn];
+
   return (
     <motion.div
       layout
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="lg:col-span-6 relative overflow-hidden group rounded-[48px] shadow-[0_10px_40px_-15px_rgba(15,35,68,0.15)] flex flex-col md:flex-row min-h-[520px] bg-white transition-transform duration-500 hover:-translate-y-2"
+      className="lg:col-span-6 relative overflow-hidden group rounded-[40px] shadow-[0_20px_60px_-15px_rgba(15,35,68,0.15)] flex flex-col lg:flex-row min-h-[480px] bg-white transition-all duration-700 hover:shadow-2xl"
+      style={{ background: course.accentColor }}
     >
+      {recommendedBadge && (
+        <div className="absolute top-0 right-0 z-30">
+          <div className="bg-[#B91C1C] text-white text-[9px] font-black px-6 py-2.5 rounded-bl-2xl uppercase tracking-[2px] shadow-lg">
+            Recommended Path
+          </div>
+        </div>
+      )}
+
       {/* Background Kanji Watermark */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-[0.05]">
-         <span className={`text-[24rem] font-serif transition-transform duration-1000 group-hover:scale-110 ${isLeft ? 'translate-x-32' : '-translate-x-32'}`}>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-[0.03]">
+         <span className="text-[24rem] font-serif transition-transform duration-[2000ms] group-hover:scale-125 group-hover:rotate-6">
             {course.kanji}
          </span>
       </div>
 
-      {/* Info Section */}
-      <div 
-        className={`w-full md:w-[45%] p-12 flex flex-col justify-center relative z-10 text-white ${isLeft ? 'md:order-1' : 'md:order-2'}`}
-        style={{ background: course.accentColor }}
-      >
-        <div className="flex flex-col h-full">
-          {course.isRecommended && (
-            <span className="absolute top-8 right-8 bg-blue-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-              Recommended Path
-            </span>
-          )}
-          
-          <span className="text-xs font-bold uppercase tracking-[4px] mb-4 text-white/60">
-            {course.tier}
-          </span>
-          <h3 className="text-4xl font-bold mb-6 font-serif leading-tight text-white">
-            {course.title}
-          </h3>
-          <p className="text-base mb-10 italic font-serif opacity-80 text-white/90">
-            "{course.subtitle}"
-          </p>
-          
-          <div className="mt-auto">
-            <a 
-              href={course.link}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xs font-bold transition-all duration-300 uppercase tracking-widest shadow-lg bg-white text-[#0f2344] hover:bg-blue-50"
-            >
-              Learn More <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Detail Section */}
-      <div className={`w-full md:w-[55%] p-12 bg-transparent flex flex-col justify-center gap-10 relative z-10 ${!isLeft ? 'md:order-1' : 'md:order-2'}`}>
-        <div className="grid gap-12">
-          {/* Core Focus */}
-          <div>
-            <h4 className="text-[11px] font-bold uppercase tracking-[2px] mb-6 flex items-center gap-3 text-gray-400">
-              <span className="w-8 h-[1px] bg-gray-200"></span> Core Focus
-            </h4>
-            <ul className="space-y-4 font-sans text-[#0f2344]">
-              {course.focusList.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-4 text-lg font-medium leading-normal">
-                  <span className="w-1.5 h-1.5 rounded-full mt-2.5 shrink-0 bg-blue-400"></span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Course Outcome Card */}
-          <div className="p-8 rounded-[32px] border border-gray-100 bg-white shadow-sm backdrop-blur-md transition-all duration-500 hover:shadow-xl">
-            <h4 className="text-[11px] font-bold uppercase tracking-[2px] mb-6 flex items-center gap-3 text-blue-500/80">
-               Scholarly Outcome
-            </h4>
-            <div className="space-y-3">
-              {course.outcomeList.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3 text-sm font-medium text-[#0f2344]">
-                  <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 bg-blue-50">
-                    <Star className="w-2.5 h-2.5 text-blue-500" />
-                  </div>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Meta */}
-        <div className="flex items-center gap-8 pt-8 border-t border-gray-50">
-           <div className="flex items-center gap-2.5 text-gray-400">
-              <Clock className="w-4 h-4" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">{course.duration}</span>
-           </div>
-           <div className="flex items-center gap-2.5 text-gray-400">
-              <GraduationCap className="w-4 h-4" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">JLPT {course.level} TRACK</span>
-           </div>
-        </div>
-      </div>
+      {columns}
     </motion.div>
   );
 };
 
 const CoursesPage = () => {
-  const [activeCategory, setActiveCategory] = useState('All Courses');
-
-const filteredCourses = activeCategory === 'All Courses' 
-    ? courses 
-    : courses.filter(c => c.type === activeCategory || (activeCategory === 'Conversation' && c.type === 'Culture'));
-
   return (
     <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden pb-12">
     
@@ -256,7 +274,7 @@ const filteredCourses = activeCategory === 'All Courses'
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="flex-1"
+            className="flex-1 w-full flex justify-center lg:block"
           >
             <div className="rounded-[40px] overflow-hidden shadow-2xl h-[400px] relative group">
               <img 
@@ -266,42 +284,18 @@ const filteredCourses = activeCategory === 'All Courses'
               />
               <div className="absolute inset-0 bg-black/10"></div>
               <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl max-w-xs shadow-lg">
-                <p className="font-bold text-[#1A1A1A] mb-1">New Cohort Starts Oct 2024</p>
-                <p className="text-xs text-gray-500">Limited slots available for N2 Business Prep</p>
+                <p className="text-xs text-gray-500">Courses Onboarding</p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="px-6 md:px-12 lg:px-24 mb-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-6 border-b border-gray-100 pb-8">
-          <div>
-            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">Academic Pathways</h2>
-            <p className="text-gray-500 text-sm">Structured learning designed for rapid fluency.</p>
-          </div>
-          <div className="flex bg-white p-1.5 rounded-xl shadow-sm border border-gray-100">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all ${
-                  activeCategory === cat 
-                    ? 'bg-[#3B66AC] text-white shadow-md' 
-                    : 'text-gray-500 hover:text-[#1A1A1A]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="px-6 md:px-12 lg:px-24 mb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           <AnimatePresence mode="wait">
-            {filteredCourses.map((course, i) => {
+            {courses.map((course, i) => {
               if (course.isStitch) {
                 return <StitchCourseCard key={course.id} course={course} index={i} />;
               }
@@ -447,7 +441,7 @@ const filteredCourses = activeCategory === 'All Courses'
         </div>
       </section>
       
-      {/* Footer */}
+    
       <Footer />
     </div>
   );
