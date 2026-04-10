@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, ChevronRight, Calendar, Clock, User, Mail } from 'lucide-react';
 import Footer from './Footer';
-import heroImage from '../assets/japanese_blog_hero.png';
-import featuredImage from '../assets/japanese_student_success.png';
 
 const BlogPage = () => {
   return (
