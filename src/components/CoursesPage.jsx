@@ -9,13 +9,13 @@ import { useModal } from '../context/ModalContext';
 const courses = [
   {
     id: 1,
-    tier: 'N5 / Q5  5 Months',
+    tier: 'N5/Q5',
     title: 'JLPT N5 – Beginner Japanese Course',
     subtitle: 'Build a clear, structured foundation in Japanese scripts and essential survival communication.',
     level: 'N5',
     kanji: '基',
     accentColor: 'linear-gradient(135deg, #3B66AC 0% 65%, #8ba3cd 65% 80%, #ffffff 80% 100%)',
-    duration: '12 Weeks',
+    duration: '5 Months',
     type: 'JLPT Focused',
     description: 'Establish a rock-solid foundation in Hiragana, Katakana, and basic Kanji.',
     focusList: [
@@ -40,13 +40,13 @@ const courses = [
   },
   {
     id: 2,
-    tier: 'N4 / Q4  5 Months',
+    tier: 'N4/Q4 ',
     title: 'JLPT N4 – Elementary Japanese Course',
     subtitle: 'Strengthen your daily interaction skills to express opinions and navigate social situations with confidence.',
     level: 'N4',
     kanji: '話',
     accentColor: 'linear-gradient(135deg, #1e3a6d 0% 65%, #4a6fa5 65% 80%, #ffffff 80% 100%)',
-    duration: '16 Weeks',
+    duration: '5 Months',
     type: 'JLPT Focused',
     description: 'Bridge the gap between textbook Japanese and real-world fluency.',
     focusList: [
@@ -71,13 +71,13 @@ const courses = [
   },
   {
     id: 3,
-    tier: 'N3 / Q3  6 Months',
+    tier: 'N3 / Q3  ',
     title: 'JLPT N3 – Intermediate Japanese Course',
     subtitle: 'Bridge the gap to professional fluency by mastering unscripted discussions and workplace communication.',
     level: 'N3',
     kanji: '橋',
     accentColor: 'linear-gradient(135deg, #0f2a52 0% 65%, #2d4a77 65% 80%, #ffffff 80% 100%)',
-    duration: '20 Weeks',
+    duration: '6 Months',
     type: 'JLPT Focused',
     description: 'Mastering the mechanics of intermediate Japanese and subtle expression.',
     focusList: [
@@ -107,13 +107,13 @@ const courses = [
   },
   {
     id: 4,
-    tier: 'Conversational  3 Months',
+    tier: 'Conversational',
     title: 'Conversation Course - Spoken Japanese & Culture',
     subtitle: 'A dedicated practical course focused on mastering real-life fluency and understanding the cultural nuances of modern Japan.',
     level: 'Fluency',
     kanji: '談',
     accentColor: 'linear-gradient(135deg, #0a1e3d 0% 65%, #25406b 65% 80%, #ffffff 80% 100%)',
-    duration: 'Flexible',
+    duration: '3 Months',
     type: 'Practical Fluency',
     description: 'Focus on native speech patterns and practical roleplays to overcome the fear of speaking.',
     focusList: [
@@ -197,8 +197,11 @@ const StitchCourseCard = ({ course, index }) => {
       </div>
 
       <div className="relative z-20 h-full flex flex-col">
-        <span className="text-[10px] font-black uppercase tracking-[5px] mb-4 text-white/40">
+        <span className="text-[10px] font-black uppercase tracking-[5px] mb-3 text-white/40">
           {course.tier}
+        </span>
+        <span className="self-start mb-4 bg-white text-[#3B66AC] text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-widest shadow-sm">
+          {course.duration}
         </span>
         <h3 className="text-4xl font-bold mb-6 font-serif leading-tight text-white">
           {course.title}
@@ -342,23 +345,32 @@ const CoursesPage = () => {
                   {course.icon && course.icon}
 
                   <div className="relative z-10 h-full flex flex-col">
-                      <div className="flex gap-3">
+                      <div className="flex flex-col gap-2">
                         {course.isWorkshop && (
                           <span className="bg-red-50 text-red-500 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded uppercase font-mono border border-red-100/50 shadow-sm">
                             Workshop
                           </span>
                         )}
                         {!course.isWorkshop && (
-                          <span className="text-[10px] font-bold tracking-widest px-3 py-1.5 rounded uppercase font-mono border bg-blue-50 text-[#3B66AC] border-blue-100">
-                            {course.level}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold tracking-wide text-gray-600 uppercase">
+                              LEVEL:
+                            </span>
+                            <span className="text-sm font-bold text-[#3B66AC] bg-blue-50 px-3 py-1 rounded border border-blue-100">
+                              {course.level}
+                            </span>
+                          </div>
                         )}
                         
                         {!course.isWorkshop && (
-                          <span className="text-gray-400 text-[10px] font-bold tracking-widest px-3 py-1.5 flex items-center gap-1.5 uppercase border border-gray-100 rounded">
-                            {course.professional ? <Briefcase className="w-3 h-3" /> : <Clock className="w-3 h-3" />}
-                            {course.duration}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold tracking-wide text-gray-600 uppercase">
+                              DURATION:
+                            </span>
+                            <span className="text-sm font-bold text-gray-700 px-3 py-1 rounded border border-gray-200">
+                              {course.duration}
+                            </span>
+                          </div>
                         )}
 
                         {course.isWorkshop && (

@@ -14,7 +14,7 @@ import { useModal } from '../context/ModalContext';
 export default function Home() {
   const { openModal } = useModal();
   return (
-    <div className="bg-[#F8F9FA] min-h-screen w-full md:pt-8 hero-tab">
+    <div className="bg-[#F8F9FA] min-h-screen w-full overflow-x-hidden md:pt-8 hero-tab">
       <div className="hidden lg:block">
         <VerticalJapaneseText 
           text="日本語を学ぶ旅へようこそ" 

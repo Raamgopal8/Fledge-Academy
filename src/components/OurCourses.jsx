@@ -1,9 +1,13 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function OurCourses() {
   const containerRef = useRef(null);
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -32,27 +36,19 @@ export default function OurCourses() {
         transition: { duration: 0.6, delay: 0.2 }
       }
     },
-    {
-      title: "JLPT N3 – Intermediate Japanese Course",
-      desc: "Mastering the mechanics of intermediate Japanese and subtle expression.",
-      motionProps: {
-        initial: { x: 50, opacity: 0 },
-        whileInView: { x: 0, opacity: 1 },
-        viewport: { once: true },
-        transition: { duration: 0.6, delay: 0.4 }
-      }
-    },
-    {
-      title: "Conversation Course - Spoken Japanese & Culture",
-      desc: "Focus on native speech patterns and practical roleplays to overcome the fear of speaking.",
-      motionProps: {
-        initial: { y: 50, opacity: 0 },
-        whileInView: { y: 0, opacity: 1 },
-        viewport: { once: true },
-        transition: { duration: 0.6, delay: 0.6 }
-    }
-  }
   ];
+
+  const scrollTo = (idx) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const card = container.children[idx];
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    setActiveIndex(idx);
+  };
+
+  const handlePrev = () => scrollTo(Math.max(activeIndex - 1, 0));
+  const handleNext = () => scrollTo(Math.min(activeIndex + 1, courses.length - 1));
 
   return (
     <div ref={containerRef} className="relative bg-white overflow-visible pb-12 md:pb-24">
@@ -66,7 +62,8 @@ export default function OurCourses() {
             <br className="hidden sm:block" /> build strong foundations and steady progress in Japanese
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-14">
+          {/* Desktop grid */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-14">
             {courses.map((course, idx) => (
               <motion.div
                 key={idx}
@@ -82,14 +79,76 @@ export default function OurCourses() {
                   </p>
                 </div>
 
-                <button
+                <Link
+                  to="/courses"
                   className="mt-8 sm:mt-10 self-start text-sm font-bold text-[#3B66AC] 
                              hover:text-blue-800 transition inline-flex items-center gap-1"
                 >
                   View Course →
-                </button>
+                </Link>
               </motion.div>
             ))}
+          </div>
+
+          {/* Mobile carousel */}
+          <div className="md:hidden">
+            <div
+              ref={scrollRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {courses.map((course, idx) => (
+                <div
+                  key={idx}
+                  className="snap-center shrink-0 w-[85vw] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 flex flex-col justify-between shadow-sm min-h-[280px]"
+                >
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
+                      {course.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {course.desc}
+                    </p>
+                  </div>
+                  <Link 
+                    to="/courses"
+                    className="mt-8 self-start text-sm font-bold text-[#3B66AC] hover:text-blue-800 transition inline-flex items-center gap-1"
+                  >
+                    View Course →
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation buttons */}
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <button
+                onClick={handlePrev}
+                disabled={activeIndex === 0}
+                className="w-7 h-7 rounded-full border border-blue-200 bg-white flex items-center justify-center text-[#3B66AC] disabled:opacity-30 hover:bg-blue-50 transition shadow-sm"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              {/* Dots */}
+              <div className="flex gap-2">
+                {courses.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => scrollTo(idx)}
+                    className={`w-2 h-2 rounded-full transition-all ${activeIndex === idx ? 'bg-[#3B66AC] w-5' : 'bg-blue-200'}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={handleNext}
+                disabled={activeIndex === courses.length - 1}
+                className="w-7 h-7 rounded-full border border-blue-200 bg-white flex items-center justify-center text-[#3B66AC] disabled:opacity-30 hover:bg-blue-50 transition shadow-sm"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
           
           <div className="flex justify-center mt-8 md:mt-16">
@@ -107,4 +166,3 @@ export default function OurCourses() {
     </div>
   );
 }
-
