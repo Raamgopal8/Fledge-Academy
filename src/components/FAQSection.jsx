@@ -88,7 +88,7 @@ export default function FAQSection() {
           return (
             <div
               key={idx}
-              className={`bg-white rounded-xl border-l-4 border-cyan-500 shadow-sm
+              className={`bg-white rounded-xl border-l-4 border-[#3B66AC] shadow-sm
                 transition-all duration-300 ease-in-out
                 ${
                   hideExtra && isExtra

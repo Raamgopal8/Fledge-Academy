@@ -3,7 +3,7 @@ import japaneseRow from "../assets/japanese_row.png";
 
 export default function WhyFledgeAcademy() {
   return (
-    <section className="min-h-0 py-12 md:min-h-screen md:py-20 bg-white px-4 sm:px-6 lg:px-8">
+    <section className="min-h-0 pt-6 pb-12 md:min-h-screen md:pt-8 md:pb-20 bg-white px-4 sm:px-6 lg:px-8">
       {/* Heading */}
       <div className="max-w-[1320px] mx-auto mb-8 md:mb-14 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black mb-3 sm:mb-4">
@@ -85,7 +85,7 @@ export default function WhyFledgeAcademy() {
         </div>
       </div>
       <div className="max-w-[900px] mx-auto mt-8 sm:mt-10 lg:mt-12 text-center flex flex-col items-center px-4">
-        <blockquote className="bg-cyan-50/60 border-l-4 border-cyan-400 px-4 sm:px-6 py-4 sm:py-5 rounded-xl shadow-sm">
+        <blockquote className="bg-[#3B66AC]/10 border-l-4 border-[#3B66AC] px-4 sm:px-6 py-4 sm:py-5 rounded-xl shadow-sm">
           <p className="text-base sm:text-lg lg:text-xl text-gray-800 font-semibold italic leading-relaxed">
             “The right environment doesn’t just teach a language—it changes how you grow in it.”
           </p>

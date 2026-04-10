@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedin, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/fledgeacad.png";
 
 export default function Footer() {
   return (
@@ -11,11 +11,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row flex-wrap justify-between gap-12">
         {/* Brand */}
         <div className="w-full md:max-w-sm flex flex-col items-start">
-          <Link to="/" className="inline-block mb-4">
+          <Link to="/" className="inline-block -mt-16 -mb-6">
             <img
               src={logo}
               alt="Fledge Academy"
-              className="h-40 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
+              className="h-56 w-auto object-contain object-top"
             />
           </Link>
           <p className="text-slate-600 text-base leading-relaxed mb-4">
@@ -23,12 +23,12 @@ export default function Footer() {
             structured learning and practical methods.
           </p>
           <p className="text-[#3B66AC] font-semibold text-sm tracking-wide uppercase mt-2">
-            Spreading your knowledge like wings to fly !
+            Spread your knowledge like wings to fly !
           </p>
         </div>
 
         {/* Quick Links */}
-        <div className="w-full md:w-auto md:mt-6">
+        <div className="w-full md:w-auto md:mt-10">
           <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Explore</h4>
           <ul className="space-y-3 text-slate-600">
             {['Home', 'Courses', 'Blog', 'About Us', 'Contact'].map((item) => (
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="w-full md:w-auto md:mt-6">
+        <div className="w-full md:w-auto md:mt-10">
           <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Get in Touch</h4>
           <ul className="space-y-4 text-slate-600">
             <li className="flex items-center gap-3 group hover:text-[#3B66AC] transition-colors cursor-pointer">
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* Social */}
-        <div className="w-full md:w-auto md:mt-6">
+        <div className="w-full md:w-auto md:mt-10">
           <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Connect With Us</h4>
           <div className="flex gap-4">
             <a href="#" className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 transition-all duration-300 hover:scale-110 hover:-translate-y-1">
@@ -89,14 +89,17 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-200">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4">
           <p className="text-sm text-slate-500 font-medium">
             © {new Date().getFullYear()} Fledge Academy. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm font-medium text-slate-500 shadow-none">
+         
+          {/* <div className="flex gap-6 text-sm font-medium text-slate-500 shadow-none">
             <a href="#" className="hover:text-[#3B66AC] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[#3B66AC] transition-colors">Terms of Service</a>
           </div>
+         */}
+
         </div>
       </div>
     </footer>

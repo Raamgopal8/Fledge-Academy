@@ -104,7 +104,7 @@ export default function StudentSuccessStories() {
               >
               {/* Quote + Stars */}
               <div className="flex items-center justify-between mb-6">
-                <div className="w-10 h-10 rounded-full bg-cyan-400 text-white flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#3B66AC] text-white flex items-center justify-center">
                   <FaQuoteLeft />
                 </div>
 
@@ -129,7 +129,7 @@ export default function StudentSuccessStories() {
                 </p>
                 <button
                   onClick={() => setActiveStory(item)}
-                  className="ml-2 text-xs font-medium text-blue-600 hover:text-cyan-600 transition align-baseline"
+                  className="ml-2 text-xs font-medium text-blue-600 hover:text-[#3B66AC] transition align-baseline"
                 >
                   Read more
                 </button>
@@ -143,7 +143,7 @@ export default function StudentSuccessStories() {
                 <div className="h-px bg-red-100 my-4" />
 
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-cyan-500">
+                  <p className="text-sm font-semibold text-[#3B66AC]">
                     {item.kanji}
                   </p>
                 </div>

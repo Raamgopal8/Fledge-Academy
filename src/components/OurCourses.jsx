@@ -58,10 +58,10 @@ export default function OurCourses() {
   return (
     <div
       ref={containerRef}
-      className="relative bg-white overflow-visible pb-12 md:pb-24"
+      className="relative bg-white overflow-visible pb-4 md:pb-8"
     >
       <section
-        className="w-full flex items-center justify-center overflow-hidden pt-4 md:pt-8 pb-12 md:pb-20"
+        className="w-full flex items-center justify-center overflow-hidden pt-4 md:pt-8 pb-4 md:pb-8"
         id="courses"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 w-full">
@@ -166,12 +166,11 @@ export default function OurCourses() {
 
           <div className="flex justify-center mt-8 md:mt-16">
             <Link to="/courses">
-              <motion.button
-                style={{ opacity: opacity3 }}
+              <button
                 className="bg-[#3B66AC] hover:bg-blue-800 text-white font-bold px-8 sm:px-12 py-3 sm:py-4 rounded-full text-sm sm:text-base shadow-lg transition"
               >
                 All Courses
-              </motion.button>
+              </button>
             </Link>
           </div>
         </div>

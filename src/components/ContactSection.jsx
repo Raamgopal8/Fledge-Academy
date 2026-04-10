@@ -24,7 +24,7 @@ export default function ContactSection() {
             <form action="https://formsubmit.co/fledgeacademy@gmail.com" method="POST">
               {/* Occupation Toggle */}
               <div className="mb-8">
-                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-3 block">Are you a...?</label>
+                <label className="text-[10px] font-bold uppercase tracking-wider text-black-400 mb-3 block">Are you a...?</label>
                 <div className="flex p-1 bg-gray-50 rounded-xl border border-gray-100">
                   <button
                     type="button"
@@ -39,7 +39,7 @@ export default function ContactSection() {
                     type="button"
                     onClick={() => setOccupation('Professional')}
                     className={`flex-1 py-3 rounded-lg text-sm font-bold transition-all ${
-                      occupation === 'Professional' ? 'bg-white text-[#3B66AC] shadow-sm ring-1 ring-black/5' : 'text-gray-400 hover:text-gray-600'
+                      occupation === 'Professional' ? 'bg-white text-[#3B66AC] shadow-sm ring-1 ring-black/5' : 'text-black-400 hover:text-gray-600'
                     }`}
                   >
                     Professional
@@ -51,17 +51,17 @@ export default function ContactSection() {
               {/* Grid for Name and Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Full Name</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-black-400 mb-2 block">Full Name</label>
                   <input
                     type="text"
                     name="Full_Name"
-                    placeholder="your good name"
+                    placeholder=""
                     className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Email Address</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-black-400 mb-2 block">Email Address</label>
                   <input
                     type="email"
                     name="Email"
@@ -75,7 +75,7 @@ export default function ContactSection() {
               {/* Location and Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Phone / WhatsApp</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-black-400 mb-2 block">Phone / WhatsApp</label>
                   <input
                     type="text"
                     name="Phone"
@@ -85,7 +85,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">Your Location</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-black-400 mb-2 block">Your Location</label>
                   <input
                     type="text"
                     name="Location"
@@ -98,7 +98,7 @@ export default function ContactSection() {
 
               {/* Interest */}
               <div className="mb-8">
-                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 block">What course are you interested in?</label>
+                <label className="text-[10px] font-bold uppercase tracking-wider text-black-400 mb-2 block">What course are you interested in?</label>
                 <select 
                   name="Interest"
                   className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all text-sm appearance-none"

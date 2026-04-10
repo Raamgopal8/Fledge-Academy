@@ -197,7 +197,7 @@ export default function WixDocking() {
           <div className="mt-6 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 w-full px-0">
             <Link to="/courses" className="w-[60%] sm:w-auto">
               <button
-                className="w-full bg-cyan-400 text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-cyan-600 transition"
+                className="w-full bg-[#3B66AC] text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-cyan-600 transition"
               >
                 Explore Courses
               </button>

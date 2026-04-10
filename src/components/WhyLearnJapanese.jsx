@@ -18,7 +18,7 @@ export default function WhyLearnJapanese() {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-5 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
@@ -41,7 +41,7 @@ export default function WhyLearnJapanese() {
               >
                 {/* ICON + LINE */}
                 <div className="relative flex flex-col items-center">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-cyan-400 text-white rounded-xl flex items-center justify-center text-xl sm:text-2xl z-10">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#3B66AC] text-white rounded-xl flex items-center justify-center text-xl sm:text-2xl z-10">
                     {item.icon}
                   </div>
                   

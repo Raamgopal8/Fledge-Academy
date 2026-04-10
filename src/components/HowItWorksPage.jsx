@@ -3,7 +3,7 @@ import React from "react";
 export default function HowItWorksPage() {
   return (
     <section
-      className="relative w-full bg-white pt-16 sm:pt-24 pb-4 sm:pb-8 overflow-hidden"
+      className="relative w-full bg-white pt-16 sm:pt-24 pb-8 sm:pb-16 overflow-hidden"
       id="how-it-works"
     >
       {/* Header */}
