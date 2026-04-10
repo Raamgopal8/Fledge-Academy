@@ -55,7 +55,7 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="Full_Name"
-                    placeholder="John Doe"
+                    placeholder="your good name"
                     className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
                     required
                   />
@@ -65,7 +65,7 @@ export default function ContactSection() {
                   <input
                     type="email"
                     name="Email"
-                    placeholder="john@example.com"
+                    placeholder=""
                     className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
                     required
                   />
@@ -79,7 +79,7 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="Phone"
-                    placeholder="+91 00000 00000"
+                    placeholder=""
                     className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
                     required
                   />
@@ -89,7 +89,7 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="Location"
-                    placeholder="City, Country"
+                    placeholder=""
                     className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-[#3B66AC] focus:ring-0 transition-all placeholder:text-gray-300 text-sm"
                     required
                   />
@@ -118,7 +118,7 @@ export default function ContactSection() {
                 type="submit"
                 className="w-full py-5 bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-bold rounded-xl shadow-lg shadow-blue-200/50 transition-all transform active:scale-[0.98] uppercase tracking-[2px] text-xs"
               >
-                Enroll Now
+                Join With Us
               </button>
             </form>
           </div>

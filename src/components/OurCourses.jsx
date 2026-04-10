@@ -13,8 +13,8 @@ export default function OurCourses() {
 
   const courses = [
     {
-      title: "Junior N5 Course (Grades 6 - 12)",
-      desc: "A beginner course for school students that combines structured teaching with activity - based practice across reading, writing, speaking, and cultural understanding.",
+      title: "JLPT N5 – Beginner Japanese Course",
+      desc: "Establish a rock-solid foundation in Hiragana, Katakana, and basic Kanji.",
       motionProps: {
         initial: { x: -50, opacity: 0 },
         whileInView: { x: 0, opacity: 1 },
@@ -23,8 +23,8 @@ export default function OurCourses() {
       }
     },
     {
-      title: "N5 Course for College Students & Professionals",
-      desc: "A beginner course created for mature learners, blending explanation with speaking drills, guided exercises, reading practice, and practical usage.",
+      title: "JLPT N4 – Elementary Japanese Course",
+      desc: "Bridge the gap between textbook Japanese and real-world fluency.",
       motionProps: {
         initial: { y: 50, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },
@@ -33,8 +33,8 @@ export default function OurCourses() {
       }
     },
     {
-      title: "JLPT N4 Course (Elementary Level)",
-      desc: "An elementary Japanese course designed to strengthen the foundation built in N5. Learners work through advanced beginner grammar, structured reading and listening tasks, and 300+ kanji - building steady confidence and real language ability.",
+      title: "JLPT N3 – Intermediate Japanese Course",
+      desc: "Mastering the mechanics of intermediate Japanese and subtle expression.",
       motionProps: {
         initial: { x: 50, opacity: 0 },
         whileInView: { x: 0, opacity: 1 },
@@ -43,8 +43,8 @@ export default function OurCourses() {
       }
     },
     {
-      title: "Demo Classes",
-      desc: "Basic Japanese kanji, grammar, and vocabulary are covered in this course session.",
+      title: "Conversation Course - Spoken Japanese & Culture",
+      desc: "Focus on native speech patterns and practical roleplays to overcome the fear of speaking.",
       motionProps: {
         initial: { y: 50, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },

@@ -57,7 +57,7 @@ const EnrollmentModal = () => {
                   type="text"
                   name="Full_Name"
                   required
-                  placeholder="John Doe"
+                  placeholder="your good name"
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-[#3B66AC] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                 />
               </div>
@@ -71,7 +71,7 @@ const EnrollmentModal = () => {
                   type="email"
                   name="Email"
                   required
-                  placeholder="john@example.com"
+                  placeholder=""
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-[#3B66AC] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                 />
               </div>
@@ -85,7 +85,7 @@ const EnrollmentModal = () => {
                   type="tel"
                   name="Phone"
                   required
-                  placeholder="+91 1234567890"
+                  placeholder=""
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-[#3B66AC] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                 />
               </div>
@@ -129,7 +129,7 @@ const EnrollmentModal = () => {
                   type="text"
                   name="Location"
                   required
-                  placeholder="Your City"
+                  placeholder=""
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-[#3B66AC] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                 />
               </div>

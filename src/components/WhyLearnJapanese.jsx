@@ -44,9 +44,7 @@ export default function WhyLearnJapanese() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-cyan-400 text-white rounded-xl flex items-center justify-center text-xl sm:text-2xl z-10">
                     {item.icon}
                   </div>
-
-                  {/* Dashed line for all cards */}
-                  <div className="absolute top-[50px] sm:top-[60px] h-[70%] sm:h-[80%] border-l-2 border-dashed border-gray-300" />
+                  
                 </div>
 
                 {/* Content */}

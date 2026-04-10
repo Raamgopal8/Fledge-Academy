@@ -443,7 +443,7 @@ const CoursesPage = () => {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Not Sure Where to start?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-              Speak with out expert mentors to get clear guidance on the right course for your goals and schedule.
+              Speak with our expert mentors to get clear guidance on the right course for your goals and schedule.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
              

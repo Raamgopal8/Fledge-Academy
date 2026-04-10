@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import logo from "../assets/logo.png";
 
@@ -9,13 +10,13 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2">
            
-              <a href="/">
+              <Link to="/">
                 <img
                   src={logo}
                   alt="Fledge Academy"
                   className="h-20 w-auto"
                 />
-              </a>
+              </Link>
             
           </div>
          
@@ -32,11 +33,11 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li className="hover:text-gray-900 cursor-pointer">Home</li>
-            <li className="hover:text-gray-900 cursor-pointer">Courses</li>
-            <li className="hover:text-gray-900 cursor-pointer"> Blog</li>
-            <li className="hover:text-gray-900 cursor-pointer">About Us</li>
-            <li className="hover:text-gray-900 cursor-pointer">Contact</li>
+            <li><Link to="/" className="hover:text-gray-900 transition-colors">Home</Link></li>
+            <li><Link to="/courses" className="hover:text-gray-900 transition-colors">Courses</Link></li>
+            <li><Link to="/blog" className="hover:text-gray-900 transition-colors">Blog</Link></li>
+            <li><Link to="/about" className="hover:text-gray-900 transition-colors">About Us</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-900 transition-colors">Contact</Link></li>
           </ul>
         </div>
 

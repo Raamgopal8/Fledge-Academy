@@ -75,7 +75,7 @@ src/
 ```
 
 ## 📝 Form Activation Note
-For active lead generation, the email `fledgeacademy@gmail.com` must have confirmed the initial activation email from FormSubmit.co.
+For active lead generation, the email `[EMAIL_ADDRESS]` must have confirmed the initial activation email from FormSubmit.co.
 
 ---
 Built with ❤️ for Fledge Academy.
