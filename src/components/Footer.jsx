@@ -31,10 +31,11 @@ export default function Footer() {
         <div className="w-full md:w-auto md:mt-10">
           <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Explore</h4>
           <ul className="space-y-3 text-slate-600">
-            {['Home', 'Courses', 'Blog', 'About Us', 'Contact'].map((item) => (
+            {['Home', 'Courses', 'Blog', 'About', 'Contact'].map((item) => (
               <li key={item}>
                 <Link 
                   to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className="hover:text-[#3B66AC] font-medium flex items-center group transition-colors"
                 >
                   <span className="w-0 h-0.5 bg-[#3B66AC] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300"></span>

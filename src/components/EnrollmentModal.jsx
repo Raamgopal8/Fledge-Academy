@@ -57,7 +57,7 @@ const EnrollmentModal = () => {
                   type="text"
                   name="Full_Name"
                   required
-                  placeholder="your good name"
+                  placeholder=""
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-[#3B66AC] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
                 />
               </div>
