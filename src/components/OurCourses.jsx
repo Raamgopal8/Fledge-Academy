@@ -81,7 +81,8 @@ export default function OurCourses() {
               <motion.div
                 key={idx}
                 {...course.motionProps}
-                className="w-full md:w-[calc(50%-2rem)] max-w-[400px] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 sm:p-10 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow min-h-[280px] sm:min-h-[320px]"
+                whileHover={{ y: -8, boxShadow: "0px 15px 30px rgba(59,102,172,0.15)" }}
+                className="w-full md:w-[calc(50%-2rem)] max-w-[400px] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 sm:p-10 md:p-8 flex flex-col justify-between shadow-sm min-h-[280px] sm:min-h-[320px] transition-all duration-300 active:mobile-shake cursor-pointer"
               >
                 <div>
                   <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
@@ -113,7 +114,7 @@ export default function OurCourses() {
               {courses.map((course, idx) => (
                 <div
                   key={idx}
-                  className="snap-center shrink-0 w-[85vw] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 flex flex-col justify-between shadow-sm min-h-[280px]"
+                  className="snap-center shrink-0 w-[85vw] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 flex flex-col justify-between shadow-sm min-h-[280px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-pointer"
                 >
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">

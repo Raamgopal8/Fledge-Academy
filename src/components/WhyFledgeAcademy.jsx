@@ -47,7 +47,7 @@ export default function WhyFledgeAcademy() {
         <div className="grid grid-cols-1 gap-4 sm:gap-6">
           {/* Image Card */}
           <div
-            className="h-[220px] sm:h-[320px] lg:h-[380px] rounded-[18px] p-5 sm:p-6 lg:p-7 text-white relative"
+            className="h-[220px] sm:h-[320px] lg:h-[380px] rounded-[18px] p-5 sm:p-6 lg:p-7 text-white relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:mobile-shake cursor-default"
             style={{
               backgroundImage: `url(${japaneseRow})`,
               backgroundSize: "cover",
@@ -101,7 +101,7 @@ function Card({ bg, title, desc, size, className = "", index }) {
 
   return (
     <div
-      className={`${bg} ${sizeClass} rounded-[18px] p-5 sm:p-6 text-white relative ${className}`}
+      className={`${bg} ${sizeClass} rounded-[18px] p-5 sm:p-6 text-white relative ${className} transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:mobile-shake cursor-default`}
     >
       <Tag />
       <NumberBadge index={index} />

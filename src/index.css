@@ -33,3 +33,17 @@ html, body {
 img {
   will-change: transform;
 }
+
+/* Mobile tap shake effect */
+@keyframes tap-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+}
+
+@media (max-width: 768px) {
+  .active\:mobile-shake:active {
+    animation: tap-shake 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+}

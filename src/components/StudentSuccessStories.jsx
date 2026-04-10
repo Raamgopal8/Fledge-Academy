@@ -100,7 +100,8 @@ export default function StudentSuccessStories() {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 transition={{ delay: index * 0.15 }}
-                className="bg-white rounded-2xl border border-red-100 shadow-md p-4 flex flex-col min-h-[300px]"
+                whileHover={{ y: -8, boxShadow: "0px 15px 30px rgba(59,102,172,0.15)" }}
+                className="bg-white rounded-2xl border border-red-100 shadow-md p-4 flex flex-col min-h-[300px] active:mobile-shake cursor-pointer"
               >
               {/* Quote + Stars */}
               <div className="flex items-center justify-between mb-6">
@@ -163,8 +164,9 @@ export default function StudentSuccessStories() {
                 return (
                   <motion.div
                     key={index}
-                    className="absolute bg-white rounded-2xl border border-red-400 shadow-md p-4 flex flex-col min-h-[280px] w-64 cursor-pointer"
+                    className="absolute bg-white rounded-2xl border border-red-400 shadow-md p-4 flex flex-col min-h-[280px] w-64 active:mobile-shake cursor-pointer"
                     initial={{ scale: 0.8, opacity: 0, x: 300 }}
+                    whileHover={{ y: -8, boxShadow: "0px 15px 30px rgba(59,102,172,0.15)" }}
                     animate={{
                       scale: isActive ? 1.1 : 0.8,
                       opacity: isActive ? 1 : 0.5,

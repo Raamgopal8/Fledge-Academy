@@ -38,7 +38,7 @@ export default function HowItWorksPage() {
         {/* Cards */}
         <div className="relative max-w-7xl mx-auto space-y-6 sm:space-y-10">
           {/* Card 1 */}
-          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-gray-100 px-6 sm:px-10 py-6 sm:py-8 shadow-sm mx-auto sm:-ml-8 ">
+          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-gray-100 px-6 sm:px-10 py-6 sm:py-8 mx-auto sm:-ml-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Teach With Clarity
             </h3>
@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Card 2 */}
-          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-cyan-300 px-6 sm:px-12 py-6 sm:py-10 shadow-sm mx-auto sm:ml-56">
+          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-cyan-300 px-6 sm:px-12 py-6 sm:py-10 mx-auto sm:ml-56 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Practice With Intention
             </h3>
@@ -60,7 +60,7 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Card 3 */}
-          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-blue-600 px-6 sm:px-12 py-6 sm:py-10 text-white shadow-sm mx-auto sm:ml-[40%]">
+          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-blue-600 px-6 sm:px-12 py-6 sm:py-10 text-white mx-auto sm:ml-[40%] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Grow With Consistency
             </h3>
