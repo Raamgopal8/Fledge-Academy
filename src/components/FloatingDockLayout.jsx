@@ -129,10 +129,10 @@ export default function WixDocking() {
       <section className="relative min-h-[600px] md:h-screen flex items-center justify-center">
         {/* CENTER CONTENT */}
         <div className="text-center max-w-4xl z-30 pt-24 md:pt-0 md:-mt-32">
-          <h1 className="text-5xl md:text-7xl font-semibold text-black/90 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-[#1A1A1A] leading-tight">
             Learn Japanese
             <br />
-            <span className="text-gray-500 font-medium">
+            <span className="text-[#3B66AC] font-extrabold">
               <SwappingText
                 phrases={[
                   "at your own pace",
@@ -145,7 +145,7 @@ export default function WixDocking() {
             </span>
           </h1>
 
-          <p className="mt-6 text-lg text-gray-600 px-4">
+          <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-6 text-center italic">
             Experience the language through a clear path
             <br className="hidden sm:block" />
             that makes every step simple

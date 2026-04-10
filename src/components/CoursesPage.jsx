@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Book, Users, Clock, Award, Star, ArrowRight, GraduationCap, Briefcase, Palette, Check } from 'lucide-react';
 import Footer from './Footer';
-import heroImage from '../assets/japanese_courses_hero.png';
+import heroImage from '../assets/japanese_coursepage.png';
 import { useModal } from '../context/ModalContext';
 
 const courses = [
@@ -266,7 +266,7 @@ const CoursesPage = () => {
   };
 
   return (
-    <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden">
+    <div className="bg-white min-h-screen font-sans overflow-x-hidden">
     
       <section className="relative pt-32 pb-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">

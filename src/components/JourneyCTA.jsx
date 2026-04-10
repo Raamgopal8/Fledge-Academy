@@ -5,12 +5,13 @@ export default function JourneyCTA() {
   return (
     <section className="w-full py-16 sm:py-24 px-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 text-center">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
           Ready to Start Your Journey?
         </h2>
 
-        <p className="mt-4 text-lg text-gray-800">
-          Join an academy where experienced mentors guide you through every step of the Japanese language and culture.
+         <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+          You don’t have to know everything to begin. <br />
+          You only need the right place to learn, grow, and stay consistent.
         </p>
 
         {/* <p className="mt-6 text-gray-700">
@@ -33,7 +34,12 @@ export default function JourneyCTA() {
             place for you.
           </p> */}
         </div>
-      
+       {/* Optional note (show only if space allows) */}
+        <p className="mt-8 text-sm italic text-gray-600 leading-relaxed">
+          “You’re not spending for just classes — <br />
+          you’re investing in a skill that can shape your future for years.”
+        </p>
+
       </div>
     </section>
   );

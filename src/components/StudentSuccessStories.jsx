@@ -81,10 +81,10 @@ export default function StudentSuccessStories() {
       <section className="py-20 bg-gradient-to-b from-white via-red-50/30 to-white">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold">
+          <h2 className="text-3xl md:text-5xl font-extrabold">
             Student Success Stories
           </h2>
-          <p className="text-gray-600 mt-4 text-sm">
+          <p className="text-gray-600 mt-4 text-sm italic">
             本物の成功体験 • Real transformation stories
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function StudentSuccessStories() {
 
               {/* Preview + Read More */}
               <div className="mb-8">
-                <p className="text-gray-700 text-sm leading-relaxed inline">
+                <p className="text-gray-600 text-sm leading-relaxed inline">
                   {item.preview}
                 </p>
                 <button

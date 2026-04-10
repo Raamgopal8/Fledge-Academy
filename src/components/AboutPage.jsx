@@ -29,7 +29,7 @@ const philosophy = [
 
 const AboutPage = () => {
   return (
-    <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden">
+    <div className="bg-white min-h-screen font-sans overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
@@ -42,10 +42,13 @@ const AboutPage = () => {
           >
             <span className="text-blue-600 font-bold text-xs tracking-widest uppercase mb-4 block">Who We Are</span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-[#1A1A1A] leading-tight mb-6">
-              Pioneering the Path <br /> to <span className="text-[#3B66AC]">Fluency.</span>
+              Shaping Your Future Through <span className="text-[#3B66AC]">Language.</span>
             </h1>
+            <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-6 text-justify">
+              &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Fledge Academy is an online learning space built for those who want to learn languages with clarity, structure, and real purpose. We believe good learning is not about rushing. It’s about understanding, practicing with care, and building confidence step by step. This belief shapes how every class is designed and delivered.
+            </p>
             <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-10 text-justify">
-             &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Fledge Academy is an online learning space built for those who want to learn languages with clarity, structure, and real purpose. We believe good learning is not about rushing. It’s about understanding, practicing with care, and building confidence step by step. This belief shapes how every class is designed and delivered. <br />  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; At Fledge, teaching is thoughtful and clear. Learners are guided patiently, with regular practice and support that helps them see steady progress over time.Our classes are flexible, yet focused — giving learners the freedom to learn while staying steady and clear about their progress. Today, we focus on Japanese language education and exams like JLPT and NAT, while building learning foundations that can grow into many skills in the future. Here, learning is not rushed — it’s guided with purpose. 
+              &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; At Fledge, teaching is thoughtful and clear. Learners are guided patiently, with regular practice and support that helps them see steady progress over time. Our classes are flexible, yet focused — giving learners the freedom to learn while staying steady and clear about their progress. Today, we focus on Japanese language education and exams like JLPT and NAT, while building learning foundations that can grow into many skills in the future. Here, learning is not rushed — it’s guided with purpose.
             </p>
             
             
@@ -144,7 +147,7 @@ const AboutPage = () => {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Ready to begin?</h2>
             <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-              Join a global community of scholars dedicated to linguistic excellence and cultural discovery.
+              Join an academy where experienced mentors guide you through every step of the Japanese language and culture.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link to="/contact" className="w-full sm:w-auto"> 

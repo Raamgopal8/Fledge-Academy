@@ -22,10 +22,10 @@ export default function WhyLearnJapanese() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             Why Learn Japanese Today
           </h2>
-          <p className="text-gray-500 max-w-xl sm:max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-6 mx-auto italic">
             Discover global opportunities, cultural depth, and a smarter way of
             thinking through language learning.
           </p>
@@ -49,10 +49,10 @@ export default function WhyLearnJapanese() {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
+                  <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-lg">
                     {item.desc}
                   </p>
                 </div>

@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const ContactPage = () => {
   return (
-    <div className="bg-[#F8F9FA] min-h-screen font-sans">
+    <div className="bg-white min-h-screen font-sans">
       <div className="pt-24 pb-12">
         <ContactSection />
       </div>

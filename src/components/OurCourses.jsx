@@ -58,10 +58,10 @@ export default function OurCourses() {
     <div ref={containerRef} className="relative bg-white overflow-visible pb-12 md:pb-24">
       <section className="w-full flex items-center justify-center overflow-hidden py-12 md:py-20" id="courses">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 w-full">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-4 sm:mb-6">
             Our Courses
           </h2>
-          <p className="text-center text-gray-500 text-sm sm:text-base md:text-md mb-8 md:mb-14 max-w-3xl mx-auto">
+          <p className="text-center text-gray-500 text-sm sm:text-base md:text-md mb-8 md:mb-14 max-w-3xl mx-auto italic">
             Each course follows a structured, purposeful approach that helps learners 
             <br className="hidden sm:block" /> build strong foundations and steady progress in Japanese
           </p>
@@ -74,10 +74,10 @@ export default function OurCourses() {
                 className="rounded-2xl border border-blue-100 bg-blue-50/50 p-6 sm:p-10 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow min-h-[280px] sm:min-h-[320px]"
               >
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
                     {course.title}
                   </h3>
-                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                     {course.desc}
                   </p>
                 </div>

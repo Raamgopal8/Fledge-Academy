@@ -7,7 +7,7 @@ import featuredImage from '../assets/japanese_student_success.png';
 
 const BlogPage = () => {
   return (
-    <div className="bg-[#F8F9FA] min-h-screen font-sans overflow-x-hidden">
+    <div className="bg-white min-h-screen font-sans overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">

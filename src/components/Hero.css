@@ -1,8 +1,4 @@
 @media (min-width: 768px) and (max-width: 1024px) {
-    .hero-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
     .hero-tab section {
         flex-direction: row !important;
         gap: 2rem;
@@ -14,13 +10,6 @@
         padding-right: 1rem;
         text-align: left;
     }
-    .hero-tab h1.hero-text {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    .hero-tab p {
-        font-size: 1.1rem;
-    }
     .hero-tab img {
         width: 16rem;
         max-width: 100%;
@@ -28,10 +17,6 @@
 }
 
 @media (max-width: 767px) {
-    .hero-container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
     .hero-tab section {
         flex-direction: column !important;
         gap: 1rem;
@@ -42,13 +27,6 @@
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         text-align: center;
-    }
-    .hero-tab h1.hero-text {
-        font-size: 1.5rem;
-        line-height: 1.1;
-    }
-    .hero-tab p {
-        font-size: 1rem;
     }
     .hero-tab img {
         width: 12rem;

@@ -9,11 +9,11 @@ export default function HowItWorksPage() {
           We teach with intention, not compulsion
         </span>
 
-        <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-gray-900">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
           How We Shape the Learning Journey
         </h1>
 
-        <p className="mt-5 text-sm sm:text-lg text-gray-600">
+        <p className="mt-5 text-sm sm:text-lg text-gray-600 italic">
           Every class is built to create clarity,
           strengthen understanding, and help learners grow with steady, lasting confidence.
         </p>
@@ -36,7 +36,7 @@ export default function HowItWorksPage() {
         <div className="relative max-w-7xl mx-auto space-y-6 sm:space-y-10">
           {/* Card 1 */}
           <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-gray-100 px-6 sm:px-10 py-6 sm:py-8 shadow-sm mx-auto sm:-ml-8 ">
-            <h3 className="text-lg sm:text-2xl font-semibold text-gray-900">
+            <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Teach With Clarity
             </h3>
             <p className="mt-4 text-sm sm:text-xl leading-relaxed text-gray-600">
@@ -46,7 +46,7 @@ export default function HowItWorksPage() {
 
           {/* Card 2 */}
           <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-cyan-300 px-6 sm:px-12 py-6 sm:py-10 shadow-sm mx-auto sm:ml-56">
-            <h3 className="text-lg sm:text-2xl font-semibold text-gray-900">
+            <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Practice With Intention
             </h3>
             <p className="mt-4 text-sm sm:text-xl leading-relaxed text-gray-800">
@@ -56,7 +56,7 @@ export default function HowItWorksPage() {
 
           {/* Card 3 */}
           <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-blue-600 px-6 sm:px-12 py-6 sm:py-10 text-white shadow-sm mx-auto sm:ml-[40%]">
-            <h3 className="text-lg sm:text-2xl font-semibold">
+            <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Grow With Consistency
             </h3>
             <p className="mt-4 text-sm sm:text-xl leading-relaxed text-blue-100">

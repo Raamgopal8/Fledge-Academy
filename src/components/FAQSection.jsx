@@ -5,7 +5,7 @@ import { Plus, Minus } from "lucide-react";
 const baseFaqs = [
   {
     q: "Do I need any previous knowledge to join the N5 course?",
-    a: "No. Our N5 course is designed for complete beginners.",
+    a: "No Our N5 course is designed for complete beginners.",
   },
   {
     q: "How interactive are the online classes?",
@@ -13,7 +13,7 @@ const baseFaqs = [
   },
   {
     q: "Will I get individual attention?",
-    a: "Yes. Small batch sizes ensure personal guidance.",
+    a: "Yes Small batch sizes ensure personal guidance.",
   },
   {
     q: "What if I miss a class?",
@@ -21,7 +21,7 @@ const baseFaqs = [
   },
   {
     q: "Do you prepare students for JLPT or NAT exams?",
-    a: "Yes. Weekly reviews and mock exams are included.",
+    a: "Yes Weekly reviews and mock exams are included.",
   },
 ];
 
@@ -74,10 +74,10 @@ export default function FAQSection() {
 
   return (
     <section className="w-full flex flex-col items-center py-10 md:py-16 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
-      <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-center">
         Frequently Asked Questions
       </h1>
-      <p className="text-gray-500 mt-3 text-center text-sm sm:text-lg">
+      <p className="text-gray-500 mt-3 text-center text-sm sm:text-lg italic">
         Everything you need to know about learning Japanese with us.
       </p>
 

@@ -6,10 +6,10 @@ export default function WhyFledgeAcademy() {
     <section className="min-h-0 py-12 md:min-h-screen md:py-20 bg-white px-4 sm:px-6 lg:px-8">
       {/* Heading */}
       <div className="max-w-[1320px] mx-auto mb-8 md:mb-14 text-center">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-black mb-3 sm:mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black mb-3 sm:mb-4">
           Why Fledge Academy
         </h1>
-        <p className="text-sm sm:text-base lg:text-md text-gray-700 max-w-2xl mx-auto px-4">
+        <p className="text-sm sm:text-base lg:text-md text-gray-600 max-w-2xl mx-auto px-4 italic">
           At Fledge Academy - clarity, progress, and support combine to create a structured, friendly, and genuinely effective learning experience.
         </p>
       </div>
@@ -107,7 +107,7 @@ function Card({ bg, title, desc, size, className = "", index }) {
       <NumberBadge index={index} />
 
       <h3 className="mt-8 sm:mt-10 lg:mt-12 text-lg sm:text-xl font-semibold">{title}</h3>
-      <p className="mt-2 text-xs sm:text-sm opacity-90">{desc}</p>
+      <p className="mt-2 text-xs sm:text-sm opacity-90 leading-relaxed">{desc}</p>
     </div>
   );
 }

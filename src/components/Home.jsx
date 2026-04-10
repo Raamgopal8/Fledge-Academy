@@ -14,7 +14,7 @@ import { useModal } from '../context/ModalContext';
 export default function Home() {
   const { openModal } = useModal();
   return (
-    <div className="hero-container min-h-screen w-full md:pt-8 hero-tab">
+    <div className="bg-[#F8F9FA] min-h-screen w-full md:pt-8 hero-tab">
       <div className="hidden lg:block">
         <VerticalJapaneseText 
           text="日本語を学ぶ旅へようこそ" 
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="max-w-2xl text-center pt-16 md:pt-25 md:text-left md:pl-8 lg:pl-20 w-full overflow-x-visible">
           <FadeUp delay={0.2}>
             <motion.h1 
-              className="text-3xl hero-text sm:text-2xl md:text-5xl lg:text-[55px] font-bold leading-tight md:leading-tight lg:leading-[1.2] text-[#000000]/70 calligraphy-reveal px-2 md:px-0"
+              className="text-5xl md:text-6xl hero-text font-extrabold leading-tight md:leading-tight lg:leading-[1.2] text-[#1A1A1A] calligraphy-reveal px-2 md:px-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, delay: 0.3 }}
@@ -55,7 +55,7 @@ export default function Home() {
           </FadeUp>
 
           <FadeUp delay={0.4}>
-            <p className="text-gray-600 mt-4 text-sm sm:text-base md:text-lg px-2 md:px-0">
+            <p className="text-gray-600 mt-4 text-lg px-2 md:px-0">
               Live interactive classes, cultural immersion,
               and simple step-by-step progress.
             </p>
