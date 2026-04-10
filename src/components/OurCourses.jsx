@@ -112,8 +112,12 @@ export default function OurCourses() {
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {courses.map((course, idx) => (
-                <div
+                <motion.div
                   key={idx}
+                  initial={{ y: 60, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, margin: "-20px" }}
+                  transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.1 }}
                   className="snap-center shrink-0 w-[85vw] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 flex flex-col justify-between shadow-sm min-h-[280px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-pointer"
                 >
                   <div>
@@ -130,7 +134,7 @@ export default function OurCourses() {
                   >
                     View Course →
                   </Link>
-                </div>
+                </motion.div>
               ))}
             </div>
 

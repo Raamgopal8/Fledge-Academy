@@ -1,5 +1,6 @@
 import React from "react";
 import japaneseRow from "../assets/japanese_row.png";
+import { motion } from "framer-motion";
 
 export default function WhyFledgeAcademy() {
   return (
@@ -46,7 +47,11 @@ export default function WhyFledgeAcademy() {
         {/* RIGHT SIDE */}
         <div className="grid grid-cols-1 gap-4 sm:gap-6">
           {/* Image Card */}
-          <div
+          <motion.div
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="h-[220px] sm:h-[320px] lg:h-[380px] rounded-[18px] p-5 sm:p-6 lg:p-7 text-white relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:mobile-shake cursor-default"
             style={{
               backgroundImage: `url(${japaneseRow})`,
@@ -64,7 +69,7 @@ export default function WhyFledgeAcademy() {
               Small groups allow us to focus on every learner. Your doubts, pace,
               and progress are always heard.
             </p>
-          </div>
+          </motion.div>
 
           {/* Bottom cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -100,7 +105,11 @@ function Card({ bg, title, desc, size, className = "", index }) {
   const sizeClass = size === "large" ? "h-[220px] sm:h-[320px] lg:h-[380px]" : "h-[220px] sm:h-[240px] lg:h-[260px]";
 
   return (
-    <div
+    <motion.div
+      initial={{ y: 60, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`${bg} ${sizeClass} rounded-[18px] p-5 sm:p-6 text-white relative ${className} transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:mobile-shake cursor-default`}
     >
       <Tag />
@@ -108,7 +117,7 @@ function Card({ bg, title, desc, size, className = "", index }) {
 
       <h3 className="mt-8 sm:mt-10 lg:mt-12 text-lg sm:text-xl font-semibold">{title}</h3>
       <p className="mt-2 text-xs sm:text-sm opacity-90 leading-relaxed">{desc}</p>
-    </div>
+    </motion.div>
   );
 }
 

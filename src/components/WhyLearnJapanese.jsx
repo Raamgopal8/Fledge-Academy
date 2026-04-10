@@ -6,6 +6,7 @@ import {
   FaStar,
   FaBook,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function WhyLearnJapanese() {
   const features = [
@@ -35,8 +36,12 @@ export default function WhyLearnJapanese() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           {features.map((item, index) => {
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ y: 60, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 flex gap-4 sm:gap-6 relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-pointer"
               >
                 {/* ICON + LINE */}
@@ -56,7 +61,7 @@ export default function WhyLearnJapanese() {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function HowItWorksPage() {
   return (
@@ -38,7 +39,12 @@ export default function HowItWorksPage() {
         {/* Cards */}
         <div className="relative max-w-7xl mx-auto space-y-6 sm:space-y-10">
           {/* Card 1 */}
-          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-gray-100 px-6 sm:px-10 py-6 sm:py-8 mx-auto sm:-ml-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
+          <motion.div 
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="max-w-xl sm:max-w-3xl rounded-2xl bg-gray-100 px-6 sm:px-10 py-6 sm:py-8 mx-auto sm:-ml-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Teach With Clarity
             </h3>
@@ -46,10 +52,15 @@ export default function HowItWorksPage() {
               Every concept is presented in a clean, step-by-step format so
               learners understand the “why” behind what they study.
             </p>
-          </div>
+          </motion.div>
 
           {/* Card 2 */}
-          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-cyan-300 px-6 sm:px-12 py-6 sm:py-10 mx-auto sm:ml-56 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
+          <motion.div
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+            className="max-w-xl sm:max-w-3xl rounded-2xl bg-cyan-300 px-6 sm:px-12 py-6 sm:py-10 mx-auto sm:ml-56 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Practice With Intention
             </h3>
@@ -57,10 +68,15 @@ export default function HowItWorksPage() {
               Students read, write, speak, and engage with culture-based tasks
               that make the language memorable and meaningful.
             </p>
-          </div>
+          </motion.div>
 
           {/* Card 3 */}
-          <div className="max-w-xl sm:max-w-3xl rounded-2xl bg-blue-600 px-6 sm:px-12 py-6 sm:py-10 text-white mx-auto sm:ml-[40%] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
+          <motion.div
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            className="max-w-xl sm:max-w-3xl rounded-2xl bg-blue-600 px-6 sm:px-12 py-6 sm:py-10 text-white mx-auto sm:ml-[40%] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Grow With Consistency
             </h3>
@@ -68,7 +84,7 @@ export default function HowItWorksPage() {
               Weekly tests and guided feedback help students build steady
               progress — without rush and pressure.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
