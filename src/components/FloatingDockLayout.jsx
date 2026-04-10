@@ -130,7 +130,7 @@ export default function WixDocking() {
 
   const IMAGES = [
     { src: img5, x: screenW * 0.04, y: 130, w: 250, h: 250, bgW: 280, bgH: 280, bgX: screenW * 0.03, bgY: 120 },
-    { src: img7, x: screenW * 0.72, y: 100, w: Math.min(320, screenW * 0.25), h: 240 },
+    { src: img7, x: screenW * 0.72, y: 120, w: Math.min(320, screenW * 0.25), h: 240 },
     { src: img4, x: screenW * 0.06, y: 510, w: 350, h: 250, bgW: 280, bgH: 280, bgX: screenW * 0.08, bgY: 490 },
     { src: img3, x: screenW * 0.78, y: 430, w: Math.min(180, screenW * 0.15), h: Math.min(180, screenW * 0.15), bgW: 280, bgH: 280, bgX: screenW * 0.75, bgY: 400 },
   ];

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Eye, Rocket, Clock, Lightbulb, Heart, TrendingUp } from 'lucide-react';
 import Footer from './Footer';
-import heroImage from '../assets/japanese_garden_house.png';
+import heroImage from '../assets/about.png';
 
 const philosophy = [
   {
@@ -67,11 +67,11 @@ const AboutPage = () => {
                 alt="Japanese Garden" 
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute bottom-6 left-6 right-6 bg-[#3B66AC]/90 backdrop-blur-md p-6 rounded-2xl text-white">
+              {/* <div className="absolute bottom-6 left-6 right-6 bg-[#3B66AC]/90 backdrop-blur-md p-6 rounded-2xl text-white"> 
                 <p className="text-sm font-medium italic">
                   "We began as a small research lab dedicated to Contextual Fluency."
                 </p>
-              </div>
+               </div> */}
             </div>
           </motion.div>
         </div>

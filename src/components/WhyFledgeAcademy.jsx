@@ -1,6 +1,6 @@
 import React from "react";
 import japaneseRow from "../assets/japanese_row.png";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 
 export default function WhyFledgeAcademy() {
   return (
@@ -54,9 +54,7 @@ export default function WhyFledgeAcademy() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="h-[220px] sm:h-[320px] lg:h-[380px] rounded-[18px] p-5 sm:p-6 lg:p-7 text-white relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:mobile-shake cursor-default"
             style={{
-              backgroundImage: `url(${japaneseRow})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundColor: "#6a5acd"
             }}
           >
             <Tag />
@@ -75,14 +73,14 @@ export default function WhyFledgeAcademy() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <Card
               index="5"
-              bg="bg-[#4f6fd8]"
+              bg="bg-[#386B7B]"
               title="Progress You Can Trust"
               desc="Weekly reviews and mock exams create a predictable path forward."
             />
 
             <Card
               index="6"
-              bg="bg-[#6a5acd]"
+              bg="bg-[#4f6fd8]"
               title="Flexible Schedules"
               desc="Online classes designed to fit school, college, and work routines."
             />

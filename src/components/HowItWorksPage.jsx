@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-20px" }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="max-w-xl sm:max-w-3xl rounded-2xl bg-blue-600 px-6 sm:px-12 py-6 sm:py-10 text-white mx-auto sm:ml-[40%] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
+            className="max-w-xl sm:max-w-3xl rounded-2xl bg-[#4f6fd8] px-6 sm:px-12 py-6 sm:py-10 text-white mx-auto sm:ml-[40%] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgb(59,102,172,0.15)] active:mobile-shake cursor-default">
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
               Grow With Consistency
             </h3>

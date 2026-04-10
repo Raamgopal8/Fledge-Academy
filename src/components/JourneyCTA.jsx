@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom';
 export default function JourneyCTA() {
   const navigate = useNavigate();
   return (
-    <section className="w-full py-16 sm:py-24 px-6 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 text-center">
+    <section
+      className="w-full py-16 sm:py-24 px-6 text-center"
+      style={{ background: 'linear-gradient(to right, #3B66AC, #a8c0e8)' }}
+    >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
           Ready to Start Your Journey?
         </h2>
 
-         <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+         <p className="mt-4 text-lg text-white leading-relaxed">
           You don’t have to know everything to begin. <br />
           You only need the right place to learn, grow, and stay consistent.
         </p>
@@ -35,7 +38,7 @@ export default function JourneyCTA() {
           </p> */}
         </div>
        {/* Optional note (show only if space allows) */}
-        <p className="mt-8 text-sm italic text-gray-600 leading-relaxed">
+        <p className="mt-8 text-sm italic text-white leading-relaxed">
           “You’re not spending for just classes — <br />
           you’re investing in a skill that can shape your future for years.”
         </p>
