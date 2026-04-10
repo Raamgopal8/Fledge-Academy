@@ -8,7 +8,7 @@ export default function HowItWorksPage() {
     >
       {/* Header */}
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-16 sm:mb-28 px-4 sm:px-6">
-        <span className="inline-block mb-4 rounded-full bg-cyan-400 px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium text-white">
+        <span className="inline-block mb-4 rounded-full bg-[#3B66AC] px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium text-white">
           We teach with intention, not compulsion
         </span>
 

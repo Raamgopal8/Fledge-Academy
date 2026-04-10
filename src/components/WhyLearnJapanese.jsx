@@ -6,6 +6,7 @@ import {
   FaStar,
   FaBook,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function WhyLearnJapanese() {
   const features = [
@@ -17,49 +18,91 @@ export default function WhyLearnJapanese() {
     { icon: <FaBook />, title: "Keeps Your Future Options Open", desc: "Whether your path is tech, business, education, content creation, or translation, Japanese fits naturally into many modern career tracks." },
   ];
 
+  /* Stagger context for cards */
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1 
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: "easeOut" } 
+    }
+  };
+
   return (
-    <section className="py-12 md:py-5 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-8 bg-white overflow-hidden relative">
+      {/* Decorative background blobs */}
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-cyan-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 md:mb-20"
+        >
+          <span className="inline-block mb-4 rounded-full bg-[#3B66AC]/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#3B66AC] uppercase tracking-wider">
+            Future Proof Your Career
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
             Why Learn Japanese Today
           </h2>
-          <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-6 mx-auto italic">
+          <p className="text-gray-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed italic">
             Discover global opportunities, cultural depth, and a smarter way of
             thinking through language learning.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        >
           {features.map((item, index) => {
             return (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 flex gap-4 sm:gap-6 relative"
+                variants={itemVariants}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
+                className="group bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(59,102,172,0.12)] transition-all duration-300 relative overflow-hidden flex flex-col h-full cursor-default"
               >
-                {/* ICON + LINE */}
-                <div className="relative flex flex-col items-center">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#3B66AC] text-white rounded-xl flex items-center justify-center text-xl sm:text-2xl z-10">
-                    {item.icon}
-                  </div>
-                  
+                {/* Decorative background glow inside card for hover */}
+                <div className="absolute -right-20 -top-20 w-40 h-40 bg-[#3B66AC]/5 rounded-full blur-2xl group-hover:bg-[#3B66AC]/20 transition-colors duration-500"></div>
+
+                {/* ICON */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F0F4FA] text-[#3B66AC] rounded-2xl flex items-center justify-center text-2xl sm:text-3xl mb-8 group-hover:scale-110 group-hover:bg-[#3B66AC] group-hover:text-white transition-all duration-300 shadow-sm relative z-10">
+                  {item.icon}
                 </div>
 
                 {/* Content */}
-                <div>
-                  <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">
+                <div className="relative z-10 flex-grow flex flex-col">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 leading-snug group-hover:text-[#3B66AC] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-500 leading-relaxed text-sm sm:text-base flex-grow">
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
