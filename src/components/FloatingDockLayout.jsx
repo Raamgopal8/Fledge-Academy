@@ -73,6 +73,42 @@ function FloatingImage({ img, target, scrollY }) {
   );
 }
 
+/* ---------------- BOUNCING CHARACTERS ---------------- */
+const JAPANESE_CHARS = [
+  { char: "あ", color: "text-red-400/30", size: "text-8xl md:text-[14rem]", left: "5%", top: "5%", duration: 25, y: ["0vh", "70vh", "-10vh", "40vh", "0vh"], x: ["0vw", "50vw", "80vw", "30vw", "0vw"] },
+  { char: "い", color: "text-blue-400/30", size: "text-7xl md:text-[11rem]", left: "80%", top: "10%", duration: 30, y: ["0vh", "60vh", "-20vh", "50vh", "0vh"], x: ["0vw", "-60vw", "-30vw", "-70vw", "0vw"] },
+  { char: "う", color: "text-green-400/30", size: "text-9xl md:text-[16rem]", left: "30%", top: "55%", duration: 35, y: ["0vh", "-60vh", "30vh", "-40vh", "0vh"], x: ["0vw", "40vw", "-40vw", "20vw", "0vw"] },
+  { char: "え", color: "text-amber-400/30", size: "text-8xl md:text-[12rem]", left: "75%", top: "70%", duration: 28, y: ["0vh", "-70vh", "10vh", "-50vh", "0vh"], x: ["0vw", "-50vw", "20vw", "-60vw", "0vw"] },
+  { char: "お", color: "text-purple-400/30", size: "text-7xl md:text-[10rem]", left: "10%", top: "75%", duration: 32, y: ["0vh", "-60vh", "20vh", "-70vh", "0vh"], x: ["0vw", "70vw", "10vw", "60vw", "0vw"] },
+];
+
+function BouncingCharacters() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      {JAPANESE_CHARS.map((item, i) => (
+        <motion.div
+          key={i}
+          className={`absolute font-extrabold ${item.color} ${item.size} drop-shadow-sm`}
+          style={{ left: item.left, top: item.top }}
+          animate={{
+            y: item.y,
+            x: item.x,
+            rotate: [0, 45, -45, 90, 0],
+            scale: [1, 1.2, 0.8, 1.1, 1],
+          }}
+          transition={{
+            duration: item.duration,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          {item.char}
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 /* ---------------- MAIN COMPONENT ---------------- */
 export default function WixDocking() {
   const { openModal } = useModal();
@@ -134,9 +170,10 @@ export default function WixDocking() {
     <div ref={wrapper} className="relative min-h-full bg-white overflow-x-hidden" id="hero">
       {/* ---------------- HERO ---------------- */}
       <section className="relative min-h-[600px] md:h-screen flex items-center justify-center">
+        <BouncingCharacters />
         {/* CENTER CONTENT */}
-        <div className="text-center max-w-4xl z-30 pt-24 md:pt-0 md:-mt-32">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[#1A1A1A] leading-tight">
+        <div className="text-center max-w-4xl z-30 pt-32 md:pt-0 md:-mt-32">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#1A1A1A] leading-tight px-4">
             Learn Japanese
             <br />
             <span className="text-[#3B66AC] font-extrabold">
@@ -151,17 +188,16 @@ export default function WixDocking() {
               />
             </span>
           </h1>
-
-          <p className="text-gray-600 text-lg max-w-xl leading-relaxed mb-6 text-center italic">
-            Experience the language through a clear path
-            <br className="hidden sm:block" />
-            that makes every step simple
+         {/* Home Page Text Content Codes */}
+          <p className="text-gray-600 text-base max-w-xl leading-relaxed mb-6 text-center italic px-4">
+            Experience language through clear path
+            that makes every step easy
           </p>
 
-          <div className="mt-6 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 px-6 md:px-0">
-            <Link to="/courses" className="w-full sm:w-auto">
+          <div className="mt-6 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 w-full px-0">
+            <Link to="/courses" className="w-[60%] sm:w-auto">
               <button
-                className="w-full bg-cyan-400 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-cyan-600 transition"
+                className="w-full bg-cyan-400 text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-cyan-600 transition"
               >
                 Explore Courses
               </button>
@@ -169,7 +205,7 @@ export default function WixDocking() {
 
             <button
               onClick={() => openModal()}
-              className="w-full sm:w-auto bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-200 transition"
+              className="w-[60%] sm:w-auto bg-gray-100 text-gray-800 px-6 py-3 rounded-lg text-base font-medium hover:bg-gray-200 transition"
             >
               Enroll Now
             </button>

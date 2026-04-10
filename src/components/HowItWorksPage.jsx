@@ -2,7 +2,10 @@ import React from "react";
 
 export default function HowItWorksPage() {
   return (
-    <section className="relative min-h-screen w-full bg-white py-16 sm:py-24 overflow-hidden" id="how-it-works">
+    <section
+      className="relative w-full bg-white pt-16 sm:pt-24 pb-4 sm:pb-8 overflow-hidden"
+      id="how-it-works"
+    >
       {/* Header */}
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-16 sm:mb-28 px-4 sm:px-6">
         <span className="inline-block mb-4 rounded-full bg-cyan-400 px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium text-white">
@@ -14,8 +17,8 @@ export default function HowItWorksPage() {
         </h1>
 
         <p className="mt-5 text-sm sm:text-lg text-gray-600 italic">
-          Every class is built to create clarity,
-          strengthen understanding, and help learners grow with steady, lasting confidence.
+          Every class is built to create clarity, strengthen understanding, and
+          help learners grow with steady, lasting confidence.
         </p>
       </div>
 
@@ -40,7 +43,8 @@ export default function HowItWorksPage() {
               Teach With Clarity
             </h3>
             <p className="mt-4 text-sm sm:text-xl leading-relaxed text-gray-600">
-              Every concept is presented in a clean, step-by-step format so learners understand the “why” behind what they study.
+              Every concept is presented in a clean, step-by-step format so
+              learners understand the “why” behind what they study.
             </p>
           </div>
 
@@ -50,7 +54,8 @@ export default function HowItWorksPage() {
               Practice With Intention
             </h3>
             <p className="mt-4 text-sm sm:text-xl leading-relaxed text-gray-800">
-              Students read, write, speak, and engage with culture-based tasks that make the language memorable and meaningful.
+              Students read, write, speak, and engage with culture-based tasks
+              that make the language memorable and meaningful.
             </p>
           </div>
 
@@ -60,7 +65,8 @@ export default function HowItWorksPage() {
               Grow With Consistency
             </h3>
             <p className="mt-4 text-sm sm:text-xl leading-relaxed text-blue-100">
-              Weekly tests and guided feedback help students build steady progress — without rush and pressure.
+              Weekly tests and guided feedback help students build steady
+              progress — without rush and pressure.
             </p>
           </div>
         </div>

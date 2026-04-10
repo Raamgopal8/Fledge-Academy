@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function OurCourses() {
   const containerRef = useRef(null);
@@ -10,7 +10,7 @@ export default function OurCourses() {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   const opacity3 = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
@@ -23,8 +23,8 @@ export default function OurCourses() {
         initial: { x: -50, opacity: 0 },
         whileInView: { x: 0, opacity: 1 },
         viewport: { once: true },
-        transition: { duration: 0.6 }
-      }
+        transition: { duration: 0.6 },
+      },
     },
     {
       title: "JLPT N4 – Elementary Japanese Course",
@@ -33,8 +33,8 @@ export default function OurCourses() {
         initial: { y: 50, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },
         viewport: { once: true },
-        transition: { duration: 0.6, delay: 0.2 }
-      }
+        transition: { duration: 0.6, delay: 0.2 },
+      },
     },
   ];
 
@@ -43,32 +43,45 @@ export default function OurCourses() {
     if (!container) return;
     const card = container.children[idx];
     if (!card) return;
-    card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
     setActiveIndex(idx);
   };
 
   const handlePrev = () => scrollTo(Math.max(activeIndex - 1, 0));
-  const handleNext = () => scrollTo(Math.min(activeIndex + 1, courses.length - 1));
+  const handleNext = () =>
+    scrollTo(Math.min(activeIndex + 1, courses.length - 1));
 
   return (
-    <div ref={containerRef} className="relative bg-white overflow-visible pb-12 md:pb-24">
-      <section className="w-full flex items-center justify-center overflow-hidden py-12 md:py-20" id="courses">
+    <div
+      ref={containerRef}
+      className="relative bg-white overflow-visible pb-12 md:pb-24"
+    >
+      <section
+        className="w-full flex items-center justify-center overflow-hidden pt-4 md:pt-8 pb-12 md:pb-20"
+        id="courses"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 w-full">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-4 sm:mb-6">
             Our Courses
           </h2>
           <p className="text-center text-gray-500 text-sm sm:text-base md:text-md mb-8 md:mb-14 max-w-3xl mx-auto italic">
-            Each course follows a structured, purposeful approach that helps learners 
-            <br className="hidden sm:block" /> build strong foundations and steady progress in Japanese
+            Each course follows a structured, purposeful approach that helps
+            learners
+            <br className="hidden sm:block" /> build strong foundations and
+            steady progress in Japanese
           </p>
 
           {/* Desktop grid */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-14">
+          <div className="hidden md:flex justify-center flex-wrap gap-8 sm:gap-10 md:gap-14">
             {courses.map((course, idx) => (
               <motion.div
                 key={idx}
                 {...course.motionProps}
-                className="rounded-2xl border border-blue-100 bg-blue-50/50 p-6 sm:p-10 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow min-h-[280px] sm:min-h-[320px]"
+                className="w-full md:w-[calc(50%-2rem)] max-w-[400px] rounded-2xl border border-blue-100 bg-blue-50/50 p-6 sm:p-10 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow min-h-[280px] sm:min-h-[320px]"
               >
                 <div>
                   <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
@@ -95,7 +108,7 @@ export default function OurCourses() {
             <div
               ref={scrollRef}
               className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {courses.map((course, idx) => (
                 <div
@@ -110,7 +123,7 @@ export default function OurCourses() {
                       {course.desc}
                     </p>
                   </div>
-                  <Link 
+                  <Link
                     to="/courses"
                     className="mt-8 self-start text-sm font-bold text-[#3B66AC] hover:text-blue-800 transition inline-flex items-center gap-1"
                   >
@@ -136,7 +149,7 @@ export default function OurCourses() {
                   <button
                     key={idx}
                     onClick={() => scrollTo(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${activeIndex === idx ? 'bg-[#3B66AC] w-5' : 'bg-blue-200'}`}
+                    className={`w-2 h-2 rounded-full transition-all ${activeIndex === idx ? "bg-[#3B66AC] w-5" : "bg-blue-200"}`}
                   />
                 ))}
               </div>
@@ -150,7 +163,7 @@ export default function OurCourses() {
               </button>
             </div>
           </div>
-          
+
           <div className="flex justify-center mt-8 md:mt-16">
             <Link to="/courses">
               <motion.button

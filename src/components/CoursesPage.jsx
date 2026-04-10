@@ -32,7 +32,7 @@ const courses = [
       'Follow clear, slow-paced daily conversations.',
       'Understand fundamental grammar and logic.'
     ],
-    link: '#',
+    
     isStitch: true,
     layout: 'left',
     buttonText: 'Enroll Now',
@@ -63,20 +63,22 @@ const courses = [
       'Explain situations using complex grammar.',
       'Master basic polite social expressions.'
     ],
-    link: '#',
+    
     isStitch: true,
     layout: 'left',
+    focusDotColor: 'bg-red-500',
+    outcomeHeaderColor: 'text-red-600',
     buttonText: 'Enroll Now',
     buttonStyle: 'white'
   },
   {
     id: 3,
-    tier: 'N3 / Q3  ',
+    tier: 'N3/Q3  ',
     title: 'JLPT N3 – Intermediate Japanese Course',
     subtitle: 'Bridge the gap to professional fluency by mastering unscripted discussions and workplace communication.',
     level: 'N3',
     kanji: '橋',
-    accentColor: 'linear-gradient(135deg, #0f2a52 0% 65%, #2d4a77 65% 80%, #ffffff 80% 100%)',
+    accentColor: 'linear-gradient(135deg, #3B66AC 0% 65%, #8ba3cd 65% 80%, #ffffff 80% 100%)',
     duration: '6 Months',
     type: 'JLPT Focused',
     description: 'Mastering the mechanics of intermediate Japanese and subtle expression.',
@@ -94,13 +96,10 @@ const courses = [
       'Identify subtle meanings and relationships.',
       'Qualify for diverse global careers.'
     ],
-    link: '#',
+    
     isStitch: true,
-    isRecommended: true,
-    recommendedBadge: true,
     outcomeTheme: 'light',
-    focusDotColor: 'bg-red-500',
-    outcomeHeaderColor: 'text-red-600',
+    
     buttonText: 'Enroll Now',
     buttonStyle: 'white',
     layout: 'left'
@@ -112,7 +111,7 @@ const courses = [
     subtitle: 'A dedicated practical course focused on mastering real-life fluency and understanding the cultural nuances of modern Japan.',
     level: 'Fluency',
     kanji: '談',
-    accentColor: 'linear-gradient(135deg, #0a1e3d 0% 65%, #25406b 65% 80%, #ffffff 80% 100%)',
+    accentColor: 'linear-gradient(135deg, #1e3a6d 0% 65%, #4a6fa5 65% 80%, #ffffff 80% 100%)',
     duration: '3 Months',
     type: 'Practical Fluency',
     description: 'Focus on native speech patterns and practical roleplays to overcome the fear of speaking.',
@@ -131,9 +130,11 @@ const courses = [
       'Understand native speakers at natural conversational speed.',
       'Overcome the fear of speaking through constant practice.'
     ],
-    link: '#',
+    
     isStitch: true,
     layout: 'left',
+    focusDotColor: 'bg-red-500',
+    outcomeHeaderColor: 'text-red-600',
     buttonText: 'Enroll Now',
     buttonStyle: 'white'
   },
@@ -196,13 +197,17 @@ const StitchCourseCard = ({ course, index }) => {
         <div className="w-full h-full border-r-[20px] border-b-[20px] border-white/20 border-dotted"></div>
       </div>
 
+      {/* course tier and course duration */}
       <div className="relative z-20 h-full flex flex-col">
-        <span className="text-[10px] font-black uppercase tracking-[5px] mb-3 text-white/40">
-          {course.tier}
-        </span>
-        <span className="self-start mb-4 bg-white text-[#3B66AC] text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-widest shadow-sm">
-          {course.duration}
-        </span>
+        <div className="flex items-center gap-4 mb-4">
+          <span className="text-[12.5px] font-black uppercase tracking-[5px] text-white/40 leading-none">
+            {course.tier}
+          </span>
+          <span className="bg-white text-[#3B66AC] text-[10px] font-bold px-3 py-1.5 rounded-md uppercase tracking-widest shadow-sm inline-flex items-center justify-center leading-none">
+            {course.duration}
+          </span>
+        </div>
+       
         <h3 className="text-4xl font-bold mb-6 font-serif leading-tight text-white">
           {course.title}
         </h3>
@@ -310,8 +315,8 @@ const CoursesPage = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-black/10"></div>
-              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl max-w-xs shadow-lg">
-                <p className="text-sm text-gray-500">Limited Slots</p>
+              <div className="absolute bottom-8 left-8 bg-[#3B66AC] backdrop-blur-md p-6 rounded-2xl max-w-xs shadow-lg">
+                <p className="text-sm text-white font-extrabold">Limited Slots</p>
               </div>
             </div>
           </motion.div>
