@@ -14,7 +14,7 @@ const events = [
     type: 'Webinar',
   
     description:
-      'Who can attend:School Students, College Students, Language Enthusiasts',
+      'Who can attend : School Students, College Students, Language Enthusiasts',
     color: 'bg-blue-50 border-blue-100',
     accentColor: '#3B66AC',
     badge: 'bg-blue-100 text-blue-700',
