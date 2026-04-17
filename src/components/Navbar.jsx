@@ -25,6 +25,7 @@ export default function Navbar() {
         <Link to="/" className={linkClass("/")}>Home</Link>
         <Link to="/courses" className={linkClass("/courses")}>Courses</Link>
         <Link to="/blog" className={linkClass("/blog")}>Blog</Link>
+        <Link to="/events" className={linkClass("/events")}>Events</Link>
         <Link to="/about" className={linkClass("/about")}>About Us</Link>
         <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
       </div>
@@ -57,6 +58,7 @@ export default function Navbar() {
             <Link to="/" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/courses" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Courses</Link>
             <Link to="/blog" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+            <Link to="/events" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Events</Link>
             <Link to="/about" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>About Us</Link>
             <Link to="/contact" className="hover:text-blue-600 transition py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             <button 

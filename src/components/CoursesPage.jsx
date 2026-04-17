@@ -294,7 +294,7 @@ const CoursesPage = () => {
             
             <div className="flex gap-4 mb-8">
               <span className="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded flex items-center gap-2">
-                <Award className="w-3 h-3" /> JLPT Certified
+                <Award className="w-3 h-3" /> JLPT Oriented
               </span>
               <span className="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded flex items-center gap-2">
                 <Users className="w-3 h-3" /> Experienced Mentors

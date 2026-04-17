@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaInstagram, FaLinkedin, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/fledgeacad.png";
 
 export default function Footer() {
@@ -83,6 +83,9 @@ export default function Footer() {
             </a>
             <a href="https://www.youtube.com/@fledgeacademy" className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#FF0000] transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <FaYoutube size={24} />
+            </a>
+            <a href="https://chat.whatsapp.com/GzS0x6vE0y..." target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] transition-all duration-300 hover:scale-110 hover:-translate-y-1">
+              <FaWhatsapp size={24} />
             </a>
           </div>
         </div>

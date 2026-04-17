@@ -22,6 +22,7 @@ import AboutPage from './components/AboutPage.jsx';
 import CoursesPage from './components/CoursesPage.jsx';
 import BlogPage from './components/BlogPage.jsx';
 import ContactPage from './components/ContactPage.jsx';
+import EventsPage from './components/EventsPage.jsx';
 import WhatsAppWidget from './components/WhatsAppWidget.jsx';
 
 import { ModalProvider } from './context/ModalContext';
@@ -54,6 +55,7 @@ function App() {
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/events" element={<EventsPage />} />
           </Routes>
         </SmoothScroll>
       </Router>
