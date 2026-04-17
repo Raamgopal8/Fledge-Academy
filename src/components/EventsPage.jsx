@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Users, Tag, ChevronRight } from 'lucide-react';
+import poster1 from "../assets/image1.png";
 import Footer from './Footer';
 
 const events = [
   {
     id: 1,
     title: 'The Importance of Learning Foreign Languages in Today’s World',
-    date: 'April 19, 2026',
-    time: '10:00 AM – 11:00 AM IST',
+    date: 'April 21, 2026',
+    time: '7:00 PM – 8:30 PM IST',
     location: 'Online (Zoom)',
     type: 'Webinar',
-    seats: 100,
+  
     description:
-      'A 1-hour deep-dive covering core N5 grammar, vocabulary patterns, and exam strategies to get you ready for the JLPT.',
+      'Who can attend:School Students, College Students, Language Enthusiasts',
     color: 'bg-blue-50 border-blue-100',
     accentColor: '#3B66AC',
     badge: 'bg-blue-100 text-blue-700',
     icon: '📝',
+    image: poster1,
   }
 ];
 
@@ -45,12 +47,11 @@ const EventsPage = () => {
               Community &amp; Growth
             </span>
             <h1 className="text-5xl md:text-7xl font-extrabold text-[#1A1A1A] leading-tight mb-6">
-              Upcoming Events <br />
-              <span className="text-[#3B66AC]">Join &amp; Thrive.</span>
+              Events & Community <br />
+              <span className="text-[#3B66AC]">Connect, Learn, &amp; Thrive.</span>
             </h1>
             <p className="text-gray-500 text-lg max-w-2xl leading-relaxed mb-8">
-              Live workshops, free demo classes, Live Webinar and exam-prep
-              sessions — designed to accelerate your Japanese language journey.
+              Step beyond the classroom into a space built for steady growth. Explore live workshops, cultural sessions, and a supportive community that guides your journey with purpose.
             </p>
             
           </motion.div>
@@ -88,17 +89,35 @@ const EventsPage = () => {
               transition={{ delay: i * 0.08 }}
               className={`group flex flex-col md:flex-row bg-white rounded-[40px] border border-gray-100 shadow-sm overflow-hidden hover:shadow-xl transition-all duration-500`}
             >
-              {/* Left Column: Icon/Symbol Placeholder */}
+              {/* Left Column: Image/Poster */}
               <div 
-                className={`md:w-1/3 p-12 flex items-center justify-center transition-all group-hover:scale-105 duration-700 ${event.color.split(' ')[0]}`}
+                className={`md:w-1/3 relative flex items-center justify-center overflow-hidden transition-all group-hover:scale-105 duration-700 ${event.color.split(' ')[0]}`}
                 style={{ borderRight: '1px solid rgba(0,0,0,0.03)' }}
               >
-                <div className="relative">
-                  <span className="text-9xl mb-4 block drop-shadow-sm select-none">
-                    {event.icon}
-                  </span>
-                  <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px] rounded-full scale-150 -z-10 opacity-30"></div>
-                </div>
+                {event.image ? (
+                  <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-50">
+                    {/* Blurred Background */}
+                    <img 
+                      src={event.image} 
+                      alt="" 
+                      className="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 scale-110"
+                    />
+                    {/* Main Image */}
+                    <img 
+                      src={event.image} 
+                      alt={event.title} 
+                      className="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 z-20 bg-gradient-to-r from-transparent to-white/5 group-hover:to-transparent transition-all duration-500"></div>
+                  </div>
+                ) : (
+                  <div className="relative">
+                    <span className="text-9xl mb-4 block drop-shadow-sm select-none">
+                      {event.icon}
+                    </span>
+                    <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px] rounded-full scale-150 -z-10 opacity-30"></div>
+                  </div>
+                )}
               </div>
 
               {/* Right Column: Details */}
@@ -107,9 +126,9 @@ const EventsPage = () => {
                   <span className={`text-[10px] font-black uppercase tracking-[3px] px-3 py-1.5 rounded-lg border ${event.badge}`}>
                     {event.type}
                   </span>
-                  <div className="flex items-center gap-2 text-xs font-bold text-[#3B66AC] bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100">
-                    <Users className="w-3 h-3" />
-                    {event.seats} Seats Left
+                  <div className="flex items-center gap-2 text-sm font-semibold text-white bg-[#3B66AC] hover:bg-[#2d4f85] px-6 py-2 rounded-md transition duration-300 shadow-sm">
+                    <Users className="w-4 h-4" />
+                    {event.seats} Free
                   </div>
                 </div>
 
@@ -153,7 +172,7 @@ const EventsPage = () => {
 
                 <div className="mt-8 flex items-center justify-between pointer-events-none">
                   <motion.a
-                    href="#"
+                    href="https://forms.gle/iR8HxecFoVLGahu68"
                     className="pointer-events-auto inline-flex items-center gap-3 bg-[#1A1A1A] hover:bg-[#3B66AC] text-white font-bold px-8 py-4 rounded-2xl transition-all shadow-lg group/btn hover:-translate-y-1"
                   >
                     Register Now
@@ -172,28 +191,35 @@ const EventsPage = () => {
         )}
       </section>
 
-      {/* ─── Newsletter Signup (mirrors BlogPage) ─── */}
+      {/* ─── Community Section ─── */}
       <section className="px-6 md:px-12 lg:px-24 mb-12">
-        <div className="max-w-7xl mx-auto bg-white rounded-[40px] p-12 md:p-20 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
-          <div className="flex-1 relative z-10">
-            <h2 className="text-4xl font-extrabold text-[#1A1A1A] mb-6">
-              Join the Creative Community
+        <div className="max-w-7xl mx-auto bg-[#3B66AC] rounded-[50px] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-xl">
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
+              Join The Fledge Community
             </h2>
-            <p className="text-gray-500 text-lg leading-relaxed">
-              Join the creative community for accessing exclusive sessions, upcoming workshops, 
-              and special Fledge Academy events.
+            <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+              Don’t study alone. Join our WhatsApp community to clear doubts with mentors and connect with fellow professionals. It’s your space for study materials, cultural workshops, and early job alerts. Stay connected, stay disciplined, and grow with a community that cares about your success.
             </p>
+            <div className="flex justify-center">
+              <a
+                href="https://chat.whatsapp.com/LJCMHmRk4n66iR7smHksxJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-[#3B66AC] font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition shadow-xl inline-flex items-center gap-3 group text-lg"
+              >
+                Join WhatsApp Community
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
-          <div className="flex-1 w-full relative z-10 flex justify-center md:justify-end">
-            <a
-              href="https://chat.whatsapp.com/GzS0x6vE0y..." // Replace with actual community link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#3B66AC] hover:bg-[#2d4f85] text-white font-bold px-12 py-5 rounded-[24px] transition shadow-xl whitespace-nowrap text-lg inline-flex items-center gap-3 group"
-            >
-              Join WhatsApp Community
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+          
+          {/* Decorative Plane Icon (SVG) - Matching CoursesPage */}
+          <div className="absolute top-1/2 right-10 -translate-y-1/2 opacity-10 pointer-events-none hidden lg:block">
+            <svg width="300" height="300" viewBox="0 0 24 24" fill="white">
+              <path d="M21 16.5L16 11.5L5 16.5V20.5L16 15.5L21 20.5V16.5Z" />
+              <path d="M21 3.5L3 11.5V15.5L21 7.5V3.5Z" />
+            </svg>
           </div>
         </div>
       </section>

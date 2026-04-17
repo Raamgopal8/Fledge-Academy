@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="w-full md:w-auto md:mt-10">
           <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Explore</h4>
           <ul className="space-y-3 text-slate-600">
-            {['Home', 'Courses', 'Blog', 'About', 'Contact'].map((item) => (
+            {['Home', 'Courses', 'Blog', 'Events', 'About', 'Contact'].map((item) => (
               <li key={item}>
                 <Link 
                   to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
@@ -83,13 +83,19 @@ export default function Footer() {
             </a>
             <a href="https://www.youtube.com/@fledgeacademy" className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#FF0000] transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <FaYoutube size={24} />
-            </a>
-            <a href="https://chat.whatsapp.com/GzS0x6vE0y..." target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] transition-all duration-300 hover:scale-110 hover:-translate-y-1">
+            </a>          
+        </div>
+             
+        <div className="w-full md:w-auto md:mt-10 flex flex-col items-center">
+          <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm text-center">Join Our Community</h4>
+          <div className="flex justify-center gap-4">
+            <a href="https://chat.whatsapp.com/LJCMHmRk4n66iR7smHksxJ" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#25D366] transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <FaWhatsapp size={24} />
             </a>
           </div>
         </div>
       </div>
+     </div>
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-200">
